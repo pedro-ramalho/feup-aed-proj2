@@ -1,0 +1,3 @@
+/home/pedro/feup-aed-proj2/build/CMakeFiles/rebuild_cache.dir
+/home/pedro/feup-aed-proj2/build/CMakeFiles/edit_cache.dir
+/home/pedro/feup-aed-proj2/build/CMakeFiles/AED2122PROJ2.dir

@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/pedro/feup-aed-proj2/headers/utils.h
+vector
+-
+string
+-
+fstream
+-
+iostream
+-
+algorithm
+-
+limits
+-
+fstream
+-
+
+/home/pedro/feup-aed-proj2/src/utils.cpp
+../headers/utils.h
+/home/pedro/feup-aed-proj2/headers/utils.h
+

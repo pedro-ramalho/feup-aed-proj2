@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/AED2122PROJ2.dir/main.cpp.o CMakeFiles/AED2122PROJ2.dir/src/utils.cpp.o  -o AED2122PROJ2 
