@@ -5,6 +5,12 @@
 #include <queue>
 #include <iostream>
 
+//---------------------------------------------//
+//  This simplified Graph class was made by    //
+//  Professor Pedro Ribeiro and most methods   //
+//  were reused from Practical Classes         //
+//---------------------------------------------//
+
 class Graph {
 private:
     struct Edge {
@@ -44,7 +50,7 @@ public:
     //breadth-first search but returns the distance between nodes a and b
     int bfs_distances(int a, int b);
 
-    //other functions (i put them here because they might be useful in the future)
+    //other functions (I put them here because they might be useful in the future)
     int out_degree(int v);
     
     int connected_components();
