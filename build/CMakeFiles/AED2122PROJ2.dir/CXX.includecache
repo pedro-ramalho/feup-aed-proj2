@@ -6,23 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/pedro/feup-aed-proj2/headers/utils.h
+/home/pedro/feup-aed-proj2/headers/graph.h
 vector
 -
-string
+list
 -
-fstream
+queue
 -
 iostream
 -
-algorithm
--
-limits
--
-fstream
--
 
-/home/pedro/feup-aed-proj2/src/utils.cpp
-../headers/utils.h
-/home/pedro/feup-aed-proj2/headers/utils.h
+/home/pedro/feup-aed-proj2/src/graph.cpp
+../headers/graph.h
+/home/pedro/feup-aed-proj2/headers/graph.h
 

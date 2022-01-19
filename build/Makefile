@@ -69,8 +69,8 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/cmake-gui -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -150,6 +150,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/AED2122PROJ2.dir/build.make CMakeFiles/AED2122PROJ2.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+src/graph.o: src/graph.cpp.o
+
+.PHONY : src/graph.o
+
+# target to build an object file
+src/graph.cpp.o:
+	$(MAKE) -f CMakeFiles/AED2122PROJ2.dir/build.make CMakeFiles/AED2122PROJ2.dir/src/graph.cpp.o
+.PHONY : src/graph.cpp.o
+
+src/graph.i: src/graph.cpp.i
+
+.PHONY : src/graph.i
+
+# target to preprocess a source file
+src/graph.cpp.i:
+	$(MAKE) -f CMakeFiles/AED2122PROJ2.dir/build.make CMakeFiles/AED2122PROJ2.dir/src/graph.cpp.i
+.PHONY : src/graph.cpp.i
+
+src/graph.s: src/graph.cpp.s
+
+.PHONY : src/graph.s
+
+# target to generate assembly for a file
+src/graph.cpp.s:
+	$(MAKE) -f CMakeFiles/AED2122PROJ2.dir/build.make CMakeFiles/AED2122PROJ2.dir/src/graph.cpp.s
+.PHONY : src/graph.cpp.s
+
 src/utils.o: src/utils.cpp.o
 
 .PHONY : src/utils.o
@@ -189,6 +216,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... src/graph.o"
+	@echo "... src/graph.i"
+	@echo "... src/graph.s"
 	@echo "... src/utils.o"
 	@echo "... src/utils.i"
 	@echo "... src/utils.s"
