@@ -60,4 +60,10 @@ public:
     int distance(int a, int b);
 
     std::list<int> topological_sorting();
+
+    //prim algorithm
+
+    //kruskal algorithm
+
+    //dijkstra algorithm
 };
