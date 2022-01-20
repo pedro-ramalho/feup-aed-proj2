@@ -1,24 +1,13 @@
 #include "../headers/utils.h"
 
+std::map<int, std::pair<std::string, std::string>> id_code;
+
+std::map<int, std::string> id_zone;
+
+std::map<int, std::pair<double, double>> id_coords;
+
 void clear_screen() { 
     std::cout << std::string(500, '\n') << std::endl; 
-}
-
-std::vector<std::string> read_file(std::string filename) {
-    filename = "dataset/" + filename;
-    std::vector<std::string> lines = std::vector<std::string>();
-    std::string line = std::string();
-    std::ifstream file(filename);
-
-    if (!file.is_open()) std::cout << "Couldn't open file!" << std::endl;
-
-    while (getline(file, line)) {
-        lines.push_back(line);
-        std::cout << line << '\n';
-    }
-
-    file.close();
-    return lines;
 }
 
 /*
@@ -42,4 +31,41 @@ double haversine(double lat1, double lon1, double lat2, double lon2) {
                cos(lat1) * cos(lat2);
     
     return 6371 * 2 * asin(sqrt(a));    
+}
+
+std::pair<std::string, std::string> get_code(int id) {
+    return id_code[id];
+}
+
+std::string get_zone(int id) {
+    return id_zone[id];
+}
+
+std::pair<double, double> get_coords(int id) {
+    return id_coords[id];
+}
+
+void read_stops_file() {
+    std::ifstream data(STOPS_FILE);
+
+    std::string str;
+    std::getline(data, str);
+
+    int id = 1;
+
+    std::vector<std::string> values = std::vector<std::string>();
+
+    while (std::getline(data, str)) { 
+        std::istringstream iss(str);
+        std::string token;
+        while (std::getline(iss, token, ',')) {
+            values.push_back(token);
+        }
+
+        id_code.insert({id, std::make_pair(values.at(0), values.at(1))});
+        id_zone.insert({id, values.at(2)});
+        id_coords.insert({id, std::make_pair(std::stod(values.at(3)), std::stod(values.at(4)))});
+        id++;
+        values.clear();
+    }
 }
