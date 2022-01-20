@@ -30,7 +30,7 @@ private:
 
 public:
     //constructor: num of nodes and undirected (default)
-    Graph(int nodes, bool has_dir = false);
+    Graph(int nodes, bool has_dir);
 
     //add edge from source to destination with a certain weight
     void add_edge(int src, int dest, int weight = 1);

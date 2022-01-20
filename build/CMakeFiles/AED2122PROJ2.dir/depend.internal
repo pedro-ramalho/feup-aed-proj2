@@ -11,7 +11,9 @@ CMakeFiles/AED2122PROJ2.dir/src/graph.cpp.o
  /home/pedro/feup-aed-proj2/headers/graph.h
  /home/pedro/feup-aed-proj2/src/graph.cpp
 CMakeFiles/AED2122PROJ2.dir/src/lines.cpp.o
+ /home/pedro/feup-aed-proj2/headers/graph.h
  /home/pedro/feup-aed-proj2/headers/lines.h
+ /home/pedro/feup-aed-proj2/headers/stops.h
  /home/pedro/feup-aed-proj2/src/lines.cpp
 CMakeFiles/AED2122PROJ2.dir/src/stops.cpp.o
  /home/pedro/feup-aed-proj2/headers/stops.h

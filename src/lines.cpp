@@ -24,19 +24,44 @@ void Lines::read_lines_file() {
     std::cout << this->line_paths.size() << std::endl;
 }
 
-void Lines::build_graph() {
+std::vector<std::string> Lines::build_graph(std::string path) {
+    std::vector<std::string> stops = std::vector<std::string>();
     std::ifstream data;
     std::string line;
-    int counter = 0;
+
+    data.open(path);
+    std::getline(data, line); //ignores the first line
+
+    while (std::getline(data, line)) stops.push_back(line);
+
+    data.close();
+
+    return stops;
+}
+
+Graph Lines::get_stops_graph() {
+    Graph stops_graph(2487, true);
 
     for (const std::string path : this->line_paths) {
-        std::cout << "Path: " << path << std::endl;
-        data.open(path);
-        std::getline(data, line); //ignores first line of each file
-        
-        while (std::getline(data, line)) std::cout << line << " ";
-        std::cout << '\n';
-        std::cout << '\n';
-        data.close();
+        std::vector<std::string> codes = build_graph(path);
+        for (int i = 1; i < this->line_paths.size() - 1; i++) {
+            int src_stop_id = this->stops.get_id(codes[i - 1]);
+            int dest_stop_id = this->stops.get_id(codes[i]);
+            stops_graph.add_edge(src_stop_id, dest_stop_id, 1);
+        }
     }
+
+    return stops_graph;
+}
+
+Graph Lines::get_distances_graph() {
+
+}
+
+Graph Lines::get_lines_graph() {
+
+}
+
+Graph Lines::get_zones_graph() {
+    
 }

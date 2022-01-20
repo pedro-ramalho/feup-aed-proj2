@@ -90,5 +90,6 @@ int main() {
 
     lines.build_graph();
 
+    Graph g(7, false);
     return 0;
 }
