@@ -177,6 +177,33 @@ src/graph.cpp.s:
 	$(MAKE) -f CMakeFiles/AED2122PROJ2.dir/build.make CMakeFiles/AED2122PROJ2.dir/src/graph.cpp.s
 .PHONY : src/graph.cpp.s
 
+src/lines.o: src/lines.cpp.o
+
+.PHONY : src/lines.o
+
+# target to build an object file
+src/lines.cpp.o:
+	$(MAKE) -f CMakeFiles/AED2122PROJ2.dir/build.make CMakeFiles/AED2122PROJ2.dir/src/lines.cpp.o
+.PHONY : src/lines.cpp.o
+
+src/lines.i: src/lines.cpp.i
+
+.PHONY : src/lines.i
+
+# target to preprocess a source file
+src/lines.cpp.i:
+	$(MAKE) -f CMakeFiles/AED2122PROJ2.dir/build.make CMakeFiles/AED2122PROJ2.dir/src/lines.cpp.i
+.PHONY : src/lines.cpp.i
+
+src/lines.s: src/lines.cpp.s
+
+.PHONY : src/lines.s
+
+# target to generate assembly for a file
+src/lines.cpp.s:
+	$(MAKE) -f CMakeFiles/AED2122PROJ2.dir/build.make CMakeFiles/AED2122PROJ2.dir/src/lines.cpp.s
+.PHONY : src/lines.cpp.s
+
 src/stops.o: src/stops.cpp.o
 
 .PHONY : src/stops.o
@@ -246,6 +273,9 @@ help:
 	@echo "... src/graph.o"
 	@echo "... src/graph.i"
 	@echo "... src/graph.s"
+	@echo "... src/lines.o"
+	@echo "... src/lines.i"
+	@echo "... src/lines.s"
 	@echo "... src/stops.o"
 	@echo "... src/stops.i"
 	@echo "... src/stops.s"

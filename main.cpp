@@ -1,7 +1,9 @@
 #include <iostream>
+#include <filesystem>
 #include "headers/utils.h"
 #include "headers/graph.h"
 #include "headers/stops.h"
+#include "headers/lines.h"
 
 //-----------------------------------------------------------------------------------------//
 // *TAREFA FUNDAMENTAL*                                                                    //
@@ -58,31 +60,35 @@
 //-----------------------------------------------------------------------------------------//
 
 int main() {
-    //creates an undirected graph with 9 nodes
-    Graph g(9, false);
-    g.add_edge(1,2);
-    g.add_edge(1,3);
-    g.add_edge(2,4);
-    g.add_edge(3,4);
-    g.add_edge(4,5);
-    g.add_edge(5,6);
-    g.add_edge(5,7);
-    g.add_edge(6,9);
-    g.add_edge(7,8);
+    // //creates an undirected graph with 9 nodes
+    // Graph g(9, false);
+    // g.add_edge(1,2);
+    // g.add_edge(1,3);
+    // g.add_edge(2,4);
+    // g.add_edge(3,4);
+    // g.add_edge(4,5);
+    // g.add_edge(5,6);
+    // g.add_edge(5,7);
+    // g.add_edge(6,9);
+    // g.add_edge(7,8);
 
-    Stops stops;
+    // Stops stops;
 
-    std::string stop_name;
-    std::cout << "Stop's code: "; std::cin >> stop_name;
-    std::cout << '\n';
-    int stop_id = stops.get_id(stop_name);
-    std::cout << "Stop ID = "  << stop_id << std::endl;
-    std::cout << '\n';
-    std::cout << "Stop's name: " << stops.get_name(stop_id).first << std::endl;
-    std::cout << "Stop's zone: " << stops.get_name(stop_id).second << std::endl;
-    std::cout << '\n';
-    std::cout << "Stop's latitude: " << stops.get_coords(stop_id).first << std::endl;
-    std::cout << "Stop's longitude: " << stops.get_coords(stop_id).second << std::endl;  
+    // std::string stop_name;
+    // std::cout << "Stop's code: "; std::cin >> stop_name;
+    // std::cout << '\n';
+    // int stop_id = stops.get_id(stop_name);
+    // std::cout << "Stop ID = "  << stop_id << std::endl;
+    // std::cout << '\n';
+    // std::cout << "Stop's name: " << stops.get_name(stop_id).first << std::endl;
+    // std::cout << "Stop's zone: " << stops.get_name(stop_id).second << std::endl;
+    // std::cout << '\n';
+    // std::cout << "Stop's latitude: " << stops.get_coords(stop_id).first << std::endl;
+    // std::cout << "Stop's longitude: " << stops.get_coords(stop_id).second << std::endl;  
+
+    Lines lines;
+
+    lines.build_graph();
 
     return 0;
 }
