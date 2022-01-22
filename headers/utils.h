@@ -15,12 +15,6 @@ const std::string STOPS_FILE = "dataset/stops.csv";
 
 void clear_screen();
 
-void read_stops_file();
-
-std::pair<std::string, std::string> get_code(int id);
-
-std::string get_zone(int id);
-
-std::pair<double, double> get_coords(int id);
+double haversine(std::pair<double, double> c1, std::pair<double, double> c2);
 
 double haversine(double lat1, double lon1, double lat2, double lon2);

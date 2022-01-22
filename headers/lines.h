@@ -5,6 +5,7 @@
 #include <fstream>
 #include <sstream>
 #include <iostream>
+#include "../headers/utils.h"
 #include "../headers/graph.h"
 #include "../headers/stops.h"
 
@@ -18,37 +19,41 @@ private:
     const std::string LINE_PREFIX = "dataset/line_";
 
     void read_lines_file();
+
+    void connect_nearby_stops(Graph& graph, double distance);
 public:
     Lines();
 
-    std::vector<std::string> build_graph(std::string path);
-
+    std::vector<std::string> get_line_stops(std::string path);
+    
     /*
      * A graph to be used when the user chooses the path with the least amount of Stops.
      * Making the weight of every edge equal to 1 should be enough to solve this problem.
      * Apply Dijkstra's algorithm and it should be done
     */
-    Graph get_stops_graph();
-    
+    Graph get_stops_graph(double distance);
+
 
     /*
     * A graph to be used when the user chooses the shortest path in terms of distance.
     * The weight of each edge should be equal to the distance between the two connecting nodes.
     * Apply Dijkstra's algorithm and it should be done
     */
-    Graph get_distances_graph();
+    Graph get_distances_graph(double distance);
 
 
     /*
     * A graph to be used when the user chooses the path with the least amount of line switches.
     * Still need to figure out a way to do this one.
     */
-    Graph get_lines_graph();
+    Graph get_lines_graph(double distance);
 
 
     /*
     * A graph to be used when the user chooses the cheapest (crosses the least amount of different zones) path.
     * Still need to figure out how to do this one.
     */
-    Graph get_zones_graph();
+    Graph get_zones_graph(double distance);
+
+
 };

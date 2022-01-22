@@ -90,11 +90,3 @@ headers/stops.h
 headers/lines.h
 /home/pedro/feup-aed-proj2/headers/lines.h
 
-/home/pedro/feup-aed-proj2/src/graph.cpp
-../headers/graph.h
-/home/pedro/feup-aed-proj2/headers/graph.h
-
-/home/pedro/feup-aed-proj2/src/lines.cpp
-../headers/lines.h
-/home/pedro/feup-aed-proj2/headers/lines.h
-

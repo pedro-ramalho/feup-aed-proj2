@@ -11,18 +11,19 @@
 //  were reused from Practical Classes         //
 //---------------------------------------------//
 
+struct Edge {
+    int dest; //destination node
+    double weight; //integer weight (can change type if needed)
+};
+
+struct Node {
+    std::list<Edge> adj; //list of outgoing edges (to adjacent nodes)
+    bool visited; //true if the node has been visited during a search
+    int distance; //distance between this current Node and another Node
+};
+
 class Graph {
 private:
-    struct Edge {
-        int dest; //destination node
-        int weight; //integer weight (can change type if needed)
-    };
-
-    struct Node {
-        std::list<Edge> adj; //list of outgoing edges (to adjacent nodes)
-        bool visited; //true if the node has been visited during a search
-        int distance; //distance between this current Node and another Node
-    };
 
     int n; // graph size (vertices are numbered from 1 to n)
     bool has_dir; //true if the grap is directed
@@ -33,7 +34,7 @@ public:
     Graph(int nodes, bool has_dir);
 
     //add edge from source to destination with a certain weight
-    void add_edge(int src, int dest, int weight = 1);
+    void add_edge(int src, int dest, double weight = 1.0);
 
     //depth-first search
     void dfs(int v);
@@ -61,6 +62,7 @@ public:
 
     std::list<int> topological_sorting();
 
+    std::vector<Node> get_nodes() { return this->nodes; }
     //prim algorithm
 
     //kruskal algorithm

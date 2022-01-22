@@ -2,7 +2,7 @@
 
 Graph::Graph(int num, bool has_dir) : n(num), has_dir(has_dir), nodes(num + 1) {}
 
-void Graph::add_edge(int src, int dest, int weight) {
+void Graph::add_edge(int src, int dest, double weight) {
     if (src < 1 || dest < 1 || dest > n) return;
     nodes[src].adj.push_back( {dest, weight} );
     if (!has_dir) nodes[dest].adj.push_back({src, weight});

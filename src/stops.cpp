@@ -4,6 +4,7 @@ Stops::Stops() {
     this->read_stops_file();
 }
 
+// Code,Name,Zone,Latitude,Longitude
 void Stops::read_stops_file() {
     int id = 1;
 
@@ -20,7 +21,7 @@ void Stops::read_stops_file() {
         while (std::getline(iss, word, ',')) values.push_back(word);
 
         code_id.insert({values.at(0), id});
-        id_name.insert({id, std::make_pair(values.at(1), values.at(2))});
+        id_name_zone.insert({id, std::make_pair(values.at(1), values.at(2))});
         id_coords.insert({id, std::make_pair(std::stod(values.at(3)), std::stod(values.at(4)))});
 
         id++;
@@ -28,12 +29,12 @@ void Stops::read_stops_file() {
     }
 }
 
-int Stops::get_id(std::string stop) {
-    return code_id[stop];
+int Stops::get_id(std::string code) {
+    return code_id[code];
 }
 
-std::pair<std::string, std::string> Stops::get_name(int id) {
-    return id_name[id];
+std::pair<std::string, std::string> Stops::get_name_zone(int id) {
+    return id_name_zone[id];
 }
 
 std::pair<double, double> Stops::get_coords(int id) {

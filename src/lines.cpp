@@ -20,11 +20,23 @@ void Lines::read_lines_file() {
         line_paths.push_back(word + "_0.csv");
         line_paths.push_back(word + "_1.csv");
     }
-
-    std::cout << this->line_paths.size() << std::endl;
 }
 
-std::vector<std::string> Lines::build_graph(std::string path) {
+void Lines::connect_nearby_stops(Graph& graph, double distance) {
+    for (int i = 1; i < graph.get_nodes().size(); i++) 
+        for (int j = 1; j < graph.get_nodes().size(); j++) {
+            std::list<Edge> edges = graph.get_nodes()[i].adj;
+            
+            bool suitable = true;
+            for (auto e : edges) 
+                if (e.dest == j) suitable = false;
+
+            if (i != j && haversine(stops.get_coords(i), stops.get_coords(j)) <= distance && suitable)
+                graph.add_edge(i, j, 0);
+        }
+}
+
+std::vector<std::string> Lines::get_line_stops(std::string path) {
     std::vector<std::string> stops = std::vector<std::string>();
     std::ifstream data;
     std::string line;
@@ -39,29 +51,71 @@ std::vector<std::string> Lines::build_graph(std::string path) {
     return stops;
 }
 
-Graph Lines::get_stops_graph() {
+Graph Lines::get_stops_graph(double distance) {
     Graph stops_graph(2487, true);
 
     for (const std::string path : this->line_paths) {
-        std::vector<std::string> codes = build_graph(path);
+        std::vector<std::string> codes = get_line_stops(path);
+
         for (int i = 1; i < this->line_paths.size() - 1; i++) {
             int src_stop_id = this->stops.get_id(codes[i - 1]);
             int dest_stop_id = this->stops.get_id(codes[i]);
+            
             stops_graph.add_edge(src_stop_id, dest_stop_id, 1);
         }
     }
+    this->connect_nearby_stops(stops_graph, distance);
 
     return stops_graph;
 }
 
-Graph Lines::get_distances_graph() {
+Graph Lines::get_distances_graph(double distance) {
+    Graph distances_graph(2487, true);
+
+
+    for (const std::string path : this->line_paths) {
+        std::vector<std::string> codes = get_line_stops(path);
+
+        for (int i = 1; i < this->line_paths.size() - 1; i++) {
+            int src_stop_id = this->stops.get_id(codes[i - 1]);
+            int dest_stop_id = this->stops.get_id(codes[i]);
+
+            std::pair<double, double> src_coords = stops.get_coords(src_stop_id);
+            std::pair<double, double>  dest_coords = stops.get_coords(dest_stop_id);
+            double distance = haversine(src_coords, dest_coords);
+
+            distances_graph.add_edge(src_stop_id, dest_stop_id, distance);
+        }
+    }
+
+    this->connect_nearby_stops(distances_graph, distance);
+
+    return distances_graph;
+}
+
+Graph Lines::get_lines_graph(double distance) {
 
 }
 
-Graph Lines::get_lines_graph() {
+Graph Lines::get_zones_graph(double distance) {
+    Graph zones_graph(2487, true);
 
-}
+    for (const std::string path : this->line_paths) {
+        std::vector<std::string> codes = get_line_stops(path);
 
-Graph Lines::get_zones_graph() {
-    
+        for (int i = 1; i < this->line_paths.size() - 1; i++) {
+            int src_stop_id = this->stops.get_id(codes[i - 1]);
+            int dest_stop_id = this->stops.get_id(codes[i]);
+            
+            std::string src_zone = stops.get_name_zone(src_stop_id).second;
+            std::string dest_zone = stops.get_name_zone(dest_stop_id).second;
+
+            int cost = src_zone == dest_zone ? 1 : 0;
+
+            zones_graph.add_edge(src_stop_id, dest_stop_id, cost);
+        }
+    }
+    this->connect_nearby_stops(zones_graph, distance);
+
+    return zones_graph;
 }
