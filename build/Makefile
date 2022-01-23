@@ -177,6 +177,33 @@ src/graph.cpp.s:
 	$(MAKE) -f CMakeFiles/AED2122PROJ2.dir/build.make CMakeFiles/AED2122PROJ2.dir/src/graph.cpp.s
 .PHONY : src/graph.cpp.s
 
+src/linegraph.o: src/linegraph.cpp.o
+
+.PHONY : src/linegraph.o
+
+# target to build an object file
+src/linegraph.cpp.o:
+	$(MAKE) -f CMakeFiles/AED2122PROJ2.dir/build.make CMakeFiles/AED2122PROJ2.dir/src/linegraph.cpp.o
+.PHONY : src/linegraph.cpp.o
+
+src/linegraph.i: src/linegraph.cpp.i
+
+.PHONY : src/linegraph.i
+
+# target to preprocess a source file
+src/linegraph.cpp.i:
+	$(MAKE) -f CMakeFiles/AED2122PROJ2.dir/build.make CMakeFiles/AED2122PROJ2.dir/src/linegraph.cpp.i
+.PHONY : src/linegraph.cpp.i
+
+src/linegraph.s: src/linegraph.cpp.s
+
+.PHONY : src/linegraph.s
+
+# target to generate assembly for a file
+src/linegraph.cpp.s:
+	$(MAKE) -f CMakeFiles/AED2122PROJ2.dir/build.make CMakeFiles/AED2122PROJ2.dir/src/linegraph.cpp.s
+.PHONY : src/linegraph.cpp.s
+
 src/lines.o: src/lines.cpp.o
 
 .PHONY : src/lines.o
@@ -204,6 +231,33 @@ src/lines.cpp.s:
 	$(MAKE) -f CMakeFiles/AED2122PROJ2.dir/build.make CMakeFiles/AED2122PROJ2.dir/src/lines.cpp.s
 .PHONY : src/lines.cpp.s
 
+src/menu.o: src/menu.cpp.o
+
+.PHONY : src/menu.o
+
+# target to build an object file
+src/menu.cpp.o:
+	$(MAKE) -f CMakeFiles/AED2122PROJ2.dir/build.make CMakeFiles/AED2122PROJ2.dir/src/menu.cpp.o
+.PHONY : src/menu.cpp.o
+
+src/menu.i: src/menu.cpp.i
+
+.PHONY : src/menu.i
+
+# target to preprocess a source file
+src/menu.cpp.i:
+	$(MAKE) -f CMakeFiles/AED2122PROJ2.dir/build.make CMakeFiles/AED2122PROJ2.dir/src/menu.cpp.i
+.PHONY : src/menu.cpp.i
+
+src/menu.s: src/menu.cpp.s
+
+.PHONY : src/menu.s
+
+# target to generate assembly for a file
+src/menu.cpp.s:
+	$(MAKE) -f CMakeFiles/AED2122PROJ2.dir/build.make CMakeFiles/AED2122PROJ2.dir/src/menu.cpp.s
+.PHONY : src/menu.cpp.s
+
 src/stops.o: src/stops.cpp.o
 
 .PHONY : src/stops.o
@@ -230,6 +284,33 @@ src/stops.s: src/stops.cpp.s
 src/stops.cpp.s:
 	$(MAKE) -f CMakeFiles/AED2122PROJ2.dir/build.make CMakeFiles/AED2122PROJ2.dir/src/stops.cpp.s
 .PHONY : src/stops.cpp.s
+
+src/stopsandlines.o: src/stopsandlines.cpp.o
+
+.PHONY : src/stopsandlines.o
+
+# target to build an object file
+src/stopsandlines.cpp.o:
+	$(MAKE) -f CMakeFiles/AED2122PROJ2.dir/build.make CMakeFiles/AED2122PROJ2.dir/src/stopsandlines.cpp.o
+.PHONY : src/stopsandlines.cpp.o
+
+src/stopsandlines.i: src/stopsandlines.cpp.i
+
+.PHONY : src/stopsandlines.i
+
+# target to preprocess a source file
+src/stopsandlines.cpp.i:
+	$(MAKE) -f CMakeFiles/AED2122PROJ2.dir/build.make CMakeFiles/AED2122PROJ2.dir/src/stopsandlines.cpp.i
+.PHONY : src/stopsandlines.cpp.i
+
+src/stopsandlines.s: src/stopsandlines.cpp.s
+
+.PHONY : src/stopsandlines.s
+
+# target to generate assembly for a file
+src/stopsandlines.cpp.s:
+	$(MAKE) -f CMakeFiles/AED2122PROJ2.dir/build.make CMakeFiles/AED2122PROJ2.dir/src/stopsandlines.cpp.s
+.PHONY : src/stopsandlines.cpp.s
 
 src/utils.o: src/utils.cpp.o
 
@@ -273,12 +354,21 @@ help:
 	@echo "... src/graph.o"
 	@echo "... src/graph.i"
 	@echo "... src/graph.s"
+	@echo "... src/linegraph.o"
+	@echo "... src/linegraph.i"
+	@echo "... src/linegraph.s"
 	@echo "... src/lines.o"
 	@echo "... src/lines.i"
 	@echo "... src/lines.s"
+	@echo "... src/menu.o"
+	@echo "... src/menu.i"
+	@echo "... src/menu.s"
 	@echo "... src/stops.o"
 	@echo "... src/stops.i"
 	@echo "... src/stops.s"
+	@echo "... src/stopsandlines.o"
+	@echo "... src/stopsandlines.i"
+	@echo "... src/stopsandlines.s"
 	@echo "... src/utils.o"
 	@echo "... src/utils.i"
 	@echo "... src/utils.s"

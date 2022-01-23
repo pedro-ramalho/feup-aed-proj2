@@ -16,6 +16,18 @@ queue
 iostream
 -
 
+/home/pedro/feup-aed-proj2/headers/linegraph.h
+list
+-
+vector
+-
+string
+-
+climits
+-
+../headers/minheap.h
+/home/pedro/feup-aed-proj2/headers/minheap.h
+
 /home/pedro/feup-aed-proj2/headers/lines.h
 vector
 -
@@ -27,10 +39,20 @@ sstream
 -
 iostream
 -
+../headers/utils.h
+/home/pedro/feup-aed-proj2/headers/utils.h
 ../headers/graph.h
 /home/pedro/feup-aed-proj2/headers/graph.h
 ../headers/stops.h
 /home/pedro/feup-aed-proj2/headers/stops.h
+../headers/linegraph.h
+/home/pedro/feup-aed-proj2/headers/linegraph.h
+
+/home/pedro/feup-aed-proj2/headers/minheap.h
+vector
+-
+unordered_map
+-
 
 /home/pedro/feup-aed-proj2/headers/stops.h
 vector
@@ -53,6 +75,16 @@ map
 -
 sstream
 -
+
+/home/pedro/feup-aed-proj2/headers/stopsandlines.h
+map
+-
+fstream
+-
+algorithm
+-
+../headers/lines.h
+/home/pedro/feup-aed-proj2/headers/lines.h
 
 /home/pedro/feup-aed-proj2/headers/utils.h
 vector
@@ -89,4 +121,18 @@ headers/stops.h
 /home/pedro/feup-aed-proj2/headers/stops.h
 headers/lines.h
 /home/pedro/feup-aed-proj2/headers/lines.h
+headers/stopsandlines.h
+/home/pedro/feup-aed-proj2/headers/stopsandlines.h
+
+/home/pedro/feup-aed-proj2/src/linegraph.cpp
+../headers/linegraph.h
+/home/pedro/feup-aed-proj2/headers/linegraph.h
+
+/home/pedro/feup-aed-proj2/src/lines.cpp
+../headers/lines.h
+/home/pedro/feup-aed-proj2/headers/lines.h
+
+/home/pedro/feup-aed-proj2/src/stopsandlines.cpp
+../headers/stopsandlines.h
+/home/pedro/feup-aed-proj2/headers/stopsandlines.h
 

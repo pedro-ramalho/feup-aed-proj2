@@ -4,6 +4,10 @@
 #include <list>
 #include <queue>
 #include <iostream>
+#include <climits>
+#include "../headers/minheap.h"
+
+#define INF (INT_MAX/2)
 
 //---------------------------------------------//
 //  This simplified Graph class was made by    //
@@ -14,12 +18,14 @@
 struct Edge {
     int dest; //destination node
     double weight; //integer weight (can change type if needed)
+    std::string line;
 };
 
 struct Node {
     std::list<Edge> adj; //list of outgoing edges (to adjacent nodes)
     bool visited; //true if the node has been visited during a search
-    int distance; //distance between this current Node and another Node
+    int dist; //distance between this current Node and another Node
+    int pred;
 };
 
 class Graph {
@@ -34,7 +40,7 @@ public:
     Graph(int nodes, bool has_dir);
 
     //add edge from source to destination with a certain weight
-    void add_edge(int src, int dest, double weight = 1.0);
+    void add_edge(int src, int dest, double weight, std::string line);
 
     //depth-first search
     void dfs(int v);
@@ -68,4 +74,11 @@ public:
     //kruskal algorithm
 
     //dijkstra algorithm
+
+    void dijkstra(int s);
+
+    std::list<int> dijkstra_path(int a, int b);
+
+    int dijkstra_distance(int a, int b);
+    
 };

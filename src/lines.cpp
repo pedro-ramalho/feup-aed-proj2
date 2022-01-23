@@ -32,8 +32,12 @@ void Lines::connect_nearby_stops(Graph& graph, double distance) {
                 if (e.dest == j) suitable = false;
 
             if (i != j && haversine(stops.get_coords(i), stops.get_coords(j)) <= distance && suitable)
-                graph.add_edge(i, j, 0);
+                graph.add_edge(i, j, 0, "A pe");
         }
+}
+
+std::vector<std::string> Lines::get_line_paths() {
+    return this->line_paths;
 }
 
 std::vector<std::string> Lines::get_line_stops(std::string path) {
@@ -53,15 +57,16 @@ std::vector<std::string> Lines::get_line_stops(std::string path) {
 
 Graph Lines::get_stops_graph(double distance) {
     Graph stops_graph(2487, true);
+    std::string curr_line;
 
     for (const std::string path : this->line_paths) {
         std::vector<std::string> codes = get_line_stops(path);
-
-        for (int i = 1; i < this->line_paths.size() - 1; i++) {
+        
+        for (int i = 1; i < codes.size() - 1; i++) {
             int src_stop_id = this->stops.get_id(codes[i - 1]);
             int dest_stop_id = this->stops.get_id(codes[i]);
-            
-            stops_graph.add_edge(src_stop_id, dest_stop_id, 1);
+            curr_line = path.substr(8, path.size() - 12); 
+            stops_graph.add_edge(src_stop_id, dest_stop_id, 1, curr_line);
         }
     }
     this->connect_nearby_stops(stops_graph, distance);
@@ -72,19 +77,20 @@ Graph Lines::get_stops_graph(double distance) {
 Graph Lines::get_distances_graph(double distance) {
     Graph distances_graph(2487, true);
 
-
     for (const std::string path : this->line_paths) {
         std::vector<std::string> codes = get_line_stops(path);
+        std::string curr_line;
 
-        for (int i = 1; i < this->line_paths.size() - 1; i++) {
+        for (int i = 1; i < codes.size() - 1; i++) {
             int src_stop_id = this->stops.get_id(codes[i - 1]);
             int dest_stop_id = this->stops.get_id(codes[i]);
 
             std::pair<double, double> src_coords = stops.get_coords(src_stop_id);
             std::pair<double, double>  dest_coords = stops.get_coords(dest_stop_id);
             double distance = haversine(src_coords, dest_coords);
+            curr_line = path.substr(8, path.size() - 12); 
 
-            distances_graph.add_edge(src_stop_id, dest_stop_id, distance);
+            distances_graph.add_edge(src_stop_id, dest_stop_id, distance, curr_line);
         }
     }
 
@@ -93,17 +99,15 @@ Graph Lines::get_distances_graph(double distance) {
     return distances_graph;
 }
 
-Graph Lines::get_lines_graph(double distance) {
-
-}
 
 Graph Lines::get_zones_graph(double distance) {
     Graph zones_graph(2487, true);
 
     for (const std::string path : this->line_paths) {
         std::vector<std::string> codes = get_line_stops(path);
-
-        for (int i = 1; i < this->line_paths.size() - 1; i++) {
+        std::string curr_line;
+        
+        for (int i = 1; i < codes.size() - 1; i++) {
             int src_stop_id = this->stops.get_id(codes[i - 1]);
             int dest_stop_id = this->stops.get_id(codes[i]);
             
@@ -112,7 +116,8 @@ Graph Lines::get_zones_graph(double distance) {
 
             int cost = src_zone == dest_zone ? 1 : 0;
 
-            zones_graph.add_edge(src_stop_id, dest_stop_id, cost);
+            curr_line = path.substr(8, path.size() - 12); 
+            zones_graph.add_edge(src_stop_id, dest_stop_id, cost, curr_line);
         }
     }
     this->connect_nearby_stops(zones_graph, distance);

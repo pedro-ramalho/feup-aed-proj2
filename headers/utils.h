@@ -9,7 +9,6 @@
 #include <map>
 #include <sstream>
 
-const std::string STOPS_FILE = "dataset/stops.csv";
 
 #define MAX_CHARS_IGNORE std::numeric_limits <std::streamsize>::max()
 

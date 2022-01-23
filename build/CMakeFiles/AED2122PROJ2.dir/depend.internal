@@ -3,21 +3,42 @@
 
 CMakeFiles/AED2122PROJ2.dir/main.cpp.o
  /home/pedro/feup-aed-proj2/headers/graph.h
+ /home/pedro/feup-aed-proj2/headers/linegraph.h
  /home/pedro/feup-aed-proj2/headers/lines.h
+ /home/pedro/feup-aed-proj2/headers/minheap.h
  /home/pedro/feup-aed-proj2/headers/stops.h
+ /home/pedro/feup-aed-proj2/headers/stopsandlines.h
  /home/pedro/feup-aed-proj2/headers/utils.h
  /home/pedro/feup-aed-proj2/main.cpp
 CMakeFiles/AED2122PROJ2.dir/src/graph.cpp.o
  /home/pedro/feup-aed-proj2/headers/graph.h
  /home/pedro/feup-aed-proj2/src/graph.cpp
+CMakeFiles/AED2122PROJ2.dir/src/linegraph.cpp.o
+ /home/pedro/feup-aed-proj2/headers/linegraph.h
+ /home/pedro/feup-aed-proj2/headers/minheap.h
+ /home/pedro/feup-aed-proj2/src/linegraph.cpp
 CMakeFiles/AED2122PROJ2.dir/src/lines.cpp.o
  /home/pedro/feup-aed-proj2/headers/graph.h
+ /home/pedro/feup-aed-proj2/headers/linegraph.h
  /home/pedro/feup-aed-proj2/headers/lines.h
+ /home/pedro/feup-aed-proj2/headers/minheap.h
  /home/pedro/feup-aed-proj2/headers/stops.h
+ /home/pedro/feup-aed-proj2/headers/utils.h
  /home/pedro/feup-aed-proj2/src/lines.cpp
+CMakeFiles/AED2122PROJ2.dir/src/menu.cpp.o
+ /home/pedro/feup-aed-proj2/src/menu.cpp
 CMakeFiles/AED2122PROJ2.dir/src/stops.cpp.o
  /home/pedro/feup-aed-proj2/headers/stops.h
  /home/pedro/feup-aed-proj2/src/stops.cpp
+CMakeFiles/AED2122PROJ2.dir/src/stopsandlines.cpp.o
+ /home/pedro/feup-aed-proj2/headers/graph.h
+ /home/pedro/feup-aed-proj2/headers/linegraph.h
+ /home/pedro/feup-aed-proj2/headers/lines.h
+ /home/pedro/feup-aed-proj2/headers/minheap.h
+ /home/pedro/feup-aed-proj2/headers/stops.h
+ /home/pedro/feup-aed-proj2/headers/stopsandlines.h
+ /home/pedro/feup-aed-proj2/headers/utils.h
+ /home/pedro/feup-aed-proj2/src/stopsandlines.cpp
 CMakeFiles/AED2122PROJ2.dir/src/utils.cpp.o
  /home/pedro/feup-aed-proj2/headers/utils.h
  /home/pedro/feup-aed-proj2/src/utils.cpp

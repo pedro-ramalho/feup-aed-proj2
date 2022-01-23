@@ -4,6 +4,7 @@
 #include "headers/graph.h"
 #include "headers/stops.h"
 #include "headers/lines.h"
+#include "headers/stopsandlines.h"
 
 //-----------------------------------------------------------------------------------------//
 // *TAREFA FUNDAMENTAL*                                                                    //
@@ -72,19 +73,19 @@ int main() {
     // g.add_edge(6,9);
     // g.add_edge(7,8);
 
-    Stops stops;
+    // Stops stops;
 
-    std::string stop_name;
-    std::cout << "Stop's code: "; std::cin >> stop_name;
-    std::cout << '\n';
-    int stop_id = stops.get_id(stop_name);
-    std::cout << "Stop ID = "  << stop_id << std::endl;
-    std::cout << '\n';
-    std::cout << "Stop's name: " << stops.get_name_zone(stop_id).first << std::endl;
-    std::cout << "Stop's zone: " << stops.get_name_zone(stop_id).second << std::endl;
-    std::cout << '\n';
-    std::cout << "Stop's latitude: " << stops.get_coords(stop_id).first << std::endl;
-    std::cout << "Stop's longitude: " << stops.get_coords(stop_id).second << std::endl;  
+    // std::string stop_name;
+    // std::cout << "Stop's code: "; std::cin >> stop_name;
+    // std::cout << '\n';
+    // int stop_id = stops.get_id(stop_name);
+    // std::cout << "Stop ID = "  << stop_id << std::endl;
+    // std::cout << '\n';
+    // std::cout << "Stop's name: " << stops.get_name_zone(stop_id).first << std::endl;
+    // std::cout << "Stop's zone: " << stops.get_name_zone(stop_id).second << std::endl;
+    // std::cout << '\n';
+    // std::cout << "Stop's latitude: " << stops.get_coords(stop_id).first << std::endl;
+    // std::cout << "Stop's longitude: " << stops.get_coords(stop_id).second << std::endl;  
 
     return 0;
 }

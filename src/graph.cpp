@@ -2,10 +2,10 @@
 
 Graph::Graph(int num, bool has_dir) : n(num), has_dir(has_dir), nodes(num + 1) {}
 
-void Graph::add_edge(int src, int dest, double weight) {
+void Graph::add_edge(int src, int dest, double weight, std::string line) {
     if (src < 1 || dest < 1 || dest > n) return;
-    nodes[src].adj.push_back( {dest, weight} );
-    if (!has_dir) nodes[dest].adj.push_back({src, weight});
+    nodes[src].adj.push_back({dest, weight, line});
+    if (!has_dir) nodes[dest].adj.push_back({src, weight, line});
 }
 
 void Graph::dfs(int v) {
@@ -44,7 +44,7 @@ void Graph::bfs(int v) {
     q.push(v);
 
     nodes[v].visited = true;
-    nodes[v].distance = 0;
+    nodes[v].dist = 0;
 
     while (!q.empty()) {
         int u = q.front(); q.pop();
@@ -54,7 +54,7 @@ void Graph::bfs(int v) {
             if (!nodes[w].visited) {
                 q.push(w);
                 nodes[w].visited = true;
-                nodes[w].distance = nodes[u].distance + 1;
+                nodes[w].dist = nodes[u].dist + 1;
             }
         }
     }
@@ -68,7 +68,7 @@ int Graph::bfs_distances(int a, int b) {
     q.push(a);
 
     nodes[a].visited = true;
-    nodes[a].distance = 0;
+    nodes[a].dist = 0;
 
     while (!q.empty()) {
         int u = q.front(); q.pop();
@@ -77,8 +77,8 @@ int Graph::bfs_distances(int a, int b) {
             if (!nodes[w].visited) {
                 q.push(w);
                 nodes[w].visited = true;
-                nodes[w].distance = nodes[u].distance + 1;
-                if (w == b) return nodes[w].distance - nodes[a].distance;
+                nodes[w].dist = nodes[u].dist + 1;
+                if (w == b) return nodes[w].dist - nodes[a].dist;
             }
         }
     }
@@ -134,4 +134,49 @@ std::list<int> Graph::topological_sorting() {
 
 int Graph::distance(int a, int b) {
     return bfs_distances(a, b);
+}
+
+void Graph::dijkstra(int s) {
+    MinHeap<int, int> q(n, -1);
+    for (int v=1; v<=n; v++) {
+        nodes[v].dist = INF;
+        q.insert(v, INF);
+        nodes[v].visited = false;
+    }
+    nodes[s].dist = 0;
+    q.decreaseKey(s, 0);
+    nodes[s].pred = s;
+    while (q.getSize()>0) {
+        int u = q.removeMin();
+        // cout << "Node " << u << " with dist = " << nodes[u].dist << endl;
+        nodes[u].visited = true;
+        for (auto e : nodes[u].adj) {
+            int v = e.dest;
+            int w = e.weight;
+            if (!nodes[v].visited && nodes[u].dist + w < nodes[v].dist) {
+                nodes[v].dist = nodes[u].dist + w;
+                q.decreaseKey(v, nodes[v].dist);
+                nodes[v].pred = u;
+            }
+        }
+    }
+}
+
+int Graph::dijkstra_distance(int a, int b) {
+    dijkstra(a);
+    if (nodes[b].dist == INF) return -1;
+    return nodes[b].dist;
+}
+
+std::list<int> Graph::dijkstra_path(int a, int b) {
+    dijkstra(a);
+    std::list<int> path;
+    if (nodes[b].dist == INF) return path;
+    path.push_back(b);
+    int v = b;
+    while (v != a) {
+        v = nodes[v].pred;
+        path.push_front(v);
+    }
+    return path;
 }
