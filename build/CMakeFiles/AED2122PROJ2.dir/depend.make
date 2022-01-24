@@ -11,6 +11,7 @@ CMakeFiles/AED2122PROJ2.dir/main.cpp.o: ../headers/utils.h
 CMakeFiles/AED2122PROJ2.dir/main.cpp.o: ../main.cpp
 
 CMakeFiles/AED2122PROJ2.dir/src/graph.cpp.o: ../headers/graph.h
+CMakeFiles/AED2122PROJ2.dir/src/graph.cpp.o: ../headers/minheap.h
 CMakeFiles/AED2122PROJ2.dir/src/graph.cpp.o: ../src/graph.cpp
 
 CMakeFiles/AED2122PROJ2.dir/src/linegraph.cpp.o: ../headers/linegraph.h

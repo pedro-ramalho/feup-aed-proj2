@@ -23,17 +23,22 @@ void Lines::read_lines_file() {
 }
 
 void Lines::connect_nearby_stops(Graph& graph, double distance) {
-    for (int i = 1; i < graph.get_nodes().size(); i++) 
-        for (int j = 1; j < graph.get_nodes().size(); j++) {
+    int size = graph.get_nodes().size();
+    for (int i = 1; i < size - 1; i++) {
+        std::cout << (float) i / size * 100 << "%" << std::endl;
+        for (int j = i+1; j < graph.get_nodes().size(); j++) {
             std::list<Edge> edges = graph.get_nodes()[i].adj;
-            
+        
+
             bool suitable = true;
             for (auto e : edges) 
                 if (e.dest == j) suitable = false;
 
-            if (i != j && haversine(stops.get_coords(i), stops.get_coords(j)) <= distance && suitable)
+            if (haversine(stops.get_coords(i), stops.get_coords(j)) <= distance && suitable)
                 graph.add_edge(i, j, 0, "A pe");
+                graph.add_edge(j, i, 0, "A pe");
         }
+    }
 }
 
 std::vector<std::string> Lines::get_line_paths() {
@@ -59,16 +64,26 @@ Graph Lines::get_stops_graph(double distance) {
     Graph stops_graph(2487, true);
     std::string curr_line;
 
+    std::cout << "Entrei no get_stops_graph()" << std::endl;
+
     for (const std::string path : this->line_paths) {
+        if (path == "dataset/line_300_1.csv" || 
+            path == "dataset/line_301_1.csv" || 
+            path == "dataset/line_302_1.csv" || 
+            path == "dataset/line_303_1.csv")
+            continue;
+    
         std::vector<std::string> codes = get_line_stops(path);
-        
+
         for (int i = 1; i < codes.size() - 1; i++) {
+
             int src_stop_id = this->stops.get_id(codes[i - 1]);
             int dest_stop_id = this->stops.get_id(codes[i]);
             curr_line = path.substr(8, path.size() - 12); 
             stops_graph.add_edge(src_stop_id, dest_stop_id, 1, curr_line);
         }
     }
+    std::cout << "Vou entrar no connect_nearby_stops" << std::endl;
     this->connect_nearby_stops(stops_graph, distance);
 
     return stops_graph;

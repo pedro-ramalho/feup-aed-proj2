@@ -87,5 +87,29 @@ int main() {
     // std::cout << "Stop's latitude: " << stops.get_coords(stop_id).first << std::endl;
     // std::cout << "Stop's longitude: " << stops.get_coords(stop_id).second << std::endl;  
 
+    Stops stops;
+
+    Lines lines;
+
+    std::string src_stop, dest_stop;
+
+    Graph g = lines.get_stops_graph(0.0);
+
+
+    std::cout << "Insira o código da paragem de partida: "; std::cin >> src_stop;
+    std::cout << "ID da paragem: " << stops.get_id(src_stop) << std::endl;
+    std::cout << "Insira o código da paragem de destino: "; std::cin >> dest_stop;
+    std::cout << "ID da paragem: " << stops.get_id(dest_stop) << std::endl;
+
+    std::list<int> best_path = g.dijkstra_path(stops.get_id(src_stop), stops.get_id(dest_stop));
+
+    if (best_path.empty()) std::cout << "Empty list" << std::endl;
+    
+    std::cout << '\n';
+
+    for (auto it = best_path.begin(); it != best_path.end(); it++)
+        std::cout << "-> " << stops.get_name_zone(*it).first << " - " << stops.get_name_zone(*it).second << std::endl;
+
+    std::cout << '\n';
     return 0;
 }
