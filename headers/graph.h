@@ -54,6 +54,8 @@ public:
     //breadth-first search
     void bfs(int v);
 
+    std::list<int> bfs_path(int a, int b);
+
     //breadth-first search but returns the distance between nodes a and b
     int bfs_distances(int a, int b);
 

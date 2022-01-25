@@ -26,6 +26,7 @@ CMakeFiles/AED2122PROJ2.dir/src/lines.cpp.o: ../headers/stops.h
 CMakeFiles/AED2122PROJ2.dir/src/lines.cpp.o: ../headers/utils.h
 CMakeFiles/AED2122PROJ2.dir/src/lines.cpp.o: ../src/lines.cpp
 
+CMakeFiles/AED2122PROJ2.dir/src/menu.cpp.o: ../headers/menu.h
 CMakeFiles/AED2122PROJ2.dir/src/menu.cpp.o: ../src/menu.cpp
 
 CMakeFiles/AED2122PROJ2.dir/src/stops.cpp.o: ../headers/stops.h

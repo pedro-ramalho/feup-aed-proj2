@@ -101,15 +101,19 @@ int main() {
     std::cout << "Insira o código da paragem de destino: "; std::cin >> dest_stop;
     std::cout << "ID da paragem: " << stops.get_id(dest_stop) << std::endl;
 
-    std::list<int> best_path = g.dijkstra_path(stops.get_id(src_stop), stops.get_id(dest_stop));
+    std::list<int> best_path = g.bfs_path(stops.get_id(src_stop), stops.get_id(dest_stop));
 
     if (best_path.empty()) std::cout << "Empty list" << std::endl;
     
     std::cout << '\n';
 
-    for (auto it = best_path.begin(); it != best_path.end(); it++)
-        std::cout << "-> " << stops.get_name_zone(*it).first << " - " << stops.get_name_zone(*it).second << std::endl;
+    std::cout << "Melhor caminho: " << std::endl;
 
     std::cout << '\n';
+
+    for (auto it = best_path.begin(); it != best_path.end(); it++)
+         std::cout << "-> " << *it << " - " << stops.get_name_zone(*it).first << " - " << stops.get_name_zone(*it).second << std::endl;
+
+    std::cout << stops.get_id("JDEU4") << std::endl;
     return 0;
 }

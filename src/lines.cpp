@@ -24,21 +24,14 @@ void Lines::read_lines_file() {
 
 void Lines::connect_nearby_stops(Graph& graph, double distance) {
     int size = graph.get_nodes().size();
-    for (int i = 1; i < size - 1; i++) {
-        std::cout << (float) i / size * 100 << "%" << std::endl;
-        for (int j = i+1; j < graph.get_nodes().size(); j++) {
-            std::list<Edge> edges = graph.get_nodes()[i].adj;
-        
 
-            bool suitable = true;
-            for (auto e : edges) 
-                if (e.dest == j) suitable = false;
-
-            if (haversine(stops.get_coords(i), stops.get_coords(j)) <= distance && suitable)
+    for (int i = 1; i < size - 1; i++)  
+        for (int j = i + 1; j < size; j++) {                
+            if (haversine(stops.get_coords(i), stops.get_coords(j)) <= distance) {
                 graph.add_edge(i, j, 0, "A pe");
                 graph.add_edge(j, i, 0, "A pe");
+            }
         }
-    }
 }
 
 std::vector<std::string> Lines::get_line_paths() {
@@ -79,11 +72,11 @@ Graph Lines::get_stops_graph(double distance) {
 
             int src_stop_id = this->stops.get_id(codes[i - 1]);
             int dest_stop_id = this->stops.get_id(codes[i]);
-            curr_line = path.substr(8, path.size() - 12); 
+            curr_line = path.substr(8, path.size() - 12);
+             
             stops_graph.add_edge(src_stop_id, dest_stop_id, 1, curr_line);
         }
     }
-    std::cout << "Vou entrar no connect_nearby_stops" << std::endl;
     this->connect_nearby_stops(stops_graph, distance);
 
     return stops_graph;

@@ -70,20 +70,61 @@ int Graph::bfs_distances(int a, int b) {
     nodes[a].visited = true;
     nodes[a].dist = 0;
 
+    std::vector<int> vec;
+
     while (!q.empty()) {
-        int u = q.front(); q.pop();
+        int u = q.front(); 
+        vec.push_back(u);
+        q.pop();
         for (auto e : nodes[u].adj) {
             int w = e.dest;
             if (!nodes[w].visited) {
                 q.push(w);
                 nodes[w].visited = true;
                 nodes[w].dist = nodes[u].dist + 1;
-                if (w == b) return nodes[w].dist - nodes[a].dist;
+                if (w == b) {
+                    for (auto x : vec) std::cout << x << std::endl;
+                    return nodes[w].dist - nodes[a].dist;
+                }
             }
         }
     }
 
     return -1;
+}
+
+std::list<int> Graph::bfs_path(int a, int b) {
+    for (int i = 1; i < this->n; i++) nodes[i].visited = false;
+
+    std::queue<int> q = std::queue<int>();
+    std::list<int> path = std::list<int>();
+
+    this->nodes[a].visited = true;
+    this->nodes[a].dist = 0;
+    this->nodes[a].pred = a;
+    q.push(a);
+
+    while (!q.empty()) {
+        int u = q.front();
+        q.pop();
+        for (auto e : nodes[u].adj) {
+            int v = e.dest;
+            if (!nodes[v].visited) {
+                nodes[v].pred = u; 
+                nodes[v].visited = true;
+                q.push(v);
+            }
+        }
+    }
+    
+    int i = b;
+    while (nodes[i].pred != i) {
+        path.push_front(i);
+        i = nodes[i].pred;
+    }
+    
+    path.push_front(i);
+    return path;
 }
 
 int Graph::out_degree(int v) {
