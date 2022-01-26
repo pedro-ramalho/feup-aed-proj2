@@ -12,7 +12,7 @@ void Stops::read_stops_file() {
     std::ifstream data(STOPS_FILE);
     std::string line;
 
-    std::getline(data, line); //ignore first line
+    std::getline(data, line); 
 
     while (std::getline(data, line)) {
         std::istringstream iss(line);
@@ -21,6 +21,7 @@ void Stops::read_stops_file() {
         while (std::getline(iss, word, ',')) values.push_back(word);
 
         code_id.insert({values.at(0), id});
+        id_to_code.insert({id, values.at(0)});
         id_name_zone.insert({id, std::make_pair(values.at(1), values.at(2))});
         id_coords.insert({id, std::make_pair(std::stod(values.at(3)), std::stod(values.at(4)))});
 
@@ -29,14 +30,18 @@ void Stops::read_stops_file() {
     }
 }
 
-int Stops::get_id(std::string code) {
-    return code_id[code];
+int Stops::get_id(std::string code) const {
+    return code_id.at(code);
 }
 
-std::pair<std::string, std::string> Stops::get_name_zone(int id) {
-    return id_name_zone[id];
+std::string Stops::get_code(int id) const {
+    return id_to_code.at(id);
 }
 
-std::pair<double, double> Stops::get_coords(int id) {
-    return id_coords[id];
+std::pair<std::string, std::string> Stops::get_name_zone(int id) const {
+    return id_name_zone.at(id);
+}
+
+std::pair<double, double> Stops::get_coords(int id) const {
+    return id_coords.at(id);
 }

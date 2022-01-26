@@ -258,6 +258,33 @@ src/menu.cpp.s:
 	$(MAKE) -f CMakeFiles/AED2122PROJ2.dir/build.make CMakeFiles/AED2122PROJ2.dir/src/menu.cpp.s
 .PHONY : src/menu.cpp.s
 
+src/stopgraph.o: src/stopgraph.cpp.o
+
+.PHONY : src/stopgraph.o
+
+# target to build an object file
+src/stopgraph.cpp.o:
+	$(MAKE) -f CMakeFiles/AED2122PROJ2.dir/build.make CMakeFiles/AED2122PROJ2.dir/src/stopgraph.cpp.o
+.PHONY : src/stopgraph.cpp.o
+
+src/stopgraph.i: src/stopgraph.cpp.i
+
+.PHONY : src/stopgraph.i
+
+# target to preprocess a source file
+src/stopgraph.cpp.i:
+	$(MAKE) -f CMakeFiles/AED2122PROJ2.dir/build.make CMakeFiles/AED2122PROJ2.dir/src/stopgraph.cpp.i
+.PHONY : src/stopgraph.cpp.i
+
+src/stopgraph.s: src/stopgraph.cpp.s
+
+.PHONY : src/stopgraph.s
+
+# target to generate assembly for a file
+src/stopgraph.cpp.s:
+	$(MAKE) -f CMakeFiles/AED2122PROJ2.dir/build.make CMakeFiles/AED2122PROJ2.dir/src/stopgraph.cpp.s
+.PHONY : src/stopgraph.cpp.s
+
 src/stops.o: src/stops.cpp.o
 
 .PHONY : src/stops.o
@@ -363,6 +390,9 @@ help:
 	@echo "... src/menu.o"
 	@echo "... src/menu.i"
 	@echo "... src/menu.s"
+	@echo "... src/stopgraph.o"
+	@echo "... src/stopgraph.i"
+	@echo "... src/stopgraph.s"
 	@echo "... src/stops.o"
 	@echo "... src/stops.i"
 	@echo "... src/stops.s"

@@ -15,6 +15,8 @@ class Stops {
 private:
     std::map<std::string, int> code_id;
 
+    std::map<int, std::string> id_to_code;
+
     std::map<int, std::pair<std::string, std::string>> id_name_zone;
 
     std::map<int, std::pair<double, double>> id_coords;
@@ -25,9 +27,11 @@ private:
 public:
     Stops();
 
-    int get_id(std::string code);
+    int get_id(std::string code) const;
 
-    std::pair<std::string, std::string> get_name_zone(int id);
+    std::string get_code(int id) const;
 
-    std::pair<double, double> get_coords(int id);
+    std::pair<std::string, std::string> get_name_zone(int id) const;
+
+    std::pair<double, double> get_coords(int id) const;
 };

@@ -6,6 +6,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/AED2122PROJ2.dir/src/linegraph.cpp.o"
   "CMakeFiles/AED2122PROJ2.dir/src/lines.cpp.o"
   "CMakeFiles/AED2122PROJ2.dir/src/menu.cpp.o"
+  "CMakeFiles/AED2122PROJ2.dir/src/stopgraph.cpp.o"
   "CMakeFiles/AED2122PROJ2.dir/src/stops.cpp.o"
   "CMakeFiles/AED2122PROJ2.dir/src/stopsandlines.cpp.o"
   "CMakeFiles/AED2122PROJ2.dir/src/utils.cpp.o"

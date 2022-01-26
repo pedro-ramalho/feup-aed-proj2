@@ -62,7 +62,7 @@ public:
     //other functions (I put them here because they might be useful in the future)
     int out_degree(int v);
     
-    int connected_components();
+    int connected_components(); //
 
     int giant_component();
     

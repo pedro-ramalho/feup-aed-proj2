@@ -5,6 +5,7 @@
 #include "headers/stops.h"
 #include "headers/lines.h"
 #include "headers/stopsandlines.h"
+#include "headers/stopgraph.h"
 
 //-----------------------------------------------------------------------------------------//
 // *TAREFA FUNDAMENTAL*                                                                    //
@@ -61,31 +62,6 @@
 //-----------------------------------------------------------------------------------------//
 
 int main() {
-    // //creates an undirected graph with 9 nodes
-    // Graph g(9, false);
-    // g.add_edge(1,2);
-    // g.add_edge(1,3);
-    // g.add_edge(2,4);
-    // g.add_edge(3,4);
-    // g.add_edge(4,5);
-    // g.add_edge(5,6);
-    // g.add_edge(5,7);
-    // g.add_edge(6,9);
-    // g.add_edge(7,8);
-
-    // Stops stops;
-
-    // std::string stop_name;
-    // std::cout << "Stop's code: "; std::cin >> stop_name;
-    // std::cout << '\n';
-    // int stop_id = stops.get_id(stop_name);
-    // std::cout << "Stop ID = "  << stop_id << std::endl;
-    // std::cout << '\n';
-    // std::cout << "Stop's name: " << stops.get_name_zone(stop_id).first << std::endl;
-    // std::cout << "Stop's zone: " << stops.get_name_zone(stop_id).second << std::endl;
-    // std::cout << '\n';
-    // std::cout << "Stop's latitude: " << stops.get_coords(stop_id).first << std::endl;
-    // std::cout << "Stop's longitude: " << stops.get_coords(stop_id).second << std::endl;  
 
     Stops stops;
 
@@ -93,7 +69,7 @@ int main() {
 
     std::string src_stop, dest_stop;
 
-    Graph g = lines.get_stops_graph(0.0);
+    StopGraph graph(stops, lines, 2488, 0.25);
 
 
     std::cout << "Insira o código da paragem de partida: "; std::cin >> src_stop;
@@ -101,7 +77,7 @@ int main() {
     std::cout << "Insira o código da paragem de destino: "; std::cin >> dest_stop;
     std::cout << "ID da paragem: " << stops.get_id(dest_stop) << std::endl;
 
-    std::list<int> best_path = g.bfs_path(stops.get_id(src_stop), stops.get_id(dest_stop));
+    std::list<int> best_path = graph.bfs_path(stops, stops.get_id(src_stop), stops.get_id(dest_stop));
 
     if (best_path.empty()) std::cout << "Empty list" << std::endl;
     
@@ -111,9 +87,12 @@ int main() {
 
     std::cout << '\n';
 
-    for (auto it = best_path.begin(); it != best_path.end(); it++)
-         std::cout << "-> " << *it << " - " << stops.get_name_zone(*it).first << " - " << stops.get_name_zone(*it).second << std::endl;
+    
+    //linha usada (ou a pé), nome da paragem, código da paragem, zona da paragem 
 
-    std::cout << stops.get_id("JDEU4") << std::endl;
+
+    for (auto it = best_path.begin(); it != best_path.end(); it++) {
+         std::cout << "-> linha usada: " << graph.get_nodes()[*it].line_used << " - " << stops.get_name_zone(*it).first << " (" << stops.get_code(*it) << ")" << " - " << stops.get_name_zone(*it).second << " - distância disponivel: " << graph.get_nodes()[*it].distance_available << std::endl;
+    }
     return 0;
 }

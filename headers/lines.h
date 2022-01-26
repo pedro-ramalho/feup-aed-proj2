@@ -24,9 +24,9 @@ private:
 public:
     Lines();
 
-    std::vector<std::string> get_line_paths();
+    std::vector<std::string> get_line_paths() const;
 
-    std::vector<std::string> get_line_stops(std::string path);
+    std::vector<std::string> get_line_stops(std::string path) const;
 
     Graph get_stops_graph(double distance);
 

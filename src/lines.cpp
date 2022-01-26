@@ -4,6 +4,9 @@ Lines::Lines() {
     this->read_lines_file();
 }
 
+
+//descobre os paths para os ficheiros das linhas
+
 void Lines::read_lines_file() {
     std::ifstream data(LINES_FILE);
     std::string line;
@@ -22,23 +25,26 @@ void Lines::read_lines_file() {
     }
 }
 
+
+//conecta as paragens que estejam a uma distância <= a distance
+
 void Lines::connect_nearby_stops(Graph& graph, double distance) {
     int size = graph.get_nodes().size();
 
     for (int i = 1; i < size - 1; i++)  
         for (int j = i + 1; j < size; j++) {                
             if (haversine(stops.get_coords(i), stops.get_coords(j)) <= distance) {
-                graph.add_edge(i, j, 0, "A pe");
-                graph.add_edge(j, i, 0, "A pe");
+                graph.add_edge(i, j, 0, "A pé");
+                graph.add_edge(j, i, 0, "A pé");
             }
         }
 }
 
-std::vector<std::string> Lines::get_line_paths() {
+std::vector<std::string> Lines::get_line_paths() const {
     return this->line_paths;
 }
 
-std::vector<std::string> Lines::get_line_stops(std::string path) {
+std::vector<std::string> Lines::get_line_stops(std::string path) const {
     std::vector<std::string> stops = std::vector<std::string>();
     std::ifstream data;
     std::string line;
@@ -53,11 +59,12 @@ std::vector<std::string> Lines::get_line_stops(std::string path) {
     return stops;
 }
 
+
+//grafo para o menor nr de paragens
+
 Graph Lines::get_stops_graph(double distance) {
     Graph stops_graph(2487, true);
     std::string curr_line;
-
-    std::cout << "Entrei no get_stops_graph()" << std::endl;
 
     for (const std::string path : this->line_paths) {
         if (path == "dataset/line_300_1.csv" || 
@@ -81,6 +88,9 @@ Graph Lines::get_stops_graph(double distance) {
 
     return stops_graph;
 }
+
+
+//grafo para a distância mais curta
 
 Graph Lines::get_distances_graph(double distance) {
     Graph distances_graph(2487, true);
@@ -107,6 +117,8 @@ Graph Lines::get_distances_graph(double distance) {
     return distances_graph;
 }
 
+
+//grafo em que o melhor caminho deve atravessar o menor numero de zonas possivel
 
 Graph Lines::get_zones_graph(double distance) {
     Graph zones_graph(2487, true);

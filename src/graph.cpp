@@ -110,7 +110,8 @@ std::list<int> Graph::bfs_path(int a, int b) {
         for (auto e : nodes[u].adj) {
             int v = e.dest;
             if (!nodes[v].visited) {
-                nodes[v].pred = u; 
+                nodes[v].pred = u;
+                
                 nodes[v].visited = true;
                 q.push(v);
             }
@@ -122,7 +123,7 @@ std::list<int> Graph::bfs_path(int a, int b) {
         path.push_front(i);
         i = nodes[i].pred;
     }
-    
+
     path.push_front(i);
     return path;
 }
