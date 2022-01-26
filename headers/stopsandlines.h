@@ -3,7 +3,7 @@
 #include <map>
 #include <fstream>
 #include <algorithm>
-#include "../../headers/lines.h"
+#include "../headers/lines.h"
 
 class StopsAndLines {
 private:
@@ -18,12 +18,17 @@ private:
     Lines lines;
 
     Stops stops;
-public:
-    StopsAndLines();
 
     void read_stops_and_lines();
 
-    void connect_nearby_stops(LineGraph& graph, double distance);
+public:
+    StopsAndLines();
 
-    LineGraph get_lines_graph(double distance);
+    std::vector<std::string> get_line_paths() const;
+
+    std::pair<double, double> get_coords(int id) const;
+
+    std::string get_line(int id) const;
+
+    int get_stop_line_id(std::string code, std::string line) const;
 };

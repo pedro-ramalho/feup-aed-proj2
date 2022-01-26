@@ -150,6 +150,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/AED2122PROJ2.dir/build.make CMakeFiles/AED2122PROJ2.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+src/graphs/distancegraph.o: src/graphs/distancegraph.cpp.o
+
+.PHONY : src/graphs/distancegraph.o
+
+# target to build an object file
+src/graphs/distancegraph.cpp.o:
+	$(MAKE) -f CMakeFiles/AED2122PROJ2.dir/build.make CMakeFiles/AED2122PROJ2.dir/src/graphs/distancegraph.cpp.o
+.PHONY : src/graphs/distancegraph.cpp.o
+
+src/graphs/distancegraph.i: src/graphs/distancegraph.cpp.i
+
+.PHONY : src/graphs/distancegraph.i
+
+# target to preprocess a source file
+src/graphs/distancegraph.cpp.i:
+	$(MAKE) -f CMakeFiles/AED2122PROJ2.dir/build.make CMakeFiles/AED2122PROJ2.dir/src/graphs/distancegraph.cpp.i
+.PHONY : src/graphs/distancegraph.cpp.i
+
+src/graphs/distancegraph.s: src/graphs/distancegraph.cpp.s
+
+.PHONY : src/graphs/distancegraph.s
+
+# target to generate assembly for a file
+src/graphs/distancegraph.cpp.s:
+	$(MAKE) -f CMakeFiles/AED2122PROJ2.dir/build.make CMakeFiles/AED2122PROJ2.dir/src/graphs/distancegraph.cpp.s
+.PHONY : src/graphs/distancegraph.cpp.s
+
 src/graphs/graph.o: src/graphs/graph.cpp.o
 
 .PHONY : src/graphs/graph.o
@@ -230,33 +257,6 @@ src/graphs/stopgraph.s: src/graphs/stopgraph.cpp.s
 src/graphs/stopgraph.cpp.s:
 	$(MAKE) -f CMakeFiles/AED2122PROJ2.dir/build.make CMakeFiles/AED2122PROJ2.dir/src/graphs/stopgraph.cpp.s
 .PHONY : src/graphs/stopgraph.cpp.s
-
-src/graphs/stopsandlines.o: src/graphs/stopsandlines.cpp.o
-
-.PHONY : src/graphs/stopsandlines.o
-
-# target to build an object file
-src/graphs/stopsandlines.cpp.o:
-	$(MAKE) -f CMakeFiles/AED2122PROJ2.dir/build.make CMakeFiles/AED2122PROJ2.dir/src/graphs/stopsandlines.cpp.o
-.PHONY : src/graphs/stopsandlines.cpp.o
-
-src/graphs/stopsandlines.i: src/graphs/stopsandlines.cpp.i
-
-.PHONY : src/graphs/stopsandlines.i
-
-# target to preprocess a source file
-src/graphs/stopsandlines.cpp.i:
-	$(MAKE) -f CMakeFiles/AED2122PROJ2.dir/build.make CMakeFiles/AED2122PROJ2.dir/src/graphs/stopsandlines.cpp.i
-.PHONY : src/graphs/stopsandlines.cpp.i
-
-src/graphs/stopsandlines.s: src/graphs/stopsandlines.cpp.s
-
-.PHONY : src/graphs/stopsandlines.s
-
-# target to generate assembly for a file
-src/graphs/stopsandlines.cpp.s:
-	$(MAKE) -f CMakeFiles/AED2122PROJ2.dir/build.make CMakeFiles/AED2122PROJ2.dir/src/graphs/stopsandlines.cpp.s
-.PHONY : src/graphs/stopsandlines.cpp.s
 
 src/graphs/zonegraph.o: src/graphs/zonegraph.cpp.o
 
@@ -366,6 +366,33 @@ src/stops.cpp.s:
 	$(MAKE) -f CMakeFiles/AED2122PROJ2.dir/build.make CMakeFiles/AED2122PROJ2.dir/src/stops.cpp.s
 .PHONY : src/stops.cpp.s
 
+src/stopsandlines.o: src/stopsandlines.cpp.o
+
+.PHONY : src/stopsandlines.o
+
+# target to build an object file
+src/stopsandlines.cpp.o:
+	$(MAKE) -f CMakeFiles/AED2122PROJ2.dir/build.make CMakeFiles/AED2122PROJ2.dir/src/stopsandlines.cpp.o
+.PHONY : src/stopsandlines.cpp.o
+
+src/stopsandlines.i: src/stopsandlines.cpp.i
+
+.PHONY : src/stopsandlines.i
+
+# target to preprocess a source file
+src/stopsandlines.cpp.i:
+	$(MAKE) -f CMakeFiles/AED2122PROJ2.dir/build.make CMakeFiles/AED2122PROJ2.dir/src/stopsandlines.cpp.i
+.PHONY : src/stopsandlines.cpp.i
+
+src/stopsandlines.s: src/stopsandlines.cpp.s
+
+.PHONY : src/stopsandlines.s
+
+# target to generate assembly for a file
+src/stopsandlines.cpp.s:
+	$(MAKE) -f CMakeFiles/AED2122PROJ2.dir/build.make CMakeFiles/AED2122PROJ2.dir/src/stopsandlines.cpp.s
+.PHONY : src/stopsandlines.cpp.s
+
 src/utils.o: src/utils.cpp.o
 
 .PHONY : src/utils.o
@@ -405,6 +432,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... src/graphs/distancegraph.o"
+	@echo "... src/graphs/distancegraph.i"
+	@echo "... src/graphs/distancegraph.s"
 	@echo "... src/graphs/graph.o"
 	@echo "... src/graphs/graph.i"
 	@echo "... src/graphs/graph.s"
@@ -414,9 +444,6 @@ help:
 	@echo "... src/graphs/stopgraph.o"
 	@echo "... src/graphs/stopgraph.i"
 	@echo "... src/graphs/stopgraph.s"
-	@echo "... src/graphs/stopsandlines.o"
-	@echo "... src/graphs/stopsandlines.i"
-	@echo "... src/graphs/stopsandlines.s"
 	@echo "... src/graphs/zonegraph.o"
 	@echo "... src/graphs/zonegraph.i"
 	@echo "... src/graphs/zonegraph.s"
@@ -429,6 +456,9 @@ help:
 	@echo "... src/stops.o"
 	@echo "... src/stops.i"
 	@echo "... src/stops.s"
+	@echo "... src/stopsandlines.o"
+	@echo "... src/stopsandlines.i"
+	@echo "... src/stopsandlines.s"
 	@echo "... src/utils.o"
 	@echo "... src/utils.i"
 	@echo "... src/utils.s"

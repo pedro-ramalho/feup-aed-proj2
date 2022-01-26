@@ -5,40 +5,44 @@
 #include <string>
 #include <climits>
 #include "../../headers/minheap.h"
+#include "../../headers/stopsandlines.h"
 
 #define INF (INT_MAX/2)
 
-struct LEdge {
-    int dest; //destination node
-    int weight; //integer weight (can change type if needed)
+struct LineEdge {
+    std::string line;
+    int dest;
+    int weight;
 };
 
-struct LNode {
-    std::list<LEdge> adj; //list of outgoing edges (to adjacent nodes)
-    std::string line;
-    bool visited; //true if the node has been visited during a search
-    int dist; //distance between this current Node and another Node
+struct LineNode {
+    std::list<LineEdge> adj;
+    std::string line_used;
+    bool visited;
+    double distance_available;
     int pred;
 };
 
 class LineGraph {
 private:
-    int n; //number of nodes
+    double distance;
 
-    bool has_dir; //true if the graph is directed
+    int n;
 
-    std::vector<LNode> nodes; //stores each node of the graph
-public:
-    //num of nodes and dir
-    LineGraph(int nodes, bool has_dir);
-    
-    void add_edge(int src, int dest, int weight);
+    std::vector<LineNode> nodes;
 
-    std::vector<LNode> get_nodes() {return this->nodes;}
+    void connect_nearby_stops(const StopsAndLines& stops_and_lines, int curr_node_id, double distance);
+
+    void build_graph(const StopsAndLines& stops_and_lines, double distance);
+
+    void add_edge(int src, int dest, int weight, std::string line);
 
     void dijkstra(int s);
 
-    std::list<int> dijkstra_path(int a, int b);
+public:
+    LineGraph(const StopsAndLines& stops_and_lines, int num, double distance);
 
-    int dijkstra_distance(int a, int b);
+    std::vector<LineNode> get_nodes();
+
+    std::list<int> dijkstra_path(const StopsAndLines& stops_and_lines, int src, int dest);
 };

@@ -2,40 +2,40 @@
 #include "../../headers/lines.h"
 #include <list>
 
-struct ZoneEdge {
+struct DistanceEdge {
     std::string line;
+    double weight;
     int dest;
-    int weight;
 };
 
-struct ZoneNode {
-    std::list<ZoneEdge> adj;
+struct DistanceNode {
+    std::list<DistanceEdge> adj;
     std::string line_used;
-    bool visited;
     double distance_available;
+    bool visited;
     int pred;
 };
 
-class ZoneGraph {
+class DistanceGraph {
 private:
     double distance; //max distance the user chose to walk
 
     int n; //number of nodes
 
-    std::vector<ZoneNode> nodes;
+    std::vector<DistanceNode> nodes;
 
     void connect_nearby_stops(const Stops& stops, int curr_node_id, double distance);
 
     void build_graph(const Stops& stops, const Lines& lines, double distance);
 
-    void add_edge(int src, int dest, int weight, std::string line);
+    void add_edge(int src, int dest, double weight, std::string line);
 
     void dijkstra(int s);
 
 public:
-    ZoneGraph(const Stops& stops, const Lines& lines, int num, double distance);
+    DistanceGraph(const Stops& stops, const Lines& lines, int num, double distance);
 
-    std::vector<ZoneNode> get_nodes();
+    std::vector<DistanceNode> get_nodes();
 
     std::list<int> dijkstra_path(const Stops& stops, int src, int dest);
 };

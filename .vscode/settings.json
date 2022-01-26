@@ -52,5 +52,6 @@
         "ratio": "cpp",
         "iomanip": "cpp",
         "climits": "cpp"
-    }
+    },
+    "workbench.preferredLightColorTheme": "Visual Studio Light"
 }
