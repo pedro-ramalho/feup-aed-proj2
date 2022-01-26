@@ -1,6 +1,6 @@
-#include "../headers/stopgraph.h"
-#include "../headers/stops.h"
-#include "../headers/lines.h"
+#include "../../headers/graphs/stopgraph.h"
+#include "../../headers/stops.h"
+#include "../../headers/lines.h"
 
 StopGraph::StopGraph(const Stops& stops, const Lines& lines, int num, double distance) : nodes(num) {
     this->n = num;
@@ -8,19 +8,7 @@ StopGraph::StopGraph(const Stops& stops, const Lines& lines, int num, double dis
     this->build_graph(stops, lines, distance);
 }
 
-void StopGraph::connect_nearby_stops(const Stops& stops, double distance) {
-    int size = this->nodes.size();
-
-    for (int i = 1; i < size - 1; i++)  
-        for (int j = i + 1; j < size; j++) {                
-            if (haversine(stops.get_coords(i), stops.get_coords(j)) <= distance) {
-                this->add_edge(i, j, 1, "A pé");
-                this->add_edge(j, i, 1, "A pé");
-            }
-        }
-}
-
-void StopGraph::new_connect_nearby_stops(const Stops& stops, int curr_node_id, double distance) {
+void StopGraph::connect_nearby_stops(const Stops& stops, int curr_node_id, double distance) {
     int size = this->nodes.size();
 
     for (int j = 1; j < size; j++)                
@@ -32,11 +20,8 @@ void StopGraph::new_connect_nearby_stops(const Stops& stops, int curr_node_id, d
 void StopGraph::build_graph(const Stops& stops, const Lines& lines, double distance) {
     std::string curr_line;
 
-    std::cout << "Starting build_graph" << std::endl;
-
     for (std::string path : lines.get_line_paths()) {
         std::vector<std::string> codes = lines.get_line_stops(path);
-
 
         if (codes.empty()) continue;
 
@@ -68,9 +53,8 @@ std::list<int> StopGraph::bfs_path(const Stops& stops, int a, int b) {
     int counter = 0;
 
     while (!q.empty()) {
-        
         int u = q.front();
-        new_connect_nearby_stops(stops, u, nodes[u].distance_available);
+        this->connect_nearby_stops(stops, u, nodes[u].distance_available);
         q.pop();
         for (auto e : nodes[u].adj) {
             int v = e.dest;

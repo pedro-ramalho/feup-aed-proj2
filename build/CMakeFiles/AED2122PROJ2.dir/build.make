@@ -83,18 +83,18 @@ CMakeFiles/AED2122PROJ2.dir/src/utils.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AED2122PROJ2.dir/src/utils.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pedro/feup-aed-proj2/src/utils.cpp -o CMakeFiles/AED2122PROJ2.dir/src/utils.cpp.s
 
-CMakeFiles/AED2122PROJ2.dir/src/graph.cpp.o: CMakeFiles/AED2122PROJ2.dir/flags.make
-CMakeFiles/AED2122PROJ2.dir/src/graph.cpp.o: ../src/graph.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedro/feup-aed-proj2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/AED2122PROJ2.dir/src/graph.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AED2122PROJ2.dir/src/graph.cpp.o -c /home/pedro/feup-aed-proj2/src/graph.cpp
+CMakeFiles/AED2122PROJ2.dir/src/graphs/graph.cpp.o: CMakeFiles/AED2122PROJ2.dir/flags.make
+CMakeFiles/AED2122PROJ2.dir/src/graphs/graph.cpp.o: ../src/graphs/graph.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedro/feup-aed-proj2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/AED2122PROJ2.dir/src/graphs/graph.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AED2122PROJ2.dir/src/graphs/graph.cpp.o -c /home/pedro/feup-aed-proj2/src/graphs/graph.cpp
 
-CMakeFiles/AED2122PROJ2.dir/src/graph.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AED2122PROJ2.dir/src/graph.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pedro/feup-aed-proj2/src/graph.cpp > CMakeFiles/AED2122PROJ2.dir/src/graph.cpp.i
+CMakeFiles/AED2122PROJ2.dir/src/graphs/graph.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AED2122PROJ2.dir/src/graphs/graph.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pedro/feup-aed-proj2/src/graphs/graph.cpp > CMakeFiles/AED2122PROJ2.dir/src/graphs/graph.cpp.i
 
-CMakeFiles/AED2122PROJ2.dir/src/graph.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AED2122PROJ2.dir/src/graph.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pedro/feup-aed-proj2/src/graph.cpp -o CMakeFiles/AED2122PROJ2.dir/src/graph.cpp.s
+CMakeFiles/AED2122PROJ2.dir/src/graphs/graph.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AED2122PROJ2.dir/src/graphs/graph.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pedro/feup-aed-proj2/src/graphs/graph.cpp -o CMakeFiles/AED2122PROJ2.dir/src/graphs/graph.cpp.s
 
 CMakeFiles/AED2122PROJ2.dir/src/stops.cpp.o: CMakeFiles/AED2122PROJ2.dir/flags.make
 CMakeFiles/AED2122PROJ2.dir/src/stops.cpp.o: ../src/stops.cpp
@@ -135,72 +135,87 @@ CMakeFiles/AED2122PROJ2.dir/src/menu.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AED2122PROJ2.dir/src/menu.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pedro/feup-aed-proj2/src/menu.cpp -o CMakeFiles/AED2122PROJ2.dir/src/menu.cpp.s
 
-CMakeFiles/AED2122PROJ2.dir/src/linegraph.cpp.o: CMakeFiles/AED2122PROJ2.dir/flags.make
-CMakeFiles/AED2122PROJ2.dir/src/linegraph.cpp.o: ../src/linegraph.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedro/feup-aed-proj2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/AED2122PROJ2.dir/src/linegraph.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AED2122PROJ2.dir/src/linegraph.cpp.o -c /home/pedro/feup-aed-proj2/src/linegraph.cpp
+CMakeFiles/AED2122PROJ2.dir/src/graphs/linegraph.cpp.o: CMakeFiles/AED2122PROJ2.dir/flags.make
+CMakeFiles/AED2122PROJ2.dir/src/graphs/linegraph.cpp.o: ../src/graphs/linegraph.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedro/feup-aed-proj2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/AED2122PROJ2.dir/src/graphs/linegraph.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AED2122PROJ2.dir/src/graphs/linegraph.cpp.o -c /home/pedro/feup-aed-proj2/src/graphs/linegraph.cpp
 
-CMakeFiles/AED2122PROJ2.dir/src/linegraph.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AED2122PROJ2.dir/src/linegraph.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pedro/feup-aed-proj2/src/linegraph.cpp > CMakeFiles/AED2122PROJ2.dir/src/linegraph.cpp.i
+CMakeFiles/AED2122PROJ2.dir/src/graphs/linegraph.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AED2122PROJ2.dir/src/graphs/linegraph.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pedro/feup-aed-proj2/src/graphs/linegraph.cpp > CMakeFiles/AED2122PROJ2.dir/src/graphs/linegraph.cpp.i
 
-CMakeFiles/AED2122PROJ2.dir/src/linegraph.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AED2122PROJ2.dir/src/linegraph.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pedro/feup-aed-proj2/src/linegraph.cpp -o CMakeFiles/AED2122PROJ2.dir/src/linegraph.cpp.s
+CMakeFiles/AED2122PROJ2.dir/src/graphs/linegraph.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AED2122PROJ2.dir/src/graphs/linegraph.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pedro/feup-aed-proj2/src/graphs/linegraph.cpp -o CMakeFiles/AED2122PROJ2.dir/src/graphs/linegraph.cpp.s
 
-CMakeFiles/AED2122PROJ2.dir/src/stopsandlines.cpp.o: CMakeFiles/AED2122PROJ2.dir/flags.make
-CMakeFiles/AED2122PROJ2.dir/src/stopsandlines.cpp.o: ../src/stopsandlines.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedro/feup-aed-proj2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/AED2122PROJ2.dir/src/stopsandlines.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AED2122PROJ2.dir/src/stopsandlines.cpp.o -c /home/pedro/feup-aed-proj2/src/stopsandlines.cpp
+CMakeFiles/AED2122PROJ2.dir/src/graphs/stopsandlines.cpp.o: CMakeFiles/AED2122PROJ2.dir/flags.make
+CMakeFiles/AED2122PROJ2.dir/src/graphs/stopsandlines.cpp.o: ../src/graphs/stopsandlines.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedro/feup-aed-proj2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/AED2122PROJ2.dir/src/graphs/stopsandlines.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AED2122PROJ2.dir/src/graphs/stopsandlines.cpp.o -c /home/pedro/feup-aed-proj2/src/graphs/stopsandlines.cpp
 
-CMakeFiles/AED2122PROJ2.dir/src/stopsandlines.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AED2122PROJ2.dir/src/stopsandlines.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pedro/feup-aed-proj2/src/stopsandlines.cpp > CMakeFiles/AED2122PROJ2.dir/src/stopsandlines.cpp.i
+CMakeFiles/AED2122PROJ2.dir/src/graphs/stopsandlines.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AED2122PROJ2.dir/src/graphs/stopsandlines.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pedro/feup-aed-proj2/src/graphs/stopsandlines.cpp > CMakeFiles/AED2122PROJ2.dir/src/graphs/stopsandlines.cpp.i
 
-CMakeFiles/AED2122PROJ2.dir/src/stopsandlines.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AED2122PROJ2.dir/src/stopsandlines.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pedro/feup-aed-proj2/src/stopsandlines.cpp -o CMakeFiles/AED2122PROJ2.dir/src/stopsandlines.cpp.s
+CMakeFiles/AED2122PROJ2.dir/src/graphs/stopsandlines.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AED2122PROJ2.dir/src/graphs/stopsandlines.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pedro/feup-aed-proj2/src/graphs/stopsandlines.cpp -o CMakeFiles/AED2122PROJ2.dir/src/graphs/stopsandlines.cpp.s
 
-CMakeFiles/AED2122PROJ2.dir/src/stopgraph.cpp.o: CMakeFiles/AED2122PROJ2.dir/flags.make
-CMakeFiles/AED2122PROJ2.dir/src/stopgraph.cpp.o: ../src/stopgraph.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedro/feup-aed-proj2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/AED2122PROJ2.dir/src/stopgraph.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AED2122PROJ2.dir/src/stopgraph.cpp.o -c /home/pedro/feup-aed-proj2/src/stopgraph.cpp
+CMakeFiles/AED2122PROJ2.dir/src/graphs/stopgraph.cpp.o: CMakeFiles/AED2122PROJ2.dir/flags.make
+CMakeFiles/AED2122PROJ2.dir/src/graphs/stopgraph.cpp.o: ../src/graphs/stopgraph.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedro/feup-aed-proj2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/AED2122PROJ2.dir/src/graphs/stopgraph.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AED2122PROJ2.dir/src/graphs/stopgraph.cpp.o -c /home/pedro/feup-aed-proj2/src/graphs/stopgraph.cpp
 
-CMakeFiles/AED2122PROJ2.dir/src/stopgraph.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AED2122PROJ2.dir/src/stopgraph.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pedro/feup-aed-proj2/src/stopgraph.cpp > CMakeFiles/AED2122PROJ2.dir/src/stopgraph.cpp.i
+CMakeFiles/AED2122PROJ2.dir/src/graphs/stopgraph.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AED2122PROJ2.dir/src/graphs/stopgraph.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pedro/feup-aed-proj2/src/graphs/stopgraph.cpp > CMakeFiles/AED2122PROJ2.dir/src/graphs/stopgraph.cpp.i
 
-CMakeFiles/AED2122PROJ2.dir/src/stopgraph.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AED2122PROJ2.dir/src/stopgraph.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pedro/feup-aed-proj2/src/stopgraph.cpp -o CMakeFiles/AED2122PROJ2.dir/src/stopgraph.cpp.s
+CMakeFiles/AED2122PROJ2.dir/src/graphs/stopgraph.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AED2122PROJ2.dir/src/graphs/stopgraph.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pedro/feup-aed-proj2/src/graphs/stopgraph.cpp -o CMakeFiles/AED2122PROJ2.dir/src/graphs/stopgraph.cpp.s
+
+CMakeFiles/AED2122PROJ2.dir/src/graphs/zonegraph.cpp.o: CMakeFiles/AED2122PROJ2.dir/flags.make
+CMakeFiles/AED2122PROJ2.dir/src/graphs/zonegraph.cpp.o: ../src/graphs/zonegraph.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedro/feup-aed-proj2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/AED2122PROJ2.dir/src/graphs/zonegraph.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AED2122PROJ2.dir/src/graphs/zonegraph.cpp.o -c /home/pedro/feup-aed-proj2/src/graphs/zonegraph.cpp
+
+CMakeFiles/AED2122PROJ2.dir/src/graphs/zonegraph.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AED2122PROJ2.dir/src/graphs/zonegraph.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pedro/feup-aed-proj2/src/graphs/zonegraph.cpp > CMakeFiles/AED2122PROJ2.dir/src/graphs/zonegraph.cpp.i
+
+CMakeFiles/AED2122PROJ2.dir/src/graphs/zonegraph.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AED2122PROJ2.dir/src/graphs/zonegraph.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pedro/feup-aed-proj2/src/graphs/zonegraph.cpp -o CMakeFiles/AED2122PROJ2.dir/src/graphs/zonegraph.cpp.s
 
 # Object files for target AED2122PROJ2
 AED2122PROJ2_OBJECTS = \
 "CMakeFiles/AED2122PROJ2.dir/main.cpp.o" \
 "CMakeFiles/AED2122PROJ2.dir/src/utils.cpp.o" \
-"CMakeFiles/AED2122PROJ2.dir/src/graph.cpp.o" \
+"CMakeFiles/AED2122PROJ2.dir/src/graphs/graph.cpp.o" \
 "CMakeFiles/AED2122PROJ2.dir/src/stops.cpp.o" \
 "CMakeFiles/AED2122PROJ2.dir/src/lines.cpp.o" \
 "CMakeFiles/AED2122PROJ2.dir/src/menu.cpp.o" \
-"CMakeFiles/AED2122PROJ2.dir/src/linegraph.cpp.o" \
-"CMakeFiles/AED2122PROJ2.dir/src/stopsandlines.cpp.o" \
-"CMakeFiles/AED2122PROJ2.dir/src/stopgraph.cpp.o"
+"CMakeFiles/AED2122PROJ2.dir/src/graphs/linegraph.cpp.o" \
+"CMakeFiles/AED2122PROJ2.dir/src/graphs/stopsandlines.cpp.o" \
+"CMakeFiles/AED2122PROJ2.dir/src/graphs/stopgraph.cpp.o" \
+"CMakeFiles/AED2122PROJ2.dir/src/graphs/zonegraph.cpp.o"
 
 # External object files for target AED2122PROJ2
 AED2122PROJ2_EXTERNAL_OBJECTS =
 
 AED2122PROJ2: CMakeFiles/AED2122PROJ2.dir/main.cpp.o
 AED2122PROJ2: CMakeFiles/AED2122PROJ2.dir/src/utils.cpp.o
-AED2122PROJ2: CMakeFiles/AED2122PROJ2.dir/src/graph.cpp.o
+AED2122PROJ2: CMakeFiles/AED2122PROJ2.dir/src/graphs/graph.cpp.o
 AED2122PROJ2: CMakeFiles/AED2122PROJ2.dir/src/stops.cpp.o
 AED2122PROJ2: CMakeFiles/AED2122PROJ2.dir/src/lines.cpp.o
 AED2122PROJ2: CMakeFiles/AED2122PROJ2.dir/src/menu.cpp.o
-AED2122PROJ2: CMakeFiles/AED2122PROJ2.dir/src/linegraph.cpp.o
-AED2122PROJ2: CMakeFiles/AED2122PROJ2.dir/src/stopsandlines.cpp.o
-AED2122PROJ2: CMakeFiles/AED2122PROJ2.dir/src/stopgraph.cpp.o
+AED2122PROJ2: CMakeFiles/AED2122PROJ2.dir/src/graphs/linegraph.cpp.o
+AED2122PROJ2: CMakeFiles/AED2122PROJ2.dir/src/graphs/stopsandlines.cpp.o
+AED2122PROJ2: CMakeFiles/AED2122PROJ2.dir/src/graphs/stopgraph.cpp.o
+AED2122PROJ2: CMakeFiles/AED2122PROJ2.dir/src/graphs/zonegraph.cpp.o
 AED2122PROJ2: CMakeFiles/AED2122PROJ2.dir/build.make
 AED2122PROJ2: CMakeFiles/AED2122PROJ2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pedro/feup-aed-proj2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable AED2122PROJ2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pedro/feup-aed-proj2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable AED2122PROJ2"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/AED2122PROJ2.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

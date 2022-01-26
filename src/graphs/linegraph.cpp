@@ -1,4 +1,4 @@
-#include "../headers/linegraph.h"
+#include "../../headers/graphs/linegraph.h"
 
 LineGraph::LineGraph(int nodes, bool has_dir) : n(nodes), has_dir(has_dir), nodes(nodes + 1) {}
 

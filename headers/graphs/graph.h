@@ -5,7 +5,7 @@
 #include <queue>
 #include <iostream>
 #include <climits>
-#include "../headers/minheap.h"
+#include "../../headers/minheap.h"
 
 #define INF (INT_MAX/2)
 

@@ -1,4 +1,4 @@
-#include "../headers/stopsandlines.h"
+#include "../../headers/graphs/stopsandlines.h"
 
 StopsAndLines::StopsAndLines() {
     this->line_paths = lines.get_line_paths();

@@ -6,9 +6,9 @@
 #include <sstream>
 #include <iostream>
 #include "../headers/utils.h"
-#include "../headers/graph.h"
+#include "../headers/graphs/graph.h"
 #include "../headers/stops.h"
-#include "../headers/linegraph.h"
+#include "../headers/graphs/linegraph.h"
 
 class Lines {
 private:

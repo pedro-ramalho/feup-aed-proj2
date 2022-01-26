@@ -1,11 +1,11 @@
 #include <iostream>
 #include <filesystem>
 #include "headers/utils.h"
-#include "headers/graph.h"
+#include "headers/graphs/graph.h"
 #include "headers/stops.h"
 #include "headers/lines.h"
-#include "headers/stopsandlines.h"
-#include "headers/stopgraph.h"
+#include "headers/graphs/stopsandlines.h"
+#include "headers/graphs/stopgraph.h"
 
 //-----------------------------------------------------------------------------------------//
 // *TAREFA FUNDAMENTAL*                                                                    //

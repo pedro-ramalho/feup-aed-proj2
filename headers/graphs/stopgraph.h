@@ -1,13 +1,17 @@
-#include "../headers/stops.h"
-#include "../headers/lines.h"
+#include "../../headers/stops.h"
+#include "../../headers/lines.h"
 #include <list>
 
+//-------------------------------------------------
+
+//struct representing the edges of a StopGraph
 struct StopEdge {
     std::string line;
     int dest; //destination node
     int weight; //default = 1
 };
 
+//struct representing the nodes of a StopGraph
 struct StopNode {
     std::list<StopEdge> adj;
     std::string line_used;
@@ -16,17 +20,19 @@ struct StopNode {
     double distance_available;
 };
 
+//-------------------------------------------------
+
+
+//this graph will be used when the user chooses the path with the least amount of stops
 class StopGraph {
 private:
-    double distance;
+    double distance; //max distance the user chose to walk
 
     int n; //number of nodes
 
     std::vector<StopNode> nodes;
 
-    void connect_nearby_stops(const Stops& stops, double distance);
-
-    void new_connect_nearby_stops(const Stops& stops, int curr_node_id, double distance);
+    void connect_nearby_stops(const Stops& stops, int curr_node_id, double distance);
 
     void build_graph(const Stops& stops, const Lines& lines, double distance);
 

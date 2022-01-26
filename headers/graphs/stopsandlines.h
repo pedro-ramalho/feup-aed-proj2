@@ -3,7 +3,7 @@
 #include <map>
 #include <fstream>
 #include <algorithm>
-#include "../headers/lines.h"
+#include "../../headers/lines.h"
 
 class StopsAndLines {
 private:

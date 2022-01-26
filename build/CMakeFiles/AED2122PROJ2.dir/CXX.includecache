@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/pedro/feup-aed-proj2/headers/graph.h
+/home/pedro/feup-aed-proj2/headers/graphs/graph.h
 vector
 -
 list
@@ -17,10 +17,10 @@ iostream
 -
 climits
 -
-../headers/minheap.h
+../../headers/minheap.h
 /home/pedro/feup-aed-proj2/headers/minheap.h
 
-/home/pedro/feup-aed-proj2/headers/linegraph.h
+/home/pedro/feup-aed-proj2/headers/graphs/linegraph.h
 list
 -
 vector
@@ -29,8 +29,26 @@ string
 -
 climits
 -
-../headers/minheap.h
+../../headers/minheap.h
 /home/pedro/feup-aed-proj2/headers/minheap.h
+
+/home/pedro/feup-aed-proj2/headers/graphs/stopgraph.h
+../../headers/stops.h
+/home/pedro/feup-aed-proj2/headers/stops.h
+../../headers/lines.h
+/home/pedro/feup-aed-proj2/headers/lines.h
+list
+-
+
+/home/pedro/feup-aed-proj2/headers/graphs/stopsandlines.h
+map
+-
+fstream
+-
+algorithm
+-
+../../headers/lines.h
+/home/pedro/feup-aed-proj2/headers/lines.h
 
 /home/pedro/feup-aed-proj2/headers/lines.h
 vector
@@ -45,25 +63,17 @@ iostream
 -
 ../headers/utils.h
 /home/pedro/feup-aed-proj2/headers/utils.h
-../headers/graph.h
-/home/pedro/feup-aed-proj2/headers/graph.h
+../headers/graphs/graph.h
+/home/pedro/feup-aed-proj2/headers/graphs/graph.h
 ../headers/stops.h
 /home/pedro/feup-aed-proj2/headers/stops.h
-../headers/linegraph.h
-/home/pedro/feup-aed-proj2/headers/linegraph.h
+../headers/graphs/linegraph.h
+/home/pedro/feup-aed-proj2/headers/graphs/linegraph.h
 
 /home/pedro/feup-aed-proj2/headers/minheap.h
 vector
 -
 unordered_map
--
-
-/home/pedro/feup-aed-proj2/headers/stopgraph.h
-../headers/stops.h
-/home/pedro/feup-aed-proj2/headers/stops.h
-../headers/lines.h
-/home/pedro/feup-aed-proj2/headers/lines.h
-list
 -
 
 /home/pedro/feup-aed-proj2/headers/stops.h
@@ -110,11 +120,21 @@ map
 sstream
 -
 
-/home/pedro/feup-aed-proj2/src/stopgraph.cpp
-../headers/stopgraph.h
-/home/pedro/feup-aed-proj2/headers/stopgraph.h
-../headers/stops.h
+/home/pedro/feup-aed-proj2/main.cpp
+iostream
+-
+filesystem
+-
+headers/utils.h
+/home/pedro/feup-aed-proj2/headers/utils.h
+headers/graphs/graph.h
+/home/pedro/feup-aed-proj2/headers/graphs/graph.h
+headers/stops.h
 /home/pedro/feup-aed-proj2/headers/stops.h
-../headers/lines.h
+headers/lines.h
 /home/pedro/feup-aed-proj2/headers/lines.h
+headers/graphs/stopsandlines.h
+/home/pedro/feup-aed-proj2/headers/graphs/stopsandlines.h
+headers/graphs/stopgraph.h
+/home/pedro/feup-aed-proj2/headers/graphs/stopgraph.h
 

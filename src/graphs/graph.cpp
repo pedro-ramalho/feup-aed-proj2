@@ -1,4 +1,4 @@
-#include "../headers/graph.h"
+#include "../../headers/graphs/graph.h"
 
 Graph::Graph(int num, bool has_dir) : n(num), has_dir(has_dir), nodes(num + 1) {}
 
