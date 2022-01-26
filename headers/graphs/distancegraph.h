@@ -14,6 +14,7 @@ struct DistanceNode {
     double distance_available;
     bool visited;
     int pred;
+    double dist;
 };
 
 class DistanceGraph {
@@ -37,5 +38,5 @@ public:
 
     std::vector<DistanceNode> get_nodes();
 
-    std::list<int> dijkstra_path(const Stops& stops, int src, int dest);
+    std::list<int> dijkstra_path(int src, int dest);
 };

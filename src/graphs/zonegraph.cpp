@@ -2,8 +2,7 @@
 #include "../../headers/stops.h"
 #include "../../headers/lines.h"
 
-ZoneGraph::ZoneGraph(const Stops& stops, const Lines& lines, int num, double distance) : nodes(num) {
-    this->n = num;
+ZoneGraph::ZoneGraph(const Stops& stops, const Lines& lines, int num, double distance) : n(num), nodes(num + 1) {
     this->distance = distance;
     this->build_graph(stops, lines, distance);
 }
@@ -45,13 +44,51 @@ void ZoneGraph::add_edge(int src, int dest, int weight, std::string line) {
 }
 
 
+//dijkstra original - tem de se mudar para o pretendido
 void ZoneGraph::dijkstra(int s) {
+    MinHeap<int, int> q(n, -1);
 
+    for (int v=1; v<=n; v++) {
+        nodes[v].dist = INF;
+        q.insert(v, INF);
+        nodes[v].visited = false;
+    }
+
+    nodes[s].dist = 0;
+    q.decreaseKey(s, 0);
+    nodes[s].pred = s;
+
+    while (q.getSize()>0) {
+        int u = q.removeMin();
+        // cout << "Node " << u << " with dist = " << nodes[u].dist << endl;
+        nodes[u].visited = true;
+        for (auto e : nodes[u].adj) {
+            int v = e.dest;
+            int w = e.weight;
+            if (!nodes[v].visited && nodes[u].dist + w < nodes[v].dist) {
+                nodes[v].dist = nodes[u].dist + w;
+                q.decreaseKey(v, nodes[v].dist);
+                nodes[v].pred = u;
+            }
+        }
+    }
 }
 
 
+//dijkstra path original - tem de se mudar para o pretendido
 std::list<int> ZoneGraph::dijkstra_path(const Stops& stops, int src, int dest) {
+    dijkstra(src);
+    std::list<int> path;
 
+    if (nodes[dest].dist == INF) return path;
+    path.push_back(dest);
+    
+    int v = dest;
+    while (v != src) {
+        v = nodes[v].pred;
+        path.push_front(v);
+    }
+    return path;
 }
 
 

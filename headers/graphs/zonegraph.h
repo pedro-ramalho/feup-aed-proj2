@@ -14,6 +14,7 @@ struct ZoneNode {
     bool visited;
     double distance_available;
     int pred;
+    int dist;
 };
 
 class ZoneGraph {
