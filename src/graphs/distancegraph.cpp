@@ -101,20 +101,24 @@ void DistanceGraph::dijkstra(const Stops& stops, int s) {
 
 
 //dijkstra path original - tem de se mudar para o pretendido
-std::list<int> DistanceGraph::dijkstra_path(const Stops& stops, int src, int dest) {
+std::pair<double, std::list<int>> DistanceGraph::dijkstra_distance_path(const Stops& stops, int src, int dest) {
     std::cout << "Entrei no dijkstra path" << std::endl;
     dijkstra(stops, src);
     std::cout << "Fiz o dijkstra(src)" << std::endl;
     std::list<int> path;
     
-    if (nodes[dest].dist == INF) return path;
+    if (nodes[dest].dist == INF) return std::make_pair(-1.0, path);
     path.push_back(dest);
     int v = dest;
     while (v != src) {
         v = nodes[v].pred;
         path.push_front(v);
     }
-    return path;
+
+    std::pair<double, std::list<int>> dijkstra_distance_path;
+    dijkstra_distance_path.first = nodes[dest].dist == INF ? -1.0 : nodes[dest].dist;
+    dijkstra_distance_path.second = path;
+    return dijkstra_distance_path;
 }
 
 

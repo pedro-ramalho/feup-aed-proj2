@@ -38,6 +38,17 @@ int Stops::get_id(std::string code) const {
     return code_id.at(code);
 }
 
+void Stops::add_stop(std::string code, int id, std::string name, std::string zone, std::pair<double, double> coords) {
+    code_id.insert({code, id});
+    id_to_code.insert({id, code});
+
+    code_to_zone.insert({code, zone});
+    code_to_name.insert({code, name});
+        
+    id_name_zone.insert({id, std::make_pair(name, zone)});
+    id_coords.insert({id, coords});
+}
+
 std::string Stops::get_name(std::string code) const {
     return code_to_name.at(code);
 }

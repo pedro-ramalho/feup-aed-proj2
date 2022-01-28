@@ -50,7 +50,6 @@ std::list<int> StopGraph::bfs_path(const Stops& stops, int a, int b) {
     this->nodes[a].distance_available = this->distance;
     this->nodes[a].line_used = "A pé";
     q.push(a);
-    int counter = 0;
 
     while (!q.empty()) {
         int u = q.front();

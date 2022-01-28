@@ -88,7 +88,7 @@ void ZoneGraph::dijkstra(const Stops& stops, int s) {
 
 
 //dijkstra path original - tem de se mudar para o pretendido
-std::list<int> ZoneGraph::dijkstra_path(const Stops& stops, int src, int dest) {
+std::pair<int, std::list<int>> ZoneGraph::dijkstra_distance_path(const Stops& stops, int src, int dest) {
 
     MinHeap<int, int> q(n, -1);
     for (int v=1; v<=n; v++) {
@@ -100,7 +100,7 @@ std::list<int> ZoneGraph::dijkstra_path(const Stops& stops, int src, int dest) {
     dijkstra(stops, src);
     std::list<int> path;
 
-    if (nodes[dest].dist == INF) return path;
+    if (nodes[dest].dist == INF) return std::make_pair(-1, path);
     path.push_back(dest);
     
     int v = dest;
@@ -108,7 +108,9 @@ std::list<int> ZoneGraph::dijkstra_path(const Stops& stops, int src, int dest) {
         v = nodes[v].pred;
         path.push_front(v);
     }
-    return path;
+
+    int distance = nodes[dest].dist == INF ? -1 : nodes[dest].dist; 
+    return {std::make_pair(distance, path)};
 }
 
 

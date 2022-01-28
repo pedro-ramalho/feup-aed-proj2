@@ -21,6 +21,7 @@ int main() {
 
     std::string src_stop, dest_stop;
 
+
     StopGraph graph(stops, lines, 2488, 0.25);
 
     DistanceGraph d_graph(stops, lines, 2487, 0.28);
@@ -64,8 +65,10 @@ int main() {
     }
 
 
-    std::list<int> best_path = l_graph.dijkstra_path(stops_and_lines, src_id, dest_id);
+    std::pair<int, std::list<int>> p = l_graph.dijkstra_distance_path(stops_and_lines, src_id, dest_id);
 
+    std::list<int> best_path = p.second;
+    
     if (best_path.empty()) std::cout << "Empty list" << std::endl;
     
     std::cout << '\n';

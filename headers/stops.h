@@ -42,4 +42,7 @@ public:
     std::pair<std::string, std::string> get_name_zone(int id) const;
 
     std::pair<double, double> get_coords(int id) const;
+
+    void add_stop(std::string code, int id, std::string name, std::string zone, std::pair<double, double> coords);
+
 };

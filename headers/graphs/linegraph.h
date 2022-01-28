@@ -49,5 +49,5 @@ public:
 
     std::vector<LineNode> get_nodes();
 
-    std::list<int> dijkstra_path(const StopsAndLines& stops_and_lines, int src, int dest);
+    std::pair<int, std::list<int>> dijkstra_distance_path(const StopsAndLines& stops_and_lines, int src, int dest);
 };

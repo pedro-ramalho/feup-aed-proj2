@@ -38,5 +38,5 @@ public:
 
     std::vector<ZoneNode> get_nodes();
 
-    std::list<int> dijkstra_path(const Stops& stops, int src, int dest);
+    std::pair<int, std::list<int>> dijkstra_distance_path(const Stops& stops, int src, int dest);
 };

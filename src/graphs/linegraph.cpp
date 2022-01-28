@@ -120,10 +120,10 @@ void LineGraph::dijkstra(const StopsAndLines& stops_and_lines, int s, int end) {
 
 
 //dijkstra path original - tem de se mudar para o pretendido
-std::list<int> LineGraph::dijkstra_path(const StopsAndLines& stops_and_lines, int src, int dest) {
+std::pair<int, std::list<int>> LineGraph::dijkstra_distance_path(const StopsAndLines& stops_and_lines, int src, int dest) {
     dijkstra(stops_and_lines, src, dest);
     std::list<int> path;
-    if (nodes[dest].dist == INF) return path;
+    if (nodes[dest].dist == INF) return {std::make_pair(-1, path)};
     path.push_back(dest);
     int v = dest;
     while (v != src) {
@@ -138,6 +138,8 @@ std::list<int> LineGraph::dijkstra_path(const StopsAndLines& stops_and_lines, in
 
     auto b_it = path.begin();
     auto e_it = path.rbegin();
+
+    int distance = nodes[dest].dist == INF ? -1 : nodes[dest].dist;
     
     first_stop = stops_and_lines.get_code_line(*b_it).first;
     b_it++;
@@ -150,7 +152,7 @@ std::list<int> LineGraph::dijkstra_path(const StopsAndLines& stops_and_lines, in
     if (first_stop == second_stop) path.pop_front();
     if (last_stop == penultima_stop) path.pop_back();
 
-    return path;
+    return {std::make_pair(distance, path)};
 }
 
 
