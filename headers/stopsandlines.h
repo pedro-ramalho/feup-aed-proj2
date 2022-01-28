@@ -41,4 +41,6 @@ public:
     std::vector<std::string> get_codes(std::string path) const;
 
     int get_stop_line_id(std::string code, std::string line) const;
+
+    void add_stop_and_line(std::string code, int id, std::string name, std::string zone, std::pair<double, double> coords, std::string line);
 };

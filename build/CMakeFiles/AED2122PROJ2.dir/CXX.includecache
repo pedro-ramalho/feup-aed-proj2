@@ -158,24 +158,6 @@ map
 sstream
 -
 
-/home/pedro/feup-aed-proj2/main.cpp
-iostream
--
-filesystem
--
-headers/menu.h
-/home/pedro/feup-aed-proj2/headers/menu.h
-chrono
--
-
-/home/pedro/feup-aed-proj2/src/graphs/stopgraph.cpp
-../../headers/graphs/stopgraph.h
-/home/pedro/feup-aed-proj2/headers/graphs/stopgraph.h
-../../headers/stops.h
-/home/pedro/feup-aed-proj2/headers/stops.h
-../../headers/lines.h
-/home/pedro/feup-aed-proj2/headers/lines.h
-
 /home/pedro/feup-aed-proj2/src/menu.cpp
 ../headers/menu.h
 /home/pedro/feup-aed-proj2/headers/menu.h

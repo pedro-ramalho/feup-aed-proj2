@@ -31,6 +31,14 @@ void Menu::run() {
         clear_screen();
     } while (criteria < 1 || criteria > 4);
 
+    double walking_distance = 0;
+
+    do {
+        std::cout << "Quanto está disposto a andar?\n";
+        std::cout << ">> "; std::cin >> walking_distance;
+        clear_screen();
+    } while (walking_distance < 0);
+
     do {
         std::cout << "Quer começar numa paragem ou numa posição (coordenadas GPS)?\n\n";
         print_prompts(stop_place_prompts);
@@ -52,14 +60,6 @@ void Menu::run() {
             src_coords = coords_option();
             break;
     }
-
-    double walking_distance = 0;
-
-    do {
-        std::cout << "Quanto está disposto a andar?\n";
-        std::cout << ">> "; std::cin >> walking_distance;
-        clear_screen();
-    } while (walking_distance < 0);
 
     choice = 0;
 
@@ -98,7 +98,7 @@ void Menu::best_path(int criteria, double walking_distance, int src_id, int dest
             case 1: // menor número de paragens
                 {   
                     Stops stop;
-                    stop.add_stop("SRC", 2488, "Posição Inicial", "NATUR", src_coords);
+                    stop.add_stop("SOURCE", 2488, "Posição Inicial", "NATUR", src_coords);
                     stop.add_stop("DEST", 2489, "Posição Final", "NATUR", dest_coords);
                     StopGraph s_graph(stop, lines, 2489, walking_distance);
                     
@@ -116,7 +116,7 @@ void Menu::best_path(int criteria, double walking_distance, int src_id, int dest
             case 2: // menor distância
                 {
                     Stops stop;
-                    stop.add_stop("SRC", 2488, "Posição Inicial", "NATUR", src_coords);
+                    stop.add_stop("SOURCE", 2488, "Posição Inicial", "NATUR", src_coords);
                     stop.add_stop("DEST", 2489, "Posição Final", "NATUR", dest_coords);
                     DistanceGraph d_graph(stop, lines, 2489, walking_distance);
                 
@@ -132,13 +132,22 @@ void Menu::best_path(int criteria, double walking_distance, int src_id, int dest
                 break;
             case 3: //menor numero de mudanças de linhas
                 {
-                    LineGraph l_graph();
+                    StopsAndLines s_l;
+                    Stops stop;
+                    stop.add_stop("SOURCE", 2488, "Posição Inicial", "NATUR", src_coords);
+                    stop.add_stop("DEST", 2489, "Posição Final", "NATUR", dest_coords);
+                    s_l.add_stop_and_line("SOURCE", 5263, "Posição Inicial", "NATUR", src_coords, "Caminho do 42");
+                    s_l.add_stop_and_line("DEST", 5264, "Posição Final", "NATUR", dest_coords, "Caminho do 42");
+                    LineGraph l_graph(s_l, 5264, walking_distance);
+
+                    list<int> path = l_graph.dijkstra_distance_path(s_l, 5263, 5264).second;
+                    this->print_best_path(path, l_graph, stop, s_l);
                 }
                 break;
             case 4: //menor numero de zonas
                 {
                     Stops stop;
-                    stop.add_stop("SRC", 2488, "Posição Inicial", "NATUR", src_coords);
+                    stop.add_stop("SOURCE", 2488, "Posição Inicial", "NATUR", src_coords);
                     stop.add_stop("DEST", 2489, "Posição Final", "NATUR", dest_coords);
                     ZoneGraph z_graph(stop, lines, 2489, walking_distance);
                 
@@ -174,8 +183,11 @@ void Menu::best_path(int criteria, double walking_distance, int src_id, int dest
                 break;
             case 3: //menor numero de mudanças de linhas
                 {
-                LineGraph l_graph(stops_and_lines, NUM_STOPS, walking_distance);
-                //l_graph.dijkstra_distance_path(stops_and_lines, src_id, dest_id);
+                    StopsAndLines s_l;
+                    LineGraph l_graph(s_l, 5262, walking_distance);
+
+                    list<int> path = l_graph.dijkstra_distance_path(s_l, src_id, dest_id).second;
+                    this->print_best_path(path, l_graph, this->stops, s_l);
                 }
                 break;
             case 4:
@@ -190,33 +202,111 @@ void Menu::best_path(int criteria, double walking_distance, int src_id, int dest
     }
     else if (src_id > 0 && dest_id == 0) { //destination is a position, src is a stop
         switch (criteria) {
-            case 1: // menor número de paragens
-                StopGraph s_graph();
+            case 1:
+                { // menor número de paragens
+                    Stops stop;
+                    stop.add_stop("DEST", 2488, "Posição Final", "NATUR", dest_coords);
+                    StopGraph s_graph(stop, lines, 2488, walking_distance);
+
+                    path = s_graph.bfs_path(stop, src_id, 2488);
+                    this->print_best_path(path, s_graph, stop);
+                }
                 break;
             case 2: // menor distância
-                DistanceGraph d_graph();
+                {
+                    Stops stop;
+                    stop.add_stop("DEST", 2488, "Posição Final", "NATUR", dest_coords);
+                    DistanceGraph d_graph(stop, lines, 2488, walking_distance);
+
+                    path = d_graph.dijkstra_distance_path(stop, src_id, 2488).second;
+                    this->print_best_path(path, d_graph, stop);
+                }
                 break;
-            case 3: //menor numero de mudanças de linhas
-                LineGraph l_graph();
+            case 3: 
+                {//menor numero de mudanças de linhas
+                    StopsAndLines s_l;
+                    Stops stop;
+                    stop.add_stop("DEST", 2488, "Posição Final", "NATUR", dest_coords);
+                    s_l.add_stop_and_line("DEST", 5263, "Posição Final", "NATUR", dest_coords, "Caminho do 42");
+                    LineGraph l_graph(s_l, 5263, walking_distance);
+
+                    list<int> path = l_graph.dijkstra_distance_path(s_l, src_id, 5263).second;
+                    this->print_best_path(path, l_graph, stop, s_l);                    
+                }
                 break;
-            case 4: //menor numero de zonas
-                ZoneGraph z_graph();
+            case 4: 
+                {//menor numero de zonas
+                    Stops stop;
+                    stop.add_stop("DEST", 2488, "Posição Final", "NATUR", dest_coords);
+                    ZoneGraph z_graph(stop, lines, 2488, walking_distance);
+
+                    path = z_graph.dijkstra_distance_path(stop, src_id, 2488).second;
+                    this->print_best_path(path, z_graph, stop);
+                }
                 break;
         }
     }
     else if (src_id == 0 && dest_id > 0) { //src is a position, destination is a stop
         switch (criteria) {
             case 1: // menor número de paragens
-                StopGraph s_graph();
+                {
+                    Stops stop;
+                    stop.add_stop("SOURCE", 2488, "Posição Inicial", "NATUR", src_coords);
+                    StopGraph s_graph(stop, lines, 2488, walking_distance);
+
+                    for (int i = 1; i <= NUM_STOPS; i++) {
+                        if (haversine(stop.get_coords(i), src_coords) <= walking_distance) {
+                            s_graph.add_edge(2488, i, 0, "A pé");
+                        }
+                    }
+                    
+                    path = s_graph.bfs_path(stop, 2488, dest_id);
+                    this->print_best_path(path, s_graph, stops);
+                }
                 break;
-            case 2: // menor distância
-                DistanceGraph d_graph();
+            case 2:
+                { // menor distância
+                    Stops stop;
+                    stop.add_stop("SOURCE", 2488, "Posição Inicial", "NATUR", src_coords);
+                    DistanceGraph d_graph(stop, lines, 2488, walking_distance);
+
+                    for (int i = 1; i <= NUM_STOPS; i++) {
+                        if (haversine(stop.get_coords(i), src_coords) <= walking_distance) {
+                            d_graph.add_edge(2488, i, 0, "A pé");
+                        }
+                    }
+                    
+                    path = d_graph.dijkstra_distance_path(stop, 2488, dest_id).second;
+                    this->print_best_path(path, d_graph, stops);
+                }
                 break;
-            case 3: //menor numero de mudanças de linhas
-                LineGraph l_graph();
+            case 3: 
+                {//menor numero de mudanças de linhas
+                    StopsAndLines s_l;
+                    Stops stop;
+                    stop.add_stop("SOURCE", 2488, "Posição Inicial", "NATUR", src_coords);
+                    s_l.add_stop_and_line("SOURCE", 5263, "Posição Inicial", "NATUR", src_coords, "Caminho do 42");
+                    LineGraph l_graph(s_l, 5264, walking_distance);
+
+                    list<int> path = l_graph.dijkstra_distance_path(s_l, 5263, dest_id).second;
+                    this->print_best_path(path, l_graph, stop, s_l);
+                }
                 break;
             case 4: //menor numero de zonas
-                ZoneGraph z_graph();
+                { 
+                    Stops stop;
+                    stop.add_stop("SOURCE", 2488, "Posição Inicial", "NATUR", src_coords);
+                    ZoneGraph z_graph(stop, lines, 2488, walking_distance);
+
+                    for (int i = 1; i <= NUM_STOPS; i++) {
+                        if (haversine(stop.get_coords(i), src_coords) <= walking_distance) {
+                            z_graph.add_edge(2488, i, 0, "A pé");
+                        }
+                    }
+                    
+                    path = z_graph.dijkstra_distance_path(stop, 2488, dest_id).second;
+                    this->print_best_path(path, z_graph, stops);
+                }
                 break;
         } 
     } 
@@ -269,7 +359,7 @@ void Menu::print_best_path(std::list<int> path, DistanceGraph graph, const Stops
 
 void Menu::print_best_path(std::list<int> path, LineGraph l_graph, const Stops& s, const StopsAndLines& s_l) {
     for (auto it = path.begin(); it != path.end(); it++) {
-        std::cout << "-> linha usada: " << l_graph.get_nodes()[*it].line_used << " - " << s.get_name(stops_and_lines.get_code_line(*it).first) << " (" << s_l.get_code_line(*it).first << ")" << " - " << s.get_zone(stops_and_lines.get_code_line(*it).first) << " - distância disponivel: " << l_graph.get_nodes()[*it].distance_available << std::endl;
+        std::cout << "-> linha usada: " << l_graph.get_nodes()[*it].line_used << " - " << s.get_name(s_l.get_code_line(*it).first) << " (" << s_l.get_code_line(*it).first << ")" << " - " << s.get_zone(s_l.get_code_line(*it).first) << " - distância disponivel: " << l_graph.get_nodes()[*it].distance_available << std::endl;
     }
 }
 

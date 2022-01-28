@@ -12,7 +12,7 @@ void ZoneGraph::connect_nearby_stops(const Stops& stops, int curr_node_id, doubl
     int size = this->nodes.size();
     for (int j = 1; j < size; j++)                
         if (curr_node_id != j && haversine(stops.get_coords(curr_node_id), stops.get_coords(j)) <= distance) {    
-            this->add_edge(curr_node_id, j, 0, "A pé"); // you only need to pay when using a 
+            this->add_edge(curr_node_id, j, 0, "A pé"); // you only need to pay when changing zones inside the bus
         }
 }
 
