@@ -31,7 +31,7 @@ private:
 
     void add_edge(int src, int dest, int weight, std::string line);
 
-    void dijkstra(int s);
+    void dijkstra(const Stops& stops, int s);
 
 public:
     ZoneGraph(const Stops& stops, const Lines& lines, int num, double distance);

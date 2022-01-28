@@ -22,6 +22,7 @@ struct LineNode {
     double distance_available;
     int pred;
     int dist;
+    bool connected_nearby_stops = false;
 };
 
 class LineGraph {
@@ -32,13 +33,16 @@ private:
 
     std::vector<LineNode> nodes;
 
+    void connect_begin_and_end_stops(const StopsAndLines& stops_and_lines, int curr_node_id);
+
     void connect_nearby_stops(const StopsAndLines& stops_and_lines, int curr_node_id, double distance);
 
     void build_graph(const StopsAndLines& stops_and_lines, double distance);
 
     void add_edge(int src, int dest, int weight, std::string line);
 
-    void dijkstra(int s);
+    void dijkstra(const StopsAndLines& stops_and_lines, int s, int d);
+
 
 public:
     LineGraph(const StopsAndLines& stops_and_lines, int num, double distance);

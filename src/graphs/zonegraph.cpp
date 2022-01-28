@@ -9,9 +9,16 @@ ZoneGraph::ZoneGraph(const Stops& stops, const Lines& lines, int num, double dis
 
 
 void ZoneGraph::connect_nearby_stops(const Stops& stops, int curr_node_id, double distance) {
-
+    int size = this->nodes.size();
+    for (int j = 1; j < size; j++)                
+        if (curr_node_id != j && haversine(stops.get_coords(curr_node_id), stops.get_coords(j)) <= distance) {
+            if (stops.get_name_zone(curr_node_id) != stops.get_name_zone(j)) {
+                this->add_edge(curr_node_id, j, 1, "A pé");
+            } else {
+                this->add_edge(curr_node_id, j, 0, "A pé");
+            }
+        }
 }
-
 
 void ZoneGraph::build_graph(const Stops& stops, const Lines& lines, double distance) {
     std::string curr_line, src_zone, dest_zone;
@@ -45,7 +52,7 @@ void ZoneGraph::add_edge(int src, int dest, int weight, std::string line) {
 
 
 //dijkstra original - tem de se mudar para o pretendido
-void ZoneGraph::dijkstra(int s) {
+void ZoneGraph::dijkstra(const Stops& stops, int s) {
     MinHeap<int, int> q(n, -1);
 
     for (int v=1; v<=n; v++) {
@@ -57,10 +64,13 @@ void ZoneGraph::dijkstra(int s) {
     nodes[s].dist = 0;
     q.decreaseKey(s, 0);
     nodes[s].pred = s;
+    nodes[s].distance_available = this->distance;
+    nodes[s].line_used = "A pé";
 
-    while (q.getSize()>0) {
+    while (q.getSize() > 0) {
         int u = q.removeMin();
         // cout << "Node " << u << " with dist = " << nodes[u].dist << endl;
+        this->connect_nearby_stops(stops, u, nodes[u].distance_available);
         nodes[u].visited = true;
         for (auto e : nodes[u].adj) {
             int v = e.dest;
@@ -69,6 +79,8 @@ void ZoneGraph::dijkstra(int s) {
                 nodes[v].dist = nodes[u].dist + w;
                 q.decreaseKey(v, nodes[v].dist);
                 nodes[v].pred = u;
+                nodes[v].line_used = e.line;
+                nodes[v].distance_available = e.line == "A pé" ? nodes[u].distance_available - haversine(stops.get_coords(u), stops.get_coords(v)) : nodes[u].distance_available;
             }
         }
     }
@@ -77,7 +89,15 @@ void ZoneGraph::dijkstra(int s) {
 
 //dijkstra path original - tem de se mudar para o pretendido
 std::list<int> ZoneGraph::dijkstra_path(const Stops& stops, int src, int dest) {
-    dijkstra(src);
+
+    MinHeap<int, int> q(n, -1);
+    for (int v=1; v<=n; v++) {
+        nodes[v].dist = INF;
+        q.insert(v, INF);
+        nodes[v].visited = false;
+    }
+
+    dijkstra(stops, src);
     std::list<int> path;
 
     if (nodes[dest].dist == INF) return path;

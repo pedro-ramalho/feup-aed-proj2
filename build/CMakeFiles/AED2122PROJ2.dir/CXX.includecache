@@ -7,9 +7,9 @@
 #IncludeRegexTransform: 
 
 /home/pedro/feup-aed-proj2/headers/graphs/distancegraph.h
-../../headers/stops.h
+../stops.h
 /home/pedro/feup-aed-proj2/headers/stops.h
-../../headers/lines.h
+../lines.h
 /home/pedro/feup-aed-proj2/headers/lines.h
 list
 -
@@ -28,7 +28,29 @@ climits
 ../../headers/minheap.h
 /home/pedro/feup-aed-proj2/headers/minheap.h
 
+/home/pedro/feup-aed-proj2/headers/graphs/linegraph.h
+list
+-
+vector
+-
+string
+-
+climits
+-
+../../headers/minheap.h
+/home/pedro/feup-aed-proj2/headers/minheap.h
+../../headers/stopsandlines.h
+/home/pedro/feup-aed-proj2/headers/stopsandlines.h
+
 /home/pedro/feup-aed-proj2/headers/graphs/stopgraph.h
+../../headers/stops.h
+/home/pedro/feup-aed-proj2/headers/stops.h
+../../headers/lines.h
+/home/pedro/feup-aed-proj2/headers/lines.h
+list
+-
+
+/home/pedro/feup-aed-proj2/headers/graphs/zonegraph.h
 ../../headers/stops.h
 /home/pedro/feup-aed-proj2/headers/stops.h
 ../../headers/lines.h
@@ -133,8 +155,10 @@ headers/graphs/stopgraph.h
 /home/pedro/feup-aed-proj2/headers/graphs/stopgraph.h
 headers/graphs/distancegraph.h
 /home/pedro/feup-aed-proj2/headers/graphs/distancegraph.h
-
-/home/pedro/feup-aed-proj2/src/graphs/distancegraph.cpp
-../../headers/graphs/distancegraph.h
-/home/pedro/feup-aed-proj2/headers/graphs/distancegraph.h
+headers/graphs/zonegraph.h
+/home/pedro/feup-aed-proj2/headers/graphs/zonegraph.h
+headers/graphs/linegraph.h
+/home/pedro/feup-aed-proj2/headers/graphs/linegraph.h
+chrono
+-
 

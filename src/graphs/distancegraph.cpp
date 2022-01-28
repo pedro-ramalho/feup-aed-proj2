@@ -11,6 +11,7 @@ void DistanceGraph::connect_nearby_stops(const Stops& stops, int curr_node_id, d
     for (int j = 1; j < size; j++)                
         if (curr_node_id != j && haversine(stops.get_coords(curr_node_id), stops.get_coords(j)) <= distance) {
             this->add_edge(curr_node_id, j, haversine(stops.get_coords(curr_node_id), stops.get_coords(j)), "A pé"); 
+            //std::cout << haversine(stops.get_coords(curr_node_id), stops.get_coords(j)) << std::endl;
         }
 }
 
@@ -35,7 +36,7 @@ void DistanceGraph::build_graph(const Stops& stops, const Lines& lines, double d
             src_coords = stops.get_coords(src_stop_id);
             dest_coords = stops.get_coords(dest_stop_id);
             distance = haversine(src_coords, dest_coords);
-
+            //std::cout << "build graph dist=" << distance << std::endl;
             curr_line = path.substr(8, path.size() - 12); 
 
             this->add_edge(src_stop_id, dest_stop_id, distance, curr_line);
@@ -52,26 +53,47 @@ void DistanceGraph::add_edge(int src, int dest, double weight, std::string line)
 
 
 //dijkstra original - tem de se mudar para o pretendido
-void DistanceGraph::dijkstra(int s) {
+void DistanceGraph::dijkstra(const Stops& stops, int s) {
     MinHeap<int, int> q(n, -1);
     for (int v=1; v<=n; v++) {
         nodes[v].dist = INF;
         q.insert(v, INF);
         nodes[v].visited = false;
     }
+
     nodes[s].dist = 0;
     q.decreaseKey(s, 0);
     nodes[s].pred = s;
+    nodes[s].distance_available = this->distance;
+    nodes[s].line_used = "A pé";
+    //std::cout << distance << " no nó: " <<  nodes[s].distance_available << std::endl;
+
     while (q.getSize()>0) {
         int u = q.removeMin();
+        //std::cout << "u = " << u << std::endl;
+        this->connect_nearby_stops(stops, u, nodes[u].distance_available);
         nodes[u].visited = true;
         for (auto e : nodes[u].adj) {
+            //std::cout << "edge = " << e.weight << std::endl;
             int v = e.dest;
-            int w = e.weight;
+            double w = e.weight;
+            //std::cout << "weight = " << w << std::endl;
             if (!nodes[v].visited && nodes[u].dist + w < nodes[v].dist) {
                 nodes[v].dist = nodes[u].dist + w;
                 q.decreaseKey(v, nodes[v].dist);
                 nodes[v].pred = u;
+                nodes[v].line_used = e.line;
+                //std::cout << "nodes[v].line_used = " << nodes[v].line_used << std::endl;
+                if (e.line == "A pé") {
+                    //std::cout << "Distance available before: " << nodes[u].distance_available << std::endl;
+                    //std::cout << "Weight: " << w << std::endl;
+                    nodes[v].distance_available = nodes[u].distance_available - w;
+                    //std::cout << "Distance available after: " << nodes[v].distance_available << std::endl;
+                } else {
+                    nodes[v].distance_available = nodes[u].distance_available; 
+                }
+            
+                //nodes[v].distance_available = e.line == "A pé" ? nodes[u].distance_available - w : nodes[u].distance_available;
             }
         }
     }
@@ -79,11 +101,12 @@ void DistanceGraph::dijkstra(int s) {
 
 
 //dijkstra path original - tem de se mudar para o pretendido
-std::list<int> DistanceGraph::dijkstra_path(int src, int dest) {
+std::list<int> DistanceGraph::dijkstra_path(const Stops& stops, int src, int dest) {
     std::cout << "Entrei no dijkstra path" << std::endl;
-    dijkstra(src);
+    dijkstra(stops, src);
     std::cout << "Fiz o dijkstra(src)" << std::endl;
     std::list<int> path;
+    
     if (nodes[dest].dist == INF) return path;
     path.push_back(dest);
     int v = dest;

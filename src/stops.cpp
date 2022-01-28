@@ -22,6 +22,10 @@ void Stops::read_stops_file() {
 
         code_id.insert({values.at(0), id});
         id_to_code.insert({id, values.at(0)});
+
+        code_to_zone.insert({values.at(0), values.at(2)});
+        code_to_name.insert({values.at(0), values.at(1)});
+        
         id_name_zone.insert({id, std::make_pair(values.at(1), values.at(2))});
         id_coords.insert({id, std::make_pair(std::stod(values.at(3)), std::stod(values.at(4)))});
 
@@ -32,6 +36,14 @@ void Stops::read_stops_file() {
 
 int Stops::get_id(std::string code) const {
     return code_id.at(code);
+}
+
+std::string Stops::get_name(std::string code) const {
+    return code_to_name.at(code);
+}
+
+std::string Stops::get_zone(std::string code) const {
+    return code_to_zone.at(code);
 }
 
 std::string Stops::get_code(int id) const {

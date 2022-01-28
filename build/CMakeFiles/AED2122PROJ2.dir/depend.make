@@ -3,7 +3,9 @@
 
 CMakeFiles/AED2122PROJ2.dir/main.cpp.o: ../headers/graphs/distancegraph.h
 CMakeFiles/AED2122PROJ2.dir/main.cpp.o: ../headers/graphs/graph.h
+CMakeFiles/AED2122PROJ2.dir/main.cpp.o: ../headers/graphs/linegraph.h
 CMakeFiles/AED2122PROJ2.dir/main.cpp.o: ../headers/graphs/stopgraph.h
+CMakeFiles/AED2122PROJ2.dir/main.cpp.o: ../headers/graphs/zonegraph.h
 CMakeFiles/AED2122PROJ2.dir/main.cpp.o: ../headers/lines.h
 CMakeFiles/AED2122PROJ2.dir/main.cpp.o: ../headers/minheap.h
 CMakeFiles/AED2122PROJ2.dir/main.cpp.o: ../headers/stops.h

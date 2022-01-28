@@ -4,7 +4,9 @@
 CMakeFiles/AED2122PROJ2.dir/main.cpp.o
  /home/pedro/feup-aed-proj2/headers/graphs/distancegraph.h
  /home/pedro/feup-aed-proj2/headers/graphs/graph.h
+ /home/pedro/feup-aed-proj2/headers/graphs/linegraph.h
  /home/pedro/feup-aed-proj2/headers/graphs/stopgraph.h
+ /home/pedro/feup-aed-proj2/headers/graphs/zonegraph.h
  /home/pedro/feup-aed-proj2/headers/lines.h
  /home/pedro/feup-aed-proj2/headers/minheap.h
  /home/pedro/feup-aed-proj2/headers/stops.h

@@ -1,5 +1,6 @@
-#include "../../headers/stops.h"
-#include "../../headers/lines.h"
+#include "../stops.h"
+#include "../lines.h"
+
 #include <list>
 
 struct DistanceEdge {
@@ -31,12 +32,12 @@ private:
 
     void add_edge(int src, int dest, double weight, std::string line);
 
-    void dijkstra(int s);
+    void dijkstra(const Stops& stops, int s);
 
 public:
     DistanceGraph(const Stops& stops, const Lines& lines, int num, double distance);
 
     std::vector<DistanceNode> get_nodes();
 
-    std::list<int> dijkstra_path(int src, int dest);
+    std::list<int> dijkstra_path(const Stops& stops, int src, int dest);
 };

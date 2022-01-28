@@ -21,6 +21,10 @@ private:
 
     std::map<int, std::pair<double, double>> id_coords;
 
+    std::map<std::string, std::string> code_to_zone;
+
+    std::map<std::string, std::string> code_to_name;
+
     const std::string STOPS_FILE = "dataset/stops.csv";
 
     void read_stops_file();
@@ -30,6 +34,10 @@ public:
     int get_id(std::string code) const;
 
     std::string get_code(int id) const;
+
+    std::string get_zone(std::string code) const;
+
+    std::string get_name(std::string code) const;
 
     std::pair<std::string, std::string> get_name_zone(int id) const;
 

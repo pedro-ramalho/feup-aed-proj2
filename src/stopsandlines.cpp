@@ -22,10 +22,23 @@ void StopsAndLines::read_stops_and_lines() {
             
             id_to_coords.insert({id, cords});
             id_to_line.insert({id, curr_line});
+            id_to_code_line.insert({id, std::make_pair(word, curr_line)});
             id++;
         }
         file.close();
     }
+}
+
+std::string StopsAndLines::get_zone(int id) const {
+    return id_to_zone.at(id);
+}
+
+std::vector<std::string> StopsAndLines::get_codes(std::string path) const {
+    return lines.get_line_stops(path);
+}
+
+std::pair<std::string, std::string> StopsAndLines::get_code_line(int id) const {
+    return id_to_code_line.at(id);
 }
 
 std::vector<std::string> StopsAndLines::get_line_paths() const {

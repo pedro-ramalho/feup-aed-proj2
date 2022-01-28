@@ -199,7 +199,7 @@ void Graph::dijkstra(int s) {
                 nodes[v].dist = nodes[u].dist + w;
                 q.decreaseKey(v, nodes[v].dist);
                 nodes[v].pred = u;
-            }
+            } 
         }
     }
 }
