@@ -2,7 +2,7 @@
 #include "../../headers/stops.h"
 #include "../../headers/lines.h"
 
-StopGraph::StopGraph(const Stops& stops, const Lines& lines, int num, double distance) : nodes(num) {
+StopGraph::StopGraph(const Stops& stops, const Lines& lines, int num, double distance) : nodes(num + 1) {
     this->n = num;
     this->distance = distance;
     this->build_graph(stops, lines, distance);
@@ -48,7 +48,7 @@ std::list<int> StopGraph::bfs_path(const Stops& stops, int a, int b) {
     this->nodes[a].visited = true;
     this->nodes[a].pred = a;
     this->nodes[a].distance_available = this->distance;
-    this->nodes[a].line_used = "A pé";
+    this->nodes[a].line_used = "Início";
     q.push(a);
 
     while (!q.empty()) {

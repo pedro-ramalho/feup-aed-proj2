@@ -30,12 +30,12 @@ private:
 
     void build_graph(const Stops& stops, const Lines& lines, double distance);
 
-    void add_edge(int src, int dest, double weight, std::string line);
-
     void dijkstra(const Stops& stops, int s);
 
 public:
     DistanceGraph(const Stops& stops, const Lines& lines, int num, double distance);
+
+    void add_edge(int src, int dest, double weight, std::string line);
 
     std::vector<DistanceNode> get_nodes();
 

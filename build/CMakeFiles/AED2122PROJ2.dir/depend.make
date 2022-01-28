@@ -7,6 +7,7 @@ CMakeFiles/AED2122PROJ2.dir/main.cpp.o: ../headers/graphs/linegraph.h
 CMakeFiles/AED2122PROJ2.dir/main.cpp.o: ../headers/graphs/stopgraph.h
 CMakeFiles/AED2122PROJ2.dir/main.cpp.o: ../headers/graphs/zonegraph.h
 CMakeFiles/AED2122PROJ2.dir/main.cpp.o: ../headers/lines.h
+CMakeFiles/AED2122PROJ2.dir/main.cpp.o: ../headers/menu.h
 CMakeFiles/AED2122PROJ2.dir/main.cpp.o: ../headers/minheap.h
 CMakeFiles/AED2122PROJ2.dir/main.cpp.o: ../headers/stops.h
 CMakeFiles/AED2122PROJ2.dir/main.cpp.o: ../headers/stopsandlines.h
@@ -57,7 +58,17 @@ CMakeFiles/AED2122PROJ2.dir/src/lines.cpp.o: ../headers/stops.h
 CMakeFiles/AED2122PROJ2.dir/src/lines.cpp.o: ../headers/utils.h
 CMakeFiles/AED2122PROJ2.dir/src/lines.cpp.o: ../src/lines.cpp
 
+CMakeFiles/AED2122PROJ2.dir/src/menu.cpp.o: ../headers/graphs/distancegraph.h
+CMakeFiles/AED2122PROJ2.dir/src/menu.cpp.o: ../headers/graphs/graph.h
+CMakeFiles/AED2122PROJ2.dir/src/menu.cpp.o: ../headers/graphs/linegraph.h
+CMakeFiles/AED2122PROJ2.dir/src/menu.cpp.o: ../headers/graphs/stopgraph.h
+CMakeFiles/AED2122PROJ2.dir/src/menu.cpp.o: ../headers/graphs/zonegraph.h
+CMakeFiles/AED2122PROJ2.dir/src/menu.cpp.o: ../headers/lines.h
 CMakeFiles/AED2122PROJ2.dir/src/menu.cpp.o: ../headers/menu.h
+CMakeFiles/AED2122PROJ2.dir/src/menu.cpp.o: ../headers/minheap.h
+CMakeFiles/AED2122PROJ2.dir/src/menu.cpp.o: ../headers/stops.h
+CMakeFiles/AED2122PROJ2.dir/src/menu.cpp.o: ../headers/stopsandlines.h
+CMakeFiles/AED2122PROJ2.dir/src/menu.cpp.o: ../headers/utils.h
 CMakeFiles/AED2122PROJ2.dir/src/menu.cpp.o: ../src/menu.cpp
 
 CMakeFiles/AED2122PROJ2.dir/src/stops.cpp.o: ../headers/stops.h

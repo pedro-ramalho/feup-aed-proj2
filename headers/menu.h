@@ -40,4 +40,14 @@ public:
     void run();
 
     void add_stop(int id, std::pair<double, double> coords);
+
+    void print_best_path(std::list<int> path, StopGraph graph, const Stops& stops);
+    
+    void print_best_path(std::list<int> path, DistanceGraph graph, const Stops& stops);
+
+    void print_best_path(std::list<int> path, LineGraph l_graph, const Stops& s, const StopsAndLines& s_l);
+
+    void print_best_path(std::list<int> path, ZoneGraph graph, const Stops& stops);
+
+
 };

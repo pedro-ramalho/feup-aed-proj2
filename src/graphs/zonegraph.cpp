@@ -11,12 +11,8 @@ ZoneGraph::ZoneGraph(const Stops& stops, const Lines& lines, int num, double dis
 void ZoneGraph::connect_nearby_stops(const Stops& stops, int curr_node_id, double distance) {
     int size = this->nodes.size();
     for (int j = 1; j < size; j++)                
-        if (curr_node_id != j && haversine(stops.get_coords(curr_node_id), stops.get_coords(j)) <= distance) {
-            if (stops.get_name_zone(curr_node_id) != stops.get_name_zone(j)) {
-                this->add_edge(curr_node_id, j, 1, "A pé");
-            } else {
-                this->add_edge(curr_node_id, j, 0, "A pé");
-            }
+        if (curr_node_id != j && haversine(stops.get_coords(curr_node_id), stops.get_coords(j)) <= distance) {    
+            this->add_edge(curr_node_id, j, 0, "A pé"); // you only need to pay when using a 
         }
 }
 
@@ -65,7 +61,7 @@ void ZoneGraph::dijkstra(const Stops& stops, int s) {
     q.decreaseKey(s, 0);
     nodes[s].pred = s;
     nodes[s].distance_available = this->distance;
-    nodes[s].line_used = "A pé";
+    nodes[s].line_used = "Início";
 
     while (q.getSize() > 0) {
         int u = q.removeMin();

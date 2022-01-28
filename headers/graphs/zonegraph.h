@@ -29,7 +29,6 @@ private:
 
     void build_graph(const Stops& stops, const Lines& lines, double distance);
 
-    void add_edge(int src, int dest, int weight, std::string line);
 
     void dijkstra(const Stops& stops, int s);
 
@@ -39,4 +38,7 @@ public:
     std::vector<ZoneNode> get_nodes();
 
     std::pair<int, std::list<int>> dijkstra_distance_path(const Stops& stops, int src, int dest);
+
+    void add_edge(int src, int dest, int weight, std::string line);
+
 };

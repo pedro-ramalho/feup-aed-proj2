@@ -65,7 +65,7 @@ void DistanceGraph::dijkstra(const Stops& stops, int s) {
     q.decreaseKey(s, 0);
     nodes[s].pred = s;
     nodes[s].distance_available = this->distance;
-    nodes[s].line_used = "A pé";
+    nodes[s].line_used = "Início";
     //std::cout << distance << " no nó: " <<  nodes[s].distance_available << std::endl;
 
     while (q.getSize()>0) {

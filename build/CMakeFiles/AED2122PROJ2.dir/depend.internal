@@ -8,6 +8,7 @@ CMakeFiles/AED2122PROJ2.dir/main.cpp.o
  /home/pedro/feup-aed-proj2/headers/graphs/stopgraph.h
  /home/pedro/feup-aed-proj2/headers/graphs/zonegraph.h
  /home/pedro/feup-aed-proj2/headers/lines.h
+ /home/pedro/feup-aed-proj2/headers/menu.h
  /home/pedro/feup-aed-proj2/headers/minheap.h
  /home/pedro/feup-aed-proj2/headers/stops.h
  /home/pedro/feup-aed-proj2/headers/stopsandlines.h
@@ -58,7 +59,17 @@ CMakeFiles/AED2122PROJ2.dir/src/lines.cpp.o
  /home/pedro/feup-aed-proj2/headers/utils.h
  /home/pedro/feup-aed-proj2/src/lines.cpp
 CMakeFiles/AED2122PROJ2.dir/src/menu.cpp.o
+ /home/pedro/feup-aed-proj2/headers/graphs/distancegraph.h
+ /home/pedro/feup-aed-proj2/headers/graphs/graph.h
+ /home/pedro/feup-aed-proj2/headers/graphs/linegraph.h
+ /home/pedro/feup-aed-proj2/headers/graphs/stopgraph.h
+ /home/pedro/feup-aed-proj2/headers/graphs/zonegraph.h
+ /home/pedro/feup-aed-proj2/headers/lines.h
  /home/pedro/feup-aed-proj2/headers/menu.h
+ /home/pedro/feup-aed-proj2/headers/minheap.h
+ /home/pedro/feup-aed-proj2/headers/stops.h
+ /home/pedro/feup-aed-proj2/headers/stopsandlines.h
+ /home/pedro/feup-aed-proj2/headers/utils.h
  /home/pedro/feup-aed-proj2/src/menu.cpp
 CMakeFiles/AED2122PROJ2.dir/src/stops.cpp.o
  /home/pedro/feup-aed-proj2/headers/stops.h
