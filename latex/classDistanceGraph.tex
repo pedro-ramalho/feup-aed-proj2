@@ -1,0 +1,102 @@
+\hypertarget{classDistanceGraph}{}\doxysection{Distance\+Graph Class Reference}
+\label{classDistanceGraph}\index{DistanceGraph@{DistanceGraph}}
+
+
+{\ttfamily \#include $<$distancegraph.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDistanceGraph_a4e3a06de73aa4150b33752d67b9da4bb}{Distance\+Graph}} (const \mbox{\hyperlink{classStops}{Stops}} \&stops, const \mbox{\hyperlink{classLines}{Lines}} \&lines, int num, double distance)
+\begin{DoxyCompactList}\small\item\em Construct a new Distance \mbox{\hyperlink{classGraph}{Graph}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDistanceGraph_a8d276dccc04d6c4c9a0517e54d2a10b0}{add\+\_\+edge}} (int src, int dest, double weight, std\+::string line)
+\begin{DoxyCompactList}\small\item\em Add an edge to a node. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{structDistanceNode}{Distance\+Node}} $>$ \mbox{\hyperlink{classDistanceGraph_ac985cfbe13c6b8b58dd0f37d29c26ee9}{get\+\_\+nodes}} ()
+\begin{DoxyCompactList}\small\item\em Get the nodes object. \end{DoxyCompactList}\item 
+std\+::pair$<$ double, std\+::list$<$ int $>$ $>$ \mbox{\hyperlink{classDistanceGraph_a23524df54f3d4eb188f6b4107b8ab380}{dijkstra\+\_\+distance\+\_\+path}} (const \mbox{\hyperlink{classStops}{Stops}} \&stops, int src, int dest)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDistanceGraph_a4e3a06de73aa4150b33752d67b9da4bb}\label{classDistanceGraph_a4e3a06de73aa4150b33752d67b9da4bb}} 
+\index{DistanceGraph@{DistanceGraph}!DistanceGraph@{DistanceGraph}}
+\index{DistanceGraph@{DistanceGraph}!DistanceGraph@{DistanceGraph}}
+\doxysubsubsection{\texorpdfstring{DistanceGraph()}{DistanceGraph()}}
+{\footnotesize\ttfamily Distance\+Graph\+::\+Distance\+Graph (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classStops}{Stops}} \&}]{stops,  }\item[{const \mbox{\hyperlink{classLines}{Lines}} \&}]{lines,  }\item[{int}]{num,  }\item[{double}]{distance }\end{DoxyParamCaption})}
+
+
+
+Construct a new Distance \mbox{\hyperlink{classGraph}{Graph}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stops} & all the existing stops \\
+\hline
+{\em lines} & all the existing lines \\
+\hline
+{\em num} & the number of notes in the graph \\
+\hline
+{\em distance} & the max distance to which you can connect a stop to the current one \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDistanceGraph_a8d276dccc04d6c4c9a0517e54d2a10b0}\label{classDistanceGraph_a8d276dccc04d6c4c9a0517e54d2a10b0}} 
+\index{DistanceGraph@{DistanceGraph}!add\_edge@{add\_edge}}
+\index{add\_edge@{add\_edge}!DistanceGraph@{DistanceGraph}}
+\doxysubsubsection{\texorpdfstring{add\_edge()}{add\_edge()}}
+{\footnotesize\ttfamily void Distance\+Graph\+::add\+\_\+edge (\begin{DoxyParamCaption}\item[{int}]{src,  }\item[{int}]{dest,  }\item[{double}]{weight,  }\item[{std\+::string}]{line }\end{DoxyParamCaption})}
+
+
+
+Add an edge to a node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & the starting node \\
+\hline
+{\em dest} & the destination node \\
+\hline
+{\em weight} & the weight of the edge \\
+\hline
+{\em line} & the line the edge is a fragment of \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDistanceGraph_a23524df54f3d4eb188f6b4107b8ab380}\label{classDistanceGraph_a23524df54f3d4eb188f6b4107b8ab380}} 
+\index{DistanceGraph@{DistanceGraph}!dijkstra\_distance\_path@{dijkstra\_distance\_path}}
+\index{dijkstra\_distance\_path@{dijkstra\_distance\_path}!DistanceGraph@{DistanceGraph}}
+\doxysubsubsection{\texorpdfstring{dijkstra\_distance\_path()}{dijkstra\_distance\_path()}}
+{\footnotesize\ttfamily std\+::pair$<$ double, std\+::list$<$ int $>$ $>$ Distance\+Graph\+::dijkstra\+\_\+distance\+\_\+path (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classStops}{Stops}} \&}]{stops,  }\item[{int}]{src,  }\item[{int}]{dest }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em stops} & all the existing nodes \\
+\hline
+{\em src} & the starting node \\
+\hline
+{\em dest} & the destination node \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pair containing the distance travelled and the path 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDistanceGraph_ac985cfbe13c6b8b58dd0f37d29c26ee9}\label{classDistanceGraph_ac985cfbe13c6b8b58dd0f37d29c26ee9}} 
+\index{DistanceGraph@{DistanceGraph}!get\_nodes@{get\_nodes}}
+\index{get\_nodes@{get\_nodes}!DistanceGraph@{DistanceGraph}}
+\doxysubsubsection{\texorpdfstring{get\_nodes()}{get\_nodes()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{structDistanceNode}{Distance\+Node}} $>$ Distance\+Graph\+::get\+\_\+nodes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the nodes object. 
+
+\begin{DoxyReturn}{Returns}
+the vector of nodes in the graph 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+headers/graphs/\mbox{\hyperlink{distancegraph_8h}{distancegraph.\+h}}\item 
+src/graphs/\mbox{\hyperlink{distancegraph_8cpp}{distancegraph.\+cpp}}\end{DoxyCompactItemize}

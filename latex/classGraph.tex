@@ -1,0 +1,157 @@
+\hypertarget{classGraph}{}\doxysection{Graph Class Reference}
+\label{classGraph}\index{Graph@{Graph}}
+
+
+{\ttfamily \#include $<$graph.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGraph_a1e237f6bb06396d1fe4b974def196d08}{Graph}} (int nodes, bool has\+\_\+dir)
+\item 
+void \mbox{\hyperlink{classGraph_a645592c7b6b4417f7e0df981902166d2}{add\+\_\+edge}} (int src, int dest, double weight, std\+::string line)
+\item 
+void \mbox{\hyperlink{classGraph_af81888a45922aa1839fe0262bd0ca7b3}{dfs}} (int v)
+\item 
+int \mbox{\hyperlink{classGraph_a1ef552e905ba104d673a81c70a55729c}{dfs\+\_\+counter}} (int v)
+\item 
+void \mbox{\hyperlink{classGraph_a9594f5f322257c9773e004e2b37d58e2}{dfs\+\_\+topological}} (int v, std\+::list$<$ int $>$ \&order)
+\item 
+void \mbox{\hyperlink{classGraph_ae1e45e27c60711dadec619ca17e830a4}{bfs}} (int v)
+\item 
+std\+::list$<$ int $>$ \mbox{\hyperlink{classGraph_aec45c9d2783d77857cdce116e221d821}{bfs\+\_\+path}} (int a, int b)
+\item 
+int \mbox{\hyperlink{classGraph_a2dd7a5caecf73847fae3f270715cb2b2}{bfs\+\_\+distances}} (int a, int b)
+\item 
+int \mbox{\hyperlink{classGraph_a3c6df034f1e2cdd181ab7f8a174579f8}{out\+\_\+degree}} (int v)
+\item 
+int \mbox{\hyperlink{classGraph_af3ba0bda620d0279ff5f4b110c41e25a}{connected\+\_\+components}} ()
+\item 
+int \mbox{\hyperlink{classGraph_ae373105fe4d9776a104a6927c59ae883}{giant\+\_\+component}} ()
+\item 
+int \mbox{\hyperlink{classGraph_a5a816844b989c28c01b97015ab8868e4}{distance}} (int a, int b)
+\item 
+std\+::list$<$ int $>$ \mbox{\hyperlink{classGraph_a96174487425e4d616ca8454d0d4844a0}{topological\+\_\+sorting}} ()
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structNode}{Node}} $>$ \mbox{\hyperlink{classGraph_ab706209e37def1f5318ec45612b6cc86}{get\+\_\+nodes}} ()
+\item 
+void \mbox{\hyperlink{classGraph_a46d2cc0c6f599257ebcbaf234196ee88}{dijkstra}} (int s)
+\item 
+std\+::list$<$ int $>$ \mbox{\hyperlink{classGraph_a7828b05645a1baea2095ada971df262f}{dijkstra\+\_\+path}} (int a, int b)
+\item 
+int \mbox{\hyperlink{classGraph_a41d0da4f9e4a809cdbbc4c49db9f074e}{dijkstra\+\_\+distance}} (int a, int b)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGraph_a1e237f6bb06396d1fe4b974def196d08}\label{classGraph_a1e237f6bb06396d1fe4b974def196d08}} 
+\index{Graph@{Graph}!Graph@{Graph}}
+\index{Graph@{Graph}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{Graph()}{Graph()}}
+{\footnotesize\ttfamily Graph\+::\+Graph (\begin{DoxyParamCaption}\item[{int}]{nodes,  }\item[{bool}]{has\+\_\+dir }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGraph_a645592c7b6b4417f7e0df981902166d2}\label{classGraph_a645592c7b6b4417f7e0df981902166d2}} 
+\index{Graph@{Graph}!add\_edge@{add\_edge}}
+\index{add\_edge@{add\_edge}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{add\_edge()}{add\_edge()}}
+{\footnotesize\ttfamily void Graph\+::add\+\_\+edge (\begin{DoxyParamCaption}\item[{int}]{src,  }\item[{int}]{dest,  }\item[{double}]{weight,  }\item[{std\+::string}]{line }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classGraph_ae1e45e27c60711dadec619ca17e830a4}\label{classGraph_ae1e45e27c60711dadec619ca17e830a4}} 
+\index{Graph@{Graph}!bfs@{bfs}}
+\index{bfs@{bfs}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{bfs()}{bfs()}}
+{\footnotesize\ttfamily void Graph\+::bfs (\begin{DoxyParamCaption}\item[{int}]{v }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classGraph_a2dd7a5caecf73847fae3f270715cb2b2}\label{classGraph_a2dd7a5caecf73847fae3f270715cb2b2}} 
+\index{Graph@{Graph}!bfs\_distances@{bfs\_distances}}
+\index{bfs\_distances@{bfs\_distances}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{bfs\_distances()}{bfs\_distances()}}
+{\footnotesize\ttfamily int Graph\+::bfs\+\_\+distances (\begin{DoxyParamCaption}\item[{int}]{a,  }\item[{int}]{b }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classGraph_aec45c9d2783d77857cdce116e221d821}\label{classGraph_aec45c9d2783d77857cdce116e221d821}} 
+\index{Graph@{Graph}!bfs\_path@{bfs\_path}}
+\index{bfs\_path@{bfs\_path}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{bfs\_path()}{bfs\_path()}}
+{\footnotesize\ttfamily std\+::list$<$ int $>$ Graph\+::bfs\+\_\+path (\begin{DoxyParamCaption}\item[{int}]{a,  }\item[{int}]{b }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classGraph_af3ba0bda620d0279ff5f4b110c41e25a}\label{classGraph_af3ba0bda620d0279ff5f4b110c41e25a}} 
+\index{Graph@{Graph}!connected\_components@{connected\_components}}
+\index{connected\_components@{connected\_components}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{connected\_components()}{connected\_components()}}
+{\footnotesize\ttfamily int Graph\+::connected\+\_\+components (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classGraph_af81888a45922aa1839fe0262bd0ca7b3}\label{classGraph_af81888a45922aa1839fe0262bd0ca7b3}} 
+\index{Graph@{Graph}!dfs@{dfs}}
+\index{dfs@{dfs}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{dfs()}{dfs()}}
+{\footnotesize\ttfamily void Graph\+::dfs (\begin{DoxyParamCaption}\item[{int}]{v }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classGraph_a1ef552e905ba104d673a81c70a55729c}\label{classGraph_a1ef552e905ba104d673a81c70a55729c}} 
+\index{Graph@{Graph}!dfs\_counter@{dfs\_counter}}
+\index{dfs\_counter@{dfs\_counter}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{dfs\_counter()}{dfs\_counter()}}
+{\footnotesize\ttfamily int Graph\+::dfs\+\_\+counter (\begin{DoxyParamCaption}\item[{int}]{v }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classGraph_a9594f5f322257c9773e004e2b37d58e2}\label{classGraph_a9594f5f322257c9773e004e2b37d58e2}} 
+\index{Graph@{Graph}!dfs\_topological@{dfs\_topological}}
+\index{dfs\_topological@{dfs\_topological}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{dfs\_topological()}{dfs\_topological()}}
+{\footnotesize\ttfamily void Graph\+::dfs\+\_\+topological (\begin{DoxyParamCaption}\item[{int}]{v,  }\item[{std\+::list$<$ int $>$ \&}]{order }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classGraph_a46d2cc0c6f599257ebcbaf234196ee88}\label{classGraph_a46d2cc0c6f599257ebcbaf234196ee88}} 
+\index{Graph@{Graph}!dijkstra@{dijkstra}}
+\index{dijkstra@{dijkstra}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{dijkstra()}{dijkstra()}}
+{\footnotesize\ttfamily void Graph\+::dijkstra (\begin{DoxyParamCaption}\item[{int}]{s }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classGraph_a41d0da4f9e4a809cdbbc4c49db9f074e}\label{classGraph_a41d0da4f9e4a809cdbbc4c49db9f074e}} 
+\index{Graph@{Graph}!dijkstra\_distance@{dijkstra\_distance}}
+\index{dijkstra\_distance@{dijkstra\_distance}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{dijkstra\_distance()}{dijkstra\_distance()}}
+{\footnotesize\ttfamily int Graph\+::dijkstra\+\_\+distance (\begin{DoxyParamCaption}\item[{int}]{a,  }\item[{int}]{b }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classGraph_a7828b05645a1baea2095ada971df262f}\label{classGraph_a7828b05645a1baea2095ada971df262f}} 
+\index{Graph@{Graph}!dijkstra\_path@{dijkstra\_path}}
+\index{dijkstra\_path@{dijkstra\_path}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{dijkstra\_path()}{dijkstra\_path()}}
+{\footnotesize\ttfamily std\+::list$<$ int $>$ Graph\+::dijkstra\+\_\+path (\begin{DoxyParamCaption}\item[{int}]{a,  }\item[{int}]{b }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classGraph_a5a816844b989c28c01b97015ab8868e4}\label{classGraph_a5a816844b989c28c01b97015ab8868e4}} 
+\index{Graph@{Graph}!distance@{distance}}
+\index{distance@{distance}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{distance()}{distance()}}
+{\footnotesize\ttfamily int Graph\+::distance (\begin{DoxyParamCaption}\item[{int}]{a,  }\item[{int}]{b }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classGraph_ab706209e37def1f5318ec45612b6cc86}\label{classGraph_ab706209e37def1f5318ec45612b6cc86}} 
+\index{Graph@{Graph}!get\_nodes@{get\_nodes}}
+\index{get\_nodes@{get\_nodes}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{get\_nodes()}{get\_nodes()}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{structNode}{Node}}$>$ Graph\+::get\+\_\+nodes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classGraph_ae373105fe4d9776a104a6927c59ae883}\label{classGraph_ae373105fe4d9776a104a6927c59ae883}} 
+\index{Graph@{Graph}!giant\_component@{giant\_component}}
+\index{giant\_component@{giant\_component}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{giant\_component()}{giant\_component()}}
+{\footnotesize\ttfamily int Graph\+::giant\+\_\+component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classGraph_a3c6df034f1e2cdd181ab7f8a174579f8}\label{classGraph_a3c6df034f1e2cdd181ab7f8a174579f8}} 
+\index{Graph@{Graph}!out\_degree@{out\_degree}}
+\index{out\_degree@{out\_degree}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{out\_degree()}{out\_degree()}}
+{\footnotesize\ttfamily int Graph\+::out\+\_\+degree (\begin{DoxyParamCaption}\item[{int}]{v }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classGraph_a96174487425e4d616ca8454d0d4844a0}\label{classGraph_a96174487425e4d616ca8454d0d4844a0}} 
+\index{Graph@{Graph}!topological\_sorting@{topological\_sorting}}
+\index{topological\_sorting@{topological\_sorting}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{topological\_sorting()}{topological\_sorting()}}
+{\footnotesize\ttfamily std\+::list$<$ int $>$ Graph\+::topological\+\_\+sorting (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+headers/graphs/\mbox{\hyperlink{graph_8h}{graph.\+h}}\item 
+src/graphs/\mbox{\hyperlink{graph_8cpp}{graph.\+cpp}}\end{DoxyCompactItemize}

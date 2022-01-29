@@ -1,0 +1,81 @@
+\hypertarget{classLineGraph}{}\doxysection{Line\+Graph Class Reference}
+\label{classLineGraph}\index{LineGraph@{LineGraph}}
+
+
+{\ttfamily \#include $<$linegraph.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLineGraph_ac92752f21d45e81df84ba10149010cef}{Line\+Graph}} (const \mbox{\hyperlink{classStopsAndLines}{Stops\+And\+Lines}} \&stops\+\_\+and\+\_\+lines, int num, double distance)
+\begin{DoxyCompactList}\small\item\em Construct a new Line \mbox{\hyperlink{classGraph}{Graph}} object. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{structLineNode}{Line\+Node}} $>$ \mbox{\hyperlink{classLineGraph_ad1bba3264e813bd00adce2dfaf5a389d}{get\+\_\+nodes}} ()
+\begin{DoxyCompactList}\small\item\em Get the vector of nodes object. \end{DoxyCompactList}\item 
+std\+::pair$<$ int, std\+::list$<$ int $>$ $>$ \mbox{\hyperlink{classLineGraph_adbc8e92c40ef6811bee56acf5a7c6020}{dijkstra\+\_\+distance\+\_\+path}} (const \mbox{\hyperlink{classStopsAndLines}{Stops\+And\+Lines}} \&stops\+\_\+and\+\_\+lines, int src, int dest)
+\begin{DoxyCompactList}\small\item\em Calculates the best path between \mbox{\hyperlink{structNode}{Node}} src and dest. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classLineGraph_ac92752f21d45e81df84ba10149010cef}\label{classLineGraph_ac92752f21d45e81df84ba10149010cef}} 
+\index{LineGraph@{LineGraph}!LineGraph@{LineGraph}}
+\index{LineGraph@{LineGraph}!LineGraph@{LineGraph}}
+\doxysubsubsection{\texorpdfstring{LineGraph()}{LineGraph()}}
+{\footnotesize\ttfamily Line\+Graph\+::\+Line\+Graph (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classStopsAndLines}{Stops\+And\+Lines}} \&}]{stops\+\_\+and\+\_\+lines,  }\item[{int}]{num,  }\item[{double}]{distance }\end{DoxyParamCaption})}
+
+
+
+Construct a new Line \mbox{\hyperlink{classGraph}{Graph}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stops\+\_\+and\+\_\+lines} & data class storing the pairs(stop, line) \\
+\hline
+{\em num} & number of nodes \\
+\hline
+{\em distance} & distance to connect the \mbox{\hyperlink{classStops}{Stops}} \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLineGraph_adbc8e92c40ef6811bee56acf5a7c6020}\label{classLineGraph_adbc8e92c40ef6811bee56acf5a7c6020}} 
+\index{LineGraph@{LineGraph}!dijkstra\_distance\_path@{dijkstra\_distance\_path}}
+\index{dijkstra\_distance\_path@{dijkstra\_distance\_path}!LineGraph@{LineGraph}}
+\doxysubsubsection{\texorpdfstring{dijkstra\_distance\_path()}{dijkstra\_distance\_path()}}
+{\footnotesize\ttfamily std\+::pair$<$ int, std\+::list$<$ int $>$ $>$ Line\+Graph\+::dijkstra\+\_\+distance\+\_\+path (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classStopsAndLines}{Stops\+And\+Lines}} \&}]{stops\+\_\+and\+\_\+lines,  }\item[{int}]{src,  }\item[{int}]{dest }\end{DoxyParamCaption})}
+
+
+
+Calculates the best path between \mbox{\hyperlink{structNode}{Node}} src and dest. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stops\+\_\+and\+\_\+lines} & data class storing the pairs(stop, line) \\
+\hline
+{\em src} & source node \\
+\hline
+{\em dest} & destination node \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+cost of the path, list of the nodes making up the path 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLineGraph_ad1bba3264e813bd00adce2dfaf5a389d}\label{classLineGraph_ad1bba3264e813bd00adce2dfaf5a389d}} 
+\index{LineGraph@{LineGraph}!get\_nodes@{get\_nodes}}
+\index{get\_nodes@{get\_nodes}!LineGraph@{LineGraph}}
+\doxysubsubsection{\texorpdfstring{get\_nodes()}{get\_nodes()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{structLineNode}{Line\+Node}} $>$ Line\+Graph\+::get\+\_\+nodes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the vector of nodes object. 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+Line\+Node$>$ 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+headers/graphs/\mbox{\hyperlink{linegraph_8h}{linegraph.\+h}}\item 
+src/graphs/\mbox{\hyperlink{linegraph_8cpp}{linegraph.\+cpp}}\end{DoxyCompactItemize}

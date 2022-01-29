@@ -1,0 +1,167 @@
+\hypertarget{classMenu}{}\doxysection{Menu Class Reference}
+\label{classMenu}\index{Menu@{Menu}}
+
+
+{\ttfamily \#include $<$menu.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMenu_ad466dd83355124a6ed958430450bfe94}{Menu}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classMenu}{Menu}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMenu_a0085cb19641e6e8dc6d31a960065fc12}{print\+\_\+prompts}} (std\+::vector$<$ std\+::string $>$ prompts)
+\begin{DoxyCompactList}\small\item\em Print given prompts to screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMenu_a35656cd130e24d69383a5c9d0a73a38c}{run}} ()
+\begin{DoxyCompactList}\small\item\em Main run function of the menu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMenu_a566fe22f672a5ab0179c2869d1f8a1e9}{add\+\_\+stop}} (int id, std\+::pair$<$ double, double $>$ coords)
+\begin{DoxyCompactList}\small\item\em Add a stop to the graph. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMenu_ad9958e7646cbe5aa244011e1d64308a7}{print\+\_\+best\+\_\+path}} (std\+::list$<$ int $>$ path, \mbox{\hyperlink{classStopGraph}{Stop\+Graph}} graph, const \mbox{\hyperlink{classStops}{Stops}} \&stops)
+\begin{DoxyCompactList}\small\item\em Prints out the best path travelling the least amount of stops. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMenu_a502313afda760716d776872f9efea2aa}{print\+\_\+best\+\_\+path}} (std\+::list$<$ int $>$ path, \mbox{\hyperlink{classDistanceGraph}{Distance\+Graph}} graph, const \mbox{\hyperlink{classStops}{Stops}} \&stops)
+\begin{DoxyCompactList}\small\item\em Prints out the best path travelling the least distance. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMenu_a49d06f6b4344a28cff61d68dea7a94fe}{print\+\_\+best\+\_\+path}} (std\+::list$<$ int $>$ path, \mbox{\hyperlink{classLineGraph}{Line\+Graph}} l\+\_\+graph, const \mbox{\hyperlink{classStops}{Stops}} \&s, const \mbox{\hyperlink{classStopsAndLines}{Stops\+And\+Lines}} \&s\+\_\+l)
+\begin{DoxyCompactList}\small\item\em Prints out the best path switching lines the least amount of times. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMenu_a548f7634b656ddb29fedbc80fa5965ac}{print\+\_\+best\+\_\+path}} (std\+::list$<$ int $>$ path, \mbox{\hyperlink{classZoneGraph}{Zone\+Graph}} graph, const \mbox{\hyperlink{classStops}{Stops}} \&stops)
+\begin{DoxyCompactList}\small\item\em Prints out the best path switching zones the least amount of times. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMenu_ad466dd83355124a6ed958430450bfe94}\label{classMenu_ad466dd83355124a6ed958430450bfe94}} 
+\index{Menu@{Menu}!Menu@{Menu}}
+\index{Menu@{Menu}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{Menu()}{Menu()}}
+{\footnotesize\ttfamily Menu\+::\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classMenu}{Menu}} object. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMenu_a566fe22f672a5ab0179c2869d1f8a1e9}\label{classMenu_a566fe22f672a5ab0179c2869d1f8a1e9}} 
+\index{Menu@{Menu}!add\_stop@{add\_stop}}
+\index{add\_stop@{add\_stop}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{add\_stop()}{add\_stop()}}
+{\footnotesize\ttfamily void Menu\+::add\+\_\+stop (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{std\+::pair$<$ double, double $>$}]{coords }\end{DoxyParamCaption})}
+
+
+
+Add a stop to the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID of the stop added \\
+\hline
+{\em coords} & coordinates of the stop \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMenu_a502313afda760716d776872f9efea2aa}\label{classMenu_a502313afda760716d776872f9efea2aa}} 
+\index{Menu@{Menu}!print\_best\_path@{print\_best\_path}}
+\index{print\_best\_path@{print\_best\_path}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{print\_best\_path()}{print\_best\_path()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void Menu\+::print\+\_\+best\+\_\+path (\begin{DoxyParamCaption}\item[{std\+::list$<$ int $>$}]{path,  }\item[{\mbox{\hyperlink{classDistanceGraph}{Distance\+Graph}}}]{graph,  }\item[{const \mbox{\hyperlink{classStops}{Stops}} \&}]{stops }\end{DoxyParamCaption})}
+
+
+
+Prints out the best path travelling the least distance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & the path to be printed out \\
+\hline
+{\em graph} & the graph in question \\
+\hline
+{\em stops} & all the existing stops \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMenu_a49d06f6b4344a28cff61d68dea7a94fe}\label{classMenu_a49d06f6b4344a28cff61d68dea7a94fe}} 
+\index{Menu@{Menu}!print\_best\_path@{print\_best\_path}}
+\index{print\_best\_path@{print\_best\_path}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{print\_best\_path()}{print\_best\_path()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void Menu\+::print\+\_\+best\+\_\+path (\begin{DoxyParamCaption}\item[{std\+::list$<$ int $>$}]{path,  }\item[{\mbox{\hyperlink{classLineGraph}{Line\+Graph}}}]{l\+\_\+graph,  }\item[{const \mbox{\hyperlink{classStops}{Stops}} \&}]{s,  }\item[{const \mbox{\hyperlink{classStopsAndLines}{Stops\+And\+Lines}} \&}]{s\+\_\+l }\end{DoxyParamCaption})}
+
+
+
+Prints out the best path switching lines the least amount of times. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & the path to be printed out \\
+\hline
+{\em l\+\_\+graph} & the graph in question \\
+\hline
+{\em s} & all the existing stops \\
+\hline
+{\em s\+\_\+l} & all the existing pairs of a Stop and a Line \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMenu_ad9958e7646cbe5aa244011e1d64308a7}\label{classMenu_ad9958e7646cbe5aa244011e1d64308a7}} 
+\index{Menu@{Menu}!print\_best\_path@{print\_best\_path}}
+\index{print\_best\_path@{print\_best\_path}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{print\_best\_path()}{print\_best\_path()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void Menu\+::print\+\_\+best\+\_\+path (\begin{DoxyParamCaption}\item[{std\+::list$<$ int $>$}]{path,  }\item[{\mbox{\hyperlink{classStopGraph}{Stop\+Graph}}}]{graph,  }\item[{const \mbox{\hyperlink{classStops}{Stops}} \&}]{stops }\end{DoxyParamCaption})}
+
+
+
+Prints out the best path travelling the least amount of stops. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & the path to be printed out \\
+\hline
+{\em graph} & the graph in question \\
+\hline
+{\em stops} & all the existing stops \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMenu_a548f7634b656ddb29fedbc80fa5965ac}\label{classMenu_a548f7634b656ddb29fedbc80fa5965ac}} 
+\index{Menu@{Menu}!print\_best\_path@{print\_best\_path}}
+\index{print\_best\_path@{print\_best\_path}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{print\_best\_path()}{print\_best\_path()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void Menu\+::print\+\_\+best\+\_\+path (\begin{DoxyParamCaption}\item[{std\+::list$<$ int $>$}]{path,  }\item[{\mbox{\hyperlink{classZoneGraph}{Zone\+Graph}}}]{graph,  }\item[{const \mbox{\hyperlink{classStops}{Stops}} \&}]{stops }\end{DoxyParamCaption})}
+
+
+
+Prints out the best path switching zones the least amount of times. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & the path to be printed out \\
+\hline
+{\em graph} & the graph in question \\
+\hline
+{\em stops} & all the existing stops \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMenu_a0085cb19641e6e8dc6d31a960065fc12}\label{classMenu_a0085cb19641e6e8dc6d31a960065fc12}} 
+\index{Menu@{Menu}!print\_prompts@{print\_prompts}}
+\index{print\_prompts@{print\_prompts}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{print\_prompts()}{print\_prompts()}}
+{\footnotesize\ttfamily void Menu\+::print\+\_\+prompts (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::string $>$}]{prompts }\end{DoxyParamCaption})}
+
+
+
+Print given prompts to screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em prompts} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMenu_a35656cd130e24d69383a5c9d0a73a38c}\label{classMenu_a35656cd130e24d69383a5c9d0a73a38c}} 
+\index{Menu@{Menu}!run@{run}}
+\index{run@{run}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void Menu\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Main run function of the menu. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+headers/\mbox{\hyperlink{menu_8h}{menu.\+h}}\item 
+src/\mbox{\hyperlink{menu_8cpp}{menu.\+cpp}}\end{DoxyCompactItemize}

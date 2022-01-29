@@ -1,11 +1,8 @@
 #include "../headers/menu.h"
 
 Menu::Menu() {
-    this->main_menu_prompts = {"1) Paragem", "2) Local"};
-
-    this->day_night_prompts = {"1) De dia", "2) De noite"};
-    
-    this->bus_ride_prompts = {"1) Menor número de paragens", "2) Menor distância", "3) Menor número de mudanças de linha", "4) Mais barato (passa por menos zonas)"};
+   
+    this->bus_ride_prompts = {"1) Menor número de paragens", "2) Menor distância", "3) Menor número de mudanças de linha", "4) Mais barato (passa por menos zonas)", "0) Sair"};
 
     this->stop_place_prompts = {"1) Paragem", "2) Local"};
 }
@@ -24,23 +21,25 @@ void Menu::run() {
     int criteria = 0;
 
     do {
-        std::cout << "Indique o tipo de percurso que deseja: \n\n";
+        std::cout << "\nIndique o tipo de percurso que deseja: \n\n";
         print_prompts(bus_ride_prompts);
 
         std::cin >> criteria;
+        if (criteria == 0) exit(0);
         clear_screen();
     } while (criteria < 1 || criteria > 4);
 
     double walking_distance = 0;
 
     do {
-        std::cout << "Quanto está disposto a andar?\n";
+        std::cout << "Quanto está disposto a andar (em metros)?\n";
         std::cout << ">> "; std::cin >> walking_distance;
+        walking_distance *= 0.001;
         clear_screen();
     } while (walking_distance < 0);
 
     do {
-        std::cout << "Quer começar numa paragem ou numa posição (coordenadas GPS)?\n\n";
+        std::cout << "Quer começar numa paragem ou num local (coordenadas GPS)?\n\n";
         print_prompts(stop_place_prompts);
 
         std::cin >> choice;
@@ -64,7 +63,7 @@ void Menu::run() {
     choice = 0;
 
     do {
-        std::cout << "Quer terminar numa paragem ou numa posição (coordenadas GPS)?\n\n";
+        std::cout << "Quer terminar numa paragem ou num local (coordenadas GPS)?\n\n";
         print_prompts(stop_place_prompts);
 
         std::cin >> choice;
@@ -92,6 +91,8 @@ void Menu::run() {
 void Menu::best_path(int criteria, double walking_distance, int src_id, int dest_id, std::pair<double, double> src_coords, std::pair<double, double> dest_coords) {
     
     std::list<int> path = std::list<int>();
+
+    std::cout << "\nCalculando o melhor percurso...\n\n";
     
     if (src_id == 0 && dest_id == 0) { //both as positions
         switch (criteria) {
@@ -261,7 +262,7 @@ void Menu::best_path(int criteria, double walking_distance, int src_id, int dest
                     }
                     
                     path = s_graph.bfs_path(stop, 2488, dest_id);
-                    this->print_best_path(path, s_graph, stops);
+                    this->print_best_path(path, s_graph, stop);
                 }
                 break;
             case 2:
@@ -277,7 +278,7 @@ void Menu::best_path(int criteria, double walking_distance, int src_id, int dest
                     }
                     
                     path = d_graph.dijkstra_distance_path(stop, 2488, dest_id).second;
-                    this->print_best_path(path, d_graph, stops);
+                    this->print_best_path(path, d_graph, stop);
                 }
                 break;
             case 3: 
@@ -286,9 +287,9 @@ void Menu::best_path(int criteria, double walking_distance, int src_id, int dest
                     Stops stop;
                     stop.add_stop("SOURCE", 2488, "Posição Inicial", "NATUR", src_coords);
                     s_l.add_stop_and_line("SOURCE", 5263, "Posição Inicial", "NATUR", src_coords, "Caminho do 42");
-                    LineGraph l_graph(s_l, 5264, walking_distance);
+                    LineGraph l_graph(s_l, 5263, walking_distance);
 
-                    list<int> path = l_graph.dijkstra_distance_path(s_l, 5263, dest_id).second;
+                    path = l_graph.dijkstra_distance_path(s_l, 5263, dest_id).second;
                     this->print_best_path(path, l_graph, stop, s_l);
                 }
                 break;
@@ -305,15 +306,11 @@ void Menu::best_path(int criteria, double walking_distance, int src_id, int dest
                     }
                     
                     path = z_graph.dijkstra_distance_path(stop, 2488, dest_id).second;
-                    this->print_best_path(path, z_graph, stops);
+                    this->print_best_path(path, z_graph, stop);
                 }
                 break;
         } 
     } 
-    else {
-        std::cerr << "ERROR AT MEM.ADDR 0x00B00B1E5\n FLUSHING CORE AND DUMPING TO BIOS\n !!CAREFUL!! IP IS VULNERABLE\n" << std::endl;
-    }
-
 }
 
 
@@ -347,19 +344,22 @@ std::pair<double, double> Menu::coords_option() {
 
 void Menu::print_best_path(std::list<int> path, StopGraph graph, const Stops& s) {
     for (auto it = path.begin(); it != path.end(); it++) {
+        std::cout << "*it = " << *it << std::endl;
         std::cout << "-> Linha usada: " << graph.get_nodes()[*it].line_used << " - " << s.get_name_zone(*it).first << " (" << s.get_code(*it) << ")" << " - " << s.get_name_zone(*it).second << std::endl;
      }
 }
 
 void Menu::print_best_path(std::list<int> path, DistanceGraph graph, const Stops& s) {
     for (auto it = path.begin(); it != path.end(); it++) {
-        std::cout << "-> linha usada: " << graph.get_nodes()[*it].line_used << " - " << s.get_name_zone(*it).first << " (" << s.get_code(*it) << ")" << " - " << s.get_name_zone(*it).second << " - distância disponivel: " << graph.get_nodes()[*it].distance_available << std::endl;
+        std::cout << "*it = " << *it << std::endl;
+        std::cout << "-> Linha usada: " << graph.get_nodes()[*it].line_used << " - " << s.get_name_zone(*it).first << " (" << s.get_code(*it) << ")" << " - " << s.get_name_zone(*it).second << " - distância disponivel: " << graph.get_nodes()[*it].distance_available << std::endl;
      }
 }
 
 void Menu::print_best_path(std::list<int> path, LineGraph l_graph, const Stops& s, const StopsAndLines& s_l) {
     for (auto it = path.begin(); it != path.end(); it++) {
-        std::cout << "-> linha usada: " << l_graph.get_nodes()[*it].line_used << " - " << s.get_name(s_l.get_code_line(*it).first) << " (" << s_l.get_code_line(*it).first << ")" << " - " << s.get_zone(s_l.get_code_line(*it).first) << " - distância disponivel: " << l_graph.get_nodes()[*it].distance_available << std::endl;
+        std::cout << "*it = " << *it << std::endl;
+        std::cout << "-> Linha usada: " << l_graph.get_nodes()[*it].line_used << " - " << s.get_name(s_l.get_code_line(*it).first) << " (" << s_l.get_code_line(*it).first << ")" << " - " << s.get_zone(s_l.get_code_line(*it).first) << " - distância disponivel: " << l_graph.get_nodes()[*it].distance_available << std::endl;
     }
 }
 

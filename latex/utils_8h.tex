@@ -1,0 +1,95 @@
+\hypertarget{utils_8h}{}\doxysection{headers/utils.h File Reference}
+\label{utils_8h}\index{headers/utils.h@{headers/utils.h}}
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+Include dependency graph for utils.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{utils_8h_a9774fe13b14fb15cc5ee8e225b0dbd4b}{M\+A\+X\+\_\+\+C\+H\+A\+R\+S\+\_\+\+I\+G\+N\+O\+RE}}~std\+::numeric\+\_\+limits $<$std\+::streamsize$>$\+::max()
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{utils_8h_a4953d1edcbbfc7e420c423ded1d5621a}{clear\+\_\+screen}} ()
+\begin{DoxyCompactList}\small\item\em Useful function to clear the terminal screen. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{utils_8h_a5bb69b8da25275d326e2a7b3e90cd6a8}{haversine}} (std\+::pair$<$ double, double $>$ c1, std\+::pair$<$ double, double $>$ c2)
+\begin{DoxyCompactList}\small\item\em Haversine function to calculate distance from two sets of coordinates. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{utils_8h_a3410d50a83dc81b71aeab3fa0340dac5}{haversine}} (double lat1, double lon1, double lat2, double lon2)
+\begin{DoxyCompactList}\small\item\em Haversine function to calculate distance from two sets of coordinates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{utils_8h_a9774fe13b14fb15cc5ee8e225b0dbd4b}\label{utils_8h_a9774fe13b14fb15cc5ee8e225b0dbd4b}} 
+\index{utils.h@{utils.h}!MAX\_CHARS\_IGNORE@{MAX\_CHARS\_IGNORE}}
+\index{MAX\_CHARS\_IGNORE@{MAX\_CHARS\_IGNORE}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_CHARS\_IGNORE}{MAX\_CHARS\_IGNORE}}
+{\footnotesize\ttfamily \#define M\+A\+X\+\_\+\+C\+H\+A\+R\+S\+\_\+\+I\+G\+N\+O\+RE~std\+::numeric\+\_\+limits $<$std\+::streamsize$>$\+::max()}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{utils_8h_a4953d1edcbbfc7e420c423ded1d5621a}\label{utils_8h_a4953d1edcbbfc7e420c423ded1d5621a}} 
+\index{utils.h@{utils.h}!clear\_screen@{clear\_screen}}
+\index{clear\_screen@{clear\_screen}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{clear\_screen()}{clear\_screen()}}
+{\footnotesize\ttfamily void clear\+\_\+screen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Useful function to clear the terminal screen. 
+
+\mbox{\Hypertarget{utils_8h_a3410d50a83dc81b71aeab3fa0340dac5}\label{utils_8h_a3410d50a83dc81b71aeab3fa0340dac5}} 
+\index{utils.h@{utils.h}!haversine@{haversine}}
+\index{haversine@{haversine}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{haversine()}{haversine()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double haversine (\begin{DoxyParamCaption}\item[{double}]{lat1,  }\item[{double}]{lon1,  }\item[{double}]{lat2,  }\item[{double}]{lon2 }\end{DoxyParamCaption})}
+
+
+
+Haversine function to calculate distance from two sets of coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lat1} & -\/ the latitude of the first location \\
+\hline
+{\em lon1} & -\/ the longitude of the first location \\
+\hline
+{\em lat2} & -\/ the latitude of the second location \\
+\hline
+{\em lon2} & -\/ the longitude of the second location \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the distance between the two locations 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utils_8h_a5bb69b8da25275d326e2a7b3e90cd6a8}\label{utils_8h_a5bb69b8da25275d326e2a7b3e90cd6a8}} 
+\index{utils.h@{utils.h}!haversine@{haversine}}
+\index{haversine@{haversine}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{haversine()}{haversine()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily double haversine (\begin{DoxyParamCaption}\item[{std\+::pair$<$ double, double $>$}]{c1,  }\item[{std\+::pair$<$ double, double $>$}]{c2 }\end{DoxyParamCaption})}
+
+
+
+Haversine function to calculate distance from two sets of coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c1} & -\/ first pair containing the latitude and longitude \\
+\hline
+{\em c2} & -\/ second pair containing the latitude and longitude \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the distance between the two locations 
+\end{DoxyReturn}

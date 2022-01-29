@@ -1,0 +1,40 @@
+digraph "headers/lines.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="headers/lines.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="headers/graphs/distancegraph.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$distancegraph_8h.html",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="headers/menu.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$menu_8h.html",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="src/menu.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$menu_8cpp.html",tooltip=" "];
+  Node2 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="src/graphs/distancegraph.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$distancegraph_8cpp.html",tooltip=" "];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="headers/stopsandlines.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$stopsandlines_8h.html",tooltip=" "];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="headers/graphs/linegraph.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$linegraph_8h.html",tooltip=" "];
+  Node7 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="src/graphs/linegraph.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$linegraph_8cpp.html",tooltip=" "];
+  Node6 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="src/stopsandlines.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$stopsandlines_8cpp.html",tooltip=" "];
+  Node1 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="headers/graphs/stopgraph.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$stopgraph_8h.html",tooltip=" "];
+  Node10 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node10 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="src/graphs/stopgraph.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$stopgraph_8cpp.html",tooltip=" "];
+  Node1 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node12 [label="headers/graphs/zonegraph.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$zonegraph_8h.html",tooltip=" "];
+  Node12 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node12 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node13 [label="src/graphs/zonegraph.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$zonegraph_8cpp.html",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node14 [label="src/lines.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$lines_8cpp.html",tooltip=" "];
+}

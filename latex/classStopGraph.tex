@@ -1,0 +1,106 @@
+\hypertarget{classStopGraph}{}\doxysection{Stop\+Graph Class Reference}
+\label{classStopGraph}\index{StopGraph@{StopGraph}}
+
+
+{\ttfamily \#include $<$stopgraph.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classStopGraph_aff3f8c060cc45944414b8815994cedbb}{Stop\+Graph}} (const \mbox{\hyperlink{classStops}{Stops}} \&stops, const \mbox{\hyperlink{classLines}{Lines}} \&lines, int num, double distance)
+\begin{DoxyCompactList}\small\item\em Construct a new Stop \mbox{\hyperlink{classGraph}{Graph}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStopGraph_a51e53242436b376679296a6fd24c4249}{add\+\_\+edge}} (int src, int dest, int weight, std\+::string line)
+\begin{DoxyCompactList}\small\item\em Adds and edge connecting \mbox{\hyperlink{structNode}{Node}} src and dest. \end{DoxyCompactList}\item 
+std\+::list$<$ int $>$ \mbox{\hyperlink{classStopGraph_abcd574f7e20aee6ff643d441995da8e0}{bfs\+\_\+path}} (const \mbox{\hyperlink{classStops}{Stops}} \&stops, int src, int dest)
+\begin{DoxyCompactList}\small\item\em Calculates the best path using Breadth-\/\+First-\/\+Search between Nodes src and dest. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{structStopNode}{Stop\+Node}} $>$ \mbox{\hyperlink{classStopGraph_a0c0fb3537b7468c93a512525f0618f90}{get\+\_\+nodes}} ()
+\begin{DoxyCompactList}\small\item\em Get the vector of nodes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classStopGraph_aff3f8c060cc45944414b8815994cedbb}\label{classStopGraph_aff3f8c060cc45944414b8815994cedbb}} 
+\index{StopGraph@{StopGraph}!StopGraph@{StopGraph}}
+\index{StopGraph@{StopGraph}!StopGraph@{StopGraph}}
+\doxysubsubsection{\texorpdfstring{StopGraph()}{StopGraph()}}
+{\footnotesize\ttfamily Stop\+Graph\+::\+Stop\+Graph (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classStops}{Stops}} \&}]{stops,  }\item[{const \mbox{\hyperlink{classLines}{Lines}} \&}]{lines,  }\item[{int}]{num,  }\item[{double}]{distance }\end{DoxyParamCaption})}
+
+
+
+Construct a new Stop \mbox{\hyperlink{classGraph}{Graph}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stops} & data class storing all stops \\
+\hline
+{\em lines} & data class storing all lines \\
+\hline
+{\em num} & number of nodes \\
+\hline
+{\em distance} & walking distance input by the user \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classStopGraph_a51e53242436b376679296a6fd24c4249}\label{classStopGraph_a51e53242436b376679296a6fd24c4249}} 
+\index{StopGraph@{StopGraph}!add\_edge@{add\_edge}}
+\index{add\_edge@{add\_edge}!StopGraph@{StopGraph}}
+\doxysubsubsection{\texorpdfstring{add\_edge()}{add\_edge()}}
+{\footnotesize\ttfamily void Stop\+Graph\+::add\+\_\+edge (\begin{DoxyParamCaption}\item[{int}]{src,  }\item[{int}]{dest,  }\item[{int}]{weight,  }\item[{std\+::string}]{line }\end{DoxyParamCaption})}
+
+
+
+Adds and edge connecting \mbox{\hyperlink{structNode}{Node}} src and dest. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & source node \\
+\hline
+{\em dest} & destination node \\
+\hline
+{\em weight} & weight of the node \\
+\hline
+{\em line} & line used in the path \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classStopGraph_abcd574f7e20aee6ff643d441995da8e0}\label{classStopGraph_abcd574f7e20aee6ff643d441995da8e0}} 
+\index{StopGraph@{StopGraph}!bfs\_path@{bfs\_path}}
+\index{bfs\_path@{bfs\_path}!StopGraph@{StopGraph}}
+\doxysubsubsection{\texorpdfstring{bfs\_path()}{bfs\_path()}}
+{\footnotesize\ttfamily std\+::list$<$ int $>$ Stop\+Graph\+::bfs\+\_\+path (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classStops}{Stops}} \&}]{stops,  }\item[{int}]{src,  }\item[{int}]{dest }\end{DoxyParamCaption})}
+
+
+
+Calculates the best path using Breadth-\/\+First-\/\+Search between Nodes src and dest. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stops} & data class storing all stops \\
+\hline
+{\em src} & source node \\
+\hline
+{\em dest} & destination node \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+best path available 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStopGraph_a0c0fb3537b7468c93a512525f0618f90}\label{classStopGraph_a0c0fb3537b7468c93a512525f0618f90}} 
+\index{StopGraph@{StopGraph}!get\_nodes@{get\_nodes}}
+\index{get\_nodes@{get\_nodes}!StopGraph@{StopGraph}}
+\doxysubsubsection{\texorpdfstring{get\_nodes()}{get\_nodes()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{structStopNode}{Stop\+Node}} $>$ Stop\+Graph\+::get\+\_\+nodes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the vector of nodes. 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+Stop\+Node$>$ 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+headers/graphs/\mbox{\hyperlink{stopgraph_8h}{stopgraph.\+h}}\item 
+src/graphs/\mbox{\hyperlink{stopgraph_8cpp}{stopgraph.\+cpp}}\end{DoxyCompactItemize}

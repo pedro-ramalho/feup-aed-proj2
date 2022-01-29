@@ -1,0 +1,197 @@
+\hypertarget{classStopsAndLines}{}\doxysection{Stops\+And\+Lines Class Reference}
+\label{classStopsAndLines}\index{StopsAndLines@{StopsAndLines}}
+
+
+{\ttfamily \#include $<$stopsandlines.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classStopsAndLines_afb876e3e04c16315e0f879d5ea76b550}{Stops\+And\+Lines}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classStops}{Stops}} And \mbox{\hyperlink{classLines}{Lines}} object. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classStopsAndLines_a05948b0254095659a95803e8daff97aa}{get\+\_\+line\+\_\+paths}} () const
+\begin{DoxyCompactList}\small\item\em Get the line paths. \end{DoxyCompactList}\item 
+std\+::pair$<$ double, double $>$ \mbox{\hyperlink{classStopsAndLines_ac55b4cede5e3241ee9ed6f445e64edd6}{get\+\_\+coords}} (int id) const
+\begin{DoxyCompactList}\small\item\em Get the coordinates of a Stop given it\textquotesingle{}s ID. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classStopsAndLines_ae23dd423cd127acc559b761edce8a7b2}{get\+\_\+line}} (int id) const
+\begin{DoxyCompactList}\small\item\em Get the line given it\textquotesingle{}s ID. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classStopsAndLines_a11abc0cf2a8612510216259c4d1a31f5}{get\+\_\+zone}} (int id) const
+\begin{DoxyCompactList}\small\item\em Get the zone given it\textquotesingle{}s ID. \end{DoxyCompactList}\item 
+std\+::pair$<$ std\+::string, std\+::string $>$ \mbox{\hyperlink{classStopsAndLines_a08ad52ff44dd391cc73515f9224355c8}{get\+\_\+code\+\_\+line}} (int id) const
+\begin{DoxyCompactList}\small\item\em Get the code and the line of a Stop given it\textquotesingle{}s ID. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classStopsAndLines_a217b249b2e1bf7c95052f320eadb2ea6}{get\+\_\+codes}} (std\+::string path) const
+\begin{DoxyCompactList}\small\item\em Get the codes of the \mbox{\hyperlink{classStops}{Stops}} inside the \char`\"{}path\char`\"{} file. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classStopsAndLines_a4f0b1f0b90e9c292c5154370d0c346b5}{get\+\_\+stop\+\_\+line\+\_\+id}} (std\+::string code, std\+::string line) const
+\begin{DoxyCompactList}\small\item\em Get the ID of the pair containing the code and line of a Stop. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStopsAndLines_abea684a7136e573029a8bfcc0fc6e494}{add\+\_\+stop\+\_\+and\+\_\+line}} (std\+::string code, int id, std\+::string name, std\+::string zone, std\+::pair$<$ double, double $>$ coords, std\+::string line)
+\begin{DoxyCompactList}\small\item\em Adds new elements to the maps above. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classStopsAndLines_afb876e3e04c16315e0f879d5ea76b550}\label{classStopsAndLines_afb876e3e04c16315e0f879d5ea76b550}} 
+\index{StopsAndLines@{StopsAndLines}!StopsAndLines@{StopsAndLines}}
+\index{StopsAndLines@{StopsAndLines}!StopsAndLines@{StopsAndLines}}
+\doxysubsubsection{\texorpdfstring{StopsAndLines()}{StopsAndLines()}}
+{\footnotesize\ttfamily Stops\+And\+Lines\+::\+Stops\+And\+Lines (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classStops}{Stops}} And \mbox{\hyperlink{classLines}{Lines}} object. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classStopsAndLines_abea684a7136e573029a8bfcc0fc6e494}\label{classStopsAndLines_abea684a7136e573029a8bfcc0fc6e494}} 
+\index{StopsAndLines@{StopsAndLines}!add\_stop\_and\_line@{add\_stop\_and\_line}}
+\index{add\_stop\_and\_line@{add\_stop\_and\_line}!StopsAndLines@{StopsAndLines}}
+\doxysubsubsection{\texorpdfstring{add\_stop\_and\_line()}{add\_stop\_and\_line()}}
+{\footnotesize\ttfamily void Stops\+And\+Lines\+::add\+\_\+stop\+\_\+and\+\_\+line (\begin{DoxyParamCaption}\item[{std\+::string}]{code,  }\item[{int}]{id,  }\item[{std\+::string}]{name,  }\item[{std\+::string}]{zone,  }\item[{std\+::pair$<$ double, double $>$}]{coords,  }\item[{std\+::string}]{line }\end{DoxyParamCaption})}
+
+
+
+Adds new elements to the maps above. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em code} & code of a Stop \\
+\hline
+{\em id} & ID representing either a Stop ID, Line ID \\
+\hline
+{\em name} & name of a Stop \\
+\hline
+{\em zone} & zone of a Stop \\
+\hline
+{\em coords} & latitude and longitude of a Stop \\
+\hline
+{\em line} & name of a Line \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classStopsAndLines_a08ad52ff44dd391cc73515f9224355c8}\label{classStopsAndLines_a08ad52ff44dd391cc73515f9224355c8}} 
+\index{StopsAndLines@{StopsAndLines}!get\_code\_line@{get\_code\_line}}
+\index{get\_code\_line@{get\_code\_line}!StopsAndLines@{StopsAndLines}}
+\doxysubsubsection{\texorpdfstring{get\_code\_line()}{get\_code\_line()}}
+{\footnotesize\ttfamily std\+::pair$<$ std\+::string, std\+::string $>$ Stops\+And\+Lines\+::get\+\_\+code\+\_\+line (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption}) const}
+
+
+
+Get the code and the line of a Stop given it\textquotesingle{}s ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID of a Stop \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::pair$<$std\+::string, std\+::string$>$ containing the code and the line of a Stop 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStopsAndLines_a217b249b2e1bf7c95052f320eadb2ea6}\label{classStopsAndLines_a217b249b2e1bf7c95052f320eadb2ea6}} 
+\index{StopsAndLines@{StopsAndLines}!get\_codes@{get\_codes}}
+\index{get\_codes@{get\_codes}!StopsAndLines@{StopsAndLines}}
+\doxysubsubsection{\texorpdfstring{get\_codes()}{get\_codes()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ Stops\+And\+Lines\+::get\+\_\+codes (\begin{DoxyParamCaption}\item[{std\+::string}]{path }\end{DoxyParamCaption}) const}
+
+
+
+Get the codes of the \mbox{\hyperlink{classStops}{Stops}} inside the \char`\"{}path\char`\"{} file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & path to the line file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$std\+::string$>$ containing the codes of the \mbox{\hyperlink{classStops}{Stops}} of the given line 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStopsAndLines_ac55b4cede5e3241ee9ed6f445e64edd6}\label{classStopsAndLines_ac55b4cede5e3241ee9ed6f445e64edd6}} 
+\index{StopsAndLines@{StopsAndLines}!get\_coords@{get\_coords}}
+\index{get\_coords@{get\_coords}!StopsAndLines@{StopsAndLines}}
+\doxysubsubsection{\texorpdfstring{get\_coords()}{get\_coords()}}
+{\footnotesize\ttfamily std\+::pair$<$ double, double $>$ Stops\+And\+Lines\+::get\+\_\+coords (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption}) const}
+
+
+
+Get the coordinates of a Stop given it\textquotesingle{}s ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID of a Stop \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::pair$<$double, double$>$ containing the latitude and longitude 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStopsAndLines_ae23dd423cd127acc559b761edce8a7b2}\label{classStopsAndLines_ae23dd423cd127acc559b761edce8a7b2}} 
+\index{StopsAndLines@{StopsAndLines}!get\_line@{get\_line}}
+\index{get\_line@{get\_line}!StopsAndLines@{StopsAndLines}}
+\doxysubsubsection{\texorpdfstring{get\_line()}{get\_line()}}
+{\footnotesize\ttfamily std\+::string Stops\+And\+Lines\+::get\+\_\+line (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption}) const}
+
+
+
+Get the line given it\textquotesingle{}s ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID of a Line \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the line name 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStopsAndLines_a05948b0254095659a95803e8daff97aa}\label{classStopsAndLines_a05948b0254095659a95803e8daff97aa}} 
+\index{StopsAndLines@{StopsAndLines}!get\_line\_paths@{get\_line\_paths}}
+\index{get\_line\_paths@{get\_line\_paths}!StopsAndLines@{StopsAndLines}}
+\doxysubsubsection{\texorpdfstring{get\_line\_paths()}{get\_line\_paths()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ Stops\+And\+Lines\+::get\+\_\+line\+\_\+paths (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the line paths. 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$std\+::string$>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStopsAndLines_a4f0b1f0b90e9c292c5154370d0c346b5}\label{classStopsAndLines_a4f0b1f0b90e9c292c5154370d0c346b5}} 
+\index{StopsAndLines@{StopsAndLines}!get\_stop\_line\_id@{get\_stop\_line\_id}}
+\index{get\_stop\_line\_id@{get\_stop\_line\_id}!StopsAndLines@{StopsAndLines}}
+\doxysubsubsection{\texorpdfstring{get\_stop\_line\_id()}{get\_stop\_line\_id()}}
+{\footnotesize\ttfamily int Stops\+And\+Lines\+::get\+\_\+stop\+\_\+line\+\_\+id (\begin{DoxyParamCaption}\item[{std\+::string}]{code,  }\item[{std\+::string}]{line }\end{DoxyParamCaption}) const}
+
+
+
+Get the ID of the pair containing the code and line of a Stop. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em code} & of the Stop \\
+\hline
+{\em line} & of the Stop \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ID of the given the pair 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStopsAndLines_a11abc0cf2a8612510216259c4d1a31f5}\label{classStopsAndLines_a11abc0cf2a8612510216259c4d1a31f5}} 
+\index{StopsAndLines@{StopsAndLines}!get\_zone@{get\_zone}}
+\index{get\_zone@{get\_zone}!StopsAndLines@{StopsAndLines}}
+\doxysubsubsection{\texorpdfstring{get\_zone()}{get\_zone()}}
+{\footnotesize\ttfamily std\+::string Stops\+And\+Lines\+::get\+\_\+zone (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption}) const}
+
+
+
+Get the zone given it\textquotesingle{}s ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID of a Stop \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the zone name 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+headers/\mbox{\hyperlink{stopsandlines_8h}{stopsandlines.\+h}}\item 
+src/\mbox{\hyperlink{stopsandlines_8cpp}{stopsandlines.\+cpp}}\end{DoxyCompactItemize}

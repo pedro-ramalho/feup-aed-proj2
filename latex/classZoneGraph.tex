@@ -1,0 +1,106 @@
+\hypertarget{classZoneGraph}{}\doxysection{Zone\+Graph Class Reference}
+\label{classZoneGraph}\index{ZoneGraph@{ZoneGraph}}
+
+
+{\ttfamily \#include $<$zonegraph.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classZoneGraph_a378bb1daf2afa0e4802f7f983791f518}{Zone\+Graph}} (const \mbox{\hyperlink{classStops}{Stops}} \&stops, const \mbox{\hyperlink{classLines}{Lines}} \&lines, int num, double distance)
+\begin{DoxyCompactList}\small\item\em Construct a new Zone \mbox{\hyperlink{classGraph}{Graph}} object. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{structZoneNode}{Zone\+Node}} $>$ \mbox{\hyperlink{classZoneGraph_a051e4068e3cdf4a1c329353a018bc7ed}{get\+\_\+nodes}} ()
+\begin{DoxyCompactList}\small\item\em Get the vector of nodes. \end{DoxyCompactList}\item 
+std\+::pair$<$ int, std\+::list$<$ int $>$ $>$ \mbox{\hyperlink{classZoneGraph_ac1e9424b3a4de85cee444c1387da4922}{dijkstra\+\_\+distance\+\_\+path}} (const \mbox{\hyperlink{classStops}{Stops}} \&stops, int src, int dest)
+\begin{DoxyCompactList}\small\item\em Calculates the best path between \mbox{\hyperlink{structNode}{Node}} src and dest. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classZoneGraph_a750ae0c7820f1fab7797efd188bea2ee}{add\+\_\+edge}} (int src, int dest, int weight, std\+::string line)
+\begin{DoxyCompactList}\small\item\em Adds and edge connecting \mbox{\hyperlink{structNode}{Node}} src and dest. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classZoneGraph_a378bb1daf2afa0e4802f7f983791f518}\label{classZoneGraph_a378bb1daf2afa0e4802f7f983791f518}} 
+\index{ZoneGraph@{ZoneGraph}!ZoneGraph@{ZoneGraph}}
+\index{ZoneGraph@{ZoneGraph}!ZoneGraph@{ZoneGraph}}
+\doxysubsubsection{\texorpdfstring{ZoneGraph()}{ZoneGraph()}}
+{\footnotesize\ttfamily Zone\+Graph\+::\+Zone\+Graph (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classStops}{Stops}} \&}]{stops,  }\item[{const \mbox{\hyperlink{classLines}{Lines}} \&}]{lines,  }\item[{int}]{num,  }\item[{double}]{distance }\end{DoxyParamCaption})}
+
+
+
+Construct a new Zone \mbox{\hyperlink{classGraph}{Graph}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stops} & data class storing all stops \\
+\hline
+{\em lines} & data class storing all lines \\
+\hline
+{\em num} & number of nodes \\
+\hline
+{\em distance} & walking distance input by the user \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classZoneGraph_a750ae0c7820f1fab7797efd188bea2ee}\label{classZoneGraph_a750ae0c7820f1fab7797efd188bea2ee}} 
+\index{ZoneGraph@{ZoneGraph}!add\_edge@{add\_edge}}
+\index{add\_edge@{add\_edge}!ZoneGraph@{ZoneGraph}}
+\doxysubsubsection{\texorpdfstring{add\_edge()}{add\_edge()}}
+{\footnotesize\ttfamily void Zone\+Graph\+::add\+\_\+edge (\begin{DoxyParamCaption}\item[{int}]{src,  }\item[{int}]{dest,  }\item[{int}]{weight,  }\item[{std\+::string}]{line }\end{DoxyParamCaption})}
+
+
+
+Adds and edge connecting \mbox{\hyperlink{structNode}{Node}} src and dest. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & source node \\
+\hline
+{\em dest} & destination node \\
+\hline
+{\em weight} & weight of the node \\
+\hline
+{\em line} & line used in the path \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classZoneGraph_ac1e9424b3a4de85cee444c1387da4922}\label{classZoneGraph_ac1e9424b3a4de85cee444c1387da4922}} 
+\index{ZoneGraph@{ZoneGraph}!dijkstra\_distance\_path@{dijkstra\_distance\_path}}
+\index{dijkstra\_distance\_path@{dijkstra\_distance\_path}!ZoneGraph@{ZoneGraph}}
+\doxysubsubsection{\texorpdfstring{dijkstra\_distance\_path()}{dijkstra\_distance\_path()}}
+{\footnotesize\ttfamily std\+::pair$<$ int, std\+::list$<$ int $>$ $>$ Zone\+Graph\+::dijkstra\+\_\+distance\+\_\+path (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classStops}{Stops}} \&}]{stops,  }\item[{int}]{src,  }\item[{int}]{dest }\end{DoxyParamCaption})}
+
+
+
+Calculates the best path between \mbox{\hyperlink{structNode}{Node}} src and dest. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stops\+\_\+and\+\_\+lines} & data class storing the pairs(stop, line) \\
+\hline
+{\em src} & source node \\
+\hline
+{\em dest} & destination node \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+cost of the path, list of the nodes making up the path 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classZoneGraph_a051e4068e3cdf4a1c329353a018bc7ed}\label{classZoneGraph_a051e4068e3cdf4a1c329353a018bc7ed}} 
+\index{ZoneGraph@{ZoneGraph}!get\_nodes@{get\_nodes}}
+\index{get\_nodes@{get\_nodes}!ZoneGraph@{ZoneGraph}}
+\doxysubsubsection{\texorpdfstring{get\_nodes()}{get\_nodes()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{structZoneNode}{Zone\+Node}} $>$ Zone\+Graph\+::get\+\_\+nodes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the vector of nodes. 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+Zone\+Node$>$ 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+headers/graphs/\mbox{\hyperlink{zonegraph_8h}{zonegraph.\+h}}\item 
+src/graphs/\mbox{\hyperlink{zonegraph_8cpp}{zonegraph.\+cpp}}\end{DoxyCompactItemize}

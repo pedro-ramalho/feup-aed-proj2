@@ -1,0 +1,178 @@
+\hypertarget{classStops}{}\doxysection{Stops Class Reference}
+\label{classStops}\index{Stops@{Stops}}
+
+
+{\ttfamily \#include $<$stops.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classStops_a663bfa74fffa3fe3b356b321c23e9ec4}{Stops}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classStops}{Stops}} object. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classStops_a30daa3a99fe87c2e9bda0568def75030}{get\+\_\+id}} (std\+::string code) const
+\begin{DoxyCompactList}\small\item\em Get the ID of a Stop given it\textquotesingle{}s code. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classStops_a4f6452088f3f5e40619602608de59682}{get\+\_\+code}} (int id) const
+\begin{DoxyCompactList}\small\item\em Get the code of the Stop given it\textquotesingle{}s ID. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classStops_a216e045fd7b98c558d0230a796ee8fc6}{get\+\_\+zone}} (std\+::string code) const
+\begin{DoxyCompactList}\small\item\em Get the zone of a Stop given it\textquotesingle{}s code. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classStops_a92f90a13fbeb7a812fb61f45e063770d}{get\+\_\+name}} (std\+::string code) const
+\begin{DoxyCompactList}\small\item\em Get the real name of a Stop given it\textquotesingle{}s name. \end{DoxyCompactList}\item 
+std\+::pair$<$ std\+::string, std\+::string $>$ \mbox{\hyperlink{classStops_ac5f69a6fbd85c893dc5683d48f1d7c9b}{get\+\_\+name\+\_\+zone}} (int id) const
+\begin{DoxyCompactList}\small\item\em Get the real name and the zone of a Stop given it\textquotesingle{}s ID. \end{DoxyCompactList}\item 
+std\+::pair$<$ double, double $>$ \mbox{\hyperlink{classStops_a6d5647594ae66f4d026883d879ef13c3}{get\+\_\+coords}} (int id) const
+\begin{DoxyCompactList}\small\item\em Get the coordinates of a Stop given it\textquotesingle{}s ID. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStops_af539179cd2c6b4ba288fbff9dbf391c0}{add\+\_\+stop}} (std\+::string code, int id, std\+::string name, std\+::string zone, std\+::pair$<$ double, double $>$ coords)
+\begin{DoxyCompactList}\small\item\em Adds new elements to every map above. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classStops_a663bfa74fffa3fe3b356b321c23e9ec4}\label{classStops_a663bfa74fffa3fe3b356b321c23e9ec4}} 
+\index{Stops@{Stops}!Stops@{Stops}}
+\index{Stops@{Stops}!Stops@{Stops}}
+\doxysubsubsection{\texorpdfstring{Stops()}{Stops()}}
+{\footnotesize\ttfamily Stops\+::\+Stops (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classStops}{Stops}} object. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classStops_af539179cd2c6b4ba288fbff9dbf391c0}\label{classStops_af539179cd2c6b4ba288fbff9dbf391c0}} 
+\index{Stops@{Stops}!add\_stop@{add\_stop}}
+\index{add\_stop@{add\_stop}!Stops@{Stops}}
+\doxysubsubsection{\texorpdfstring{add\_stop()}{add\_stop()}}
+{\footnotesize\ttfamily void Stops\+::add\+\_\+stop (\begin{DoxyParamCaption}\item[{std\+::string}]{code,  }\item[{int}]{id,  }\item[{std\+::string}]{name,  }\item[{std\+::string}]{zone,  }\item[{std\+::pair$<$ double, double $>$}]{coords }\end{DoxyParamCaption})}
+
+
+
+Adds new elements to every map above. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em code} & code of the Stop \\
+\hline
+{\em id} & ID of the Stop \\
+\hline
+{\em name} & real name of the Stop \\
+\hline
+{\em zone} & zone of the Stop \\
+\hline
+{\em coords} & pair containing the latitude and longitude of the Stop \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classStops_a4f6452088f3f5e40619602608de59682}\label{classStops_a4f6452088f3f5e40619602608de59682}} 
+\index{Stops@{Stops}!get\_code@{get\_code}}
+\index{get\_code@{get\_code}!Stops@{Stops}}
+\doxysubsubsection{\texorpdfstring{get\_code()}{get\_code()}}
+{\footnotesize\ttfamily std\+::string Stops\+::get\+\_\+code (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption}) const}
+
+
+
+Get the code of the Stop given it\textquotesingle{}s ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID of the Stop \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+code of the Stop 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStops_a6d5647594ae66f4d026883d879ef13c3}\label{classStops_a6d5647594ae66f4d026883d879ef13c3}} 
+\index{Stops@{Stops}!get\_coords@{get\_coords}}
+\index{get\_coords@{get\_coords}!Stops@{Stops}}
+\doxysubsubsection{\texorpdfstring{get\_coords()}{get\_coords()}}
+{\footnotesize\ttfamily std\+::pair$<$ double, double $>$ Stops\+::get\+\_\+coords (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption}) const}
+
+
+
+Get the coordinates of a Stop given it\textquotesingle{}s ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID of the Stop \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pair of the latitude and longitude of the Stop 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStops_a30daa3a99fe87c2e9bda0568def75030}\label{classStops_a30daa3a99fe87c2e9bda0568def75030}} 
+\index{Stops@{Stops}!get\_id@{get\_id}}
+\index{get\_id@{get\_id}!Stops@{Stops}}
+\doxysubsubsection{\texorpdfstring{get\_id()}{get\_id()}}
+{\footnotesize\ttfamily int Stops\+::get\+\_\+id (\begin{DoxyParamCaption}\item[{std\+::string}]{code }\end{DoxyParamCaption}) const}
+
+
+
+Get the ID of a Stop given it\textquotesingle{}s code. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em code} & code of the Stop \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ID of the Stop 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStops_a92f90a13fbeb7a812fb61f45e063770d}\label{classStops_a92f90a13fbeb7a812fb61f45e063770d}} 
+\index{Stops@{Stops}!get\_name@{get\_name}}
+\index{get\_name@{get\_name}!Stops@{Stops}}
+\doxysubsubsection{\texorpdfstring{get\_name()}{get\_name()}}
+{\footnotesize\ttfamily std\+::string Stops\+::get\+\_\+name (\begin{DoxyParamCaption}\item[{std\+::string}]{code }\end{DoxyParamCaption}) const}
+
+
+
+Get the real name of a Stop given it\textquotesingle{}s name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em code} & code of the Stop \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+real name of the Stop 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStops_ac5f69a6fbd85c893dc5683d48f1d7c9b}\label{classStops_ac5f69a6fbd85c893dc5683d48f1d7c9b}} 
+\index{Stops@{Stops}!get\_name\_zone@{get\_name\_zone}}
+\index{get\_name\_zone@{get\_name\_zone}!Stops@{Stops}}
+\doxysubsubsection{\texorpdfstring{get\_name\_zone()}{get\_name\_zone()}}
+{\footnotesize\ttfamily std\+::pair$<$ std\+::string, std\+::string $>$ Stops\+::get\+\_\+name\+\_\+zone (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption}) const}
+
+
+
+Get the real name and the zone of a Stop given it\textquotesingle{}s ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID of the Stop \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pair of the real name and zone of the Stop 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStops_a216e045fd7b98c558d0230a796ee8fc6}\label{classStops_a216e045fd7b98c558d0230a796ee8fc6}} 
+\index{Stops@{Stops}!get\_zone@{get\_zone}}
+\index{get\_zone@{get\_zone}!Stops@{Stops}}
+\doxysubsubsection{\texorpdfstring{get\_zone()}{get\_zone()}}
+{\footnotesize\ttfamily std\+::string Stops\+::get\+\_\+zone (\begin{DoxyParamCaption}\item[{std\+::string}]{code }\end{DoxyParamCaption}) const}
+
+
+
+Get the zone of a Stop given it\textquotesingle{}s code. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em code} & code of the Stop \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+zone of the Stop 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+headers/\mbox{\hyperlink{stops_8h}{stops.\+h}}\item 
+src/\mbox{\hyperlink{stops_8cpp}{stops.\+cpp}}\end{DoxyCompactItemize}

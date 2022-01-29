@@ -1,0 +1,101 @@
+\hypertarget{structLineNode}{}\doxysection{Line\+Node Struct Reference}
+\label{structLineNode}\index{LineNode@{LineNode}}
+
+
+{\ttfamily \#include $<$linegraph.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::list$<$ \mbox{\hyperlink{structLineEdge}{Line\+Edge}} $>$ \mbox{\hyperlink{structLineNode_ad71336e4616b6bc70c85842ed62b135d}{adj}}
+\begin{DoxyCompactList}\small\item\em List of edges connected to the node. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{structLineNode_ac5fdec7814fd25d1aca173d4fd0254d0}{line\+\_\+used}}
+\begin{DoxyCompactList}\small\item\em The line used in the path. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structLineNode_a583742e4576b0c8d2a184b7a08f8675b}{visited}}
+\begin{DoxyCompactList}\small\item\em Boolean dictating whether the node has been visited or not. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{structLineNode_a74c8c55d2554791b1cda5870329148ad}{distance\+\_\+available}}
+\begin{DoxyCompactList}\small\item\em Distance the user is willing to walk when at the current node. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structLineNode_a963909f269753ef42f1e3a07b806d7fc}{pred}}
+\begin{DoxyCompactList}\small\item\em The previous node to the current one. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structLineNode_a04626ac05d303a908f013cf5ae1bd2df}{dist}}
+\begin{DoxyCompactList}\small\item\em Distance between the source node and the current one. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structLineNode_af671c1b2038fa48c03b699b21f6097d6}{connected\+\_\+nearby\+\_\+stops}} = false
+\begin{DoxyCompactList}\small\item\em Boolean dictating whether the node has been connected to nearby stops; false as default. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structLineNode_ad71336e4616b6bc70c85842ed62b135d}\label{structLineNode_ad71336e4616b6bc70c85842ed62b135d}} 
+\index{LineNode@{LineNode}!adj@{adj}}
+\index{adj@{adj}!LineNode@{LineNode}}
+\doxysubsubsection{\texorpdfstring{adj}{adj}}
+{\footnotesize\ttfamily std\+::list$<$\mbox{\hyperlink{structLineEdge}{Line\+Edge}}$>$ Line\+Node\+::adj}
+
+
+
+List of edges connected to the node. 
+
+\mbox{\Hypertarget{structLineNode_af671c1b2038fa48c03b699b21f6097d6}\label{structLineNode_af671c1b2038fa48c03b699b21f6097d6}} 
+\index{LineNode@{LineNode}!connected\_nearby\_stops@{connected\_nearby\_stops}}
+\index{connected\_nearby\_stops@{connected\_nearby\_stops}!LineNode@{LineNode}}
+\doxysubsubsection{\texorpdfstring{connected\_nearby\_stops}{connected\_nearby\_stops}}
+{\footnotesize\ttfamily bool Line\+Node\+::connected\+\_\+nearby\+\_\+stops = false}
+
+
+
+Boolean dictating whether the node has been connected to nearby stops; false as default. 
+
+\mbox{\Hypertarget{structLineNode_a04626ac05d303a908f013cf5ae1bd2df}\label{structLineNode_a04626ac05d303a908f013cf5ae1bd2df}} 
+\index{LineNode@{LineNode}!dist@{dist}}
+\index{dist@{dist}!LineNode@{LineNode}}
+\doxysubsubsection{\texorpdfstring{dist}{dist}}
+{\footnotesize\ttfamily int Line\+Node\+::dist}
+
+
+
+Distance between the source node and the current one. 
+
+\mbox{\Hypertarget{structLineNode_a74c8c55d2554791b1cda5870329148ad}\label{structLineNode_a74c8c55d2554791b1cda5870329148ad}} 
+\index{LineNode@{LineNode}!distance\_available@{distance\_available}}
+\index{distance\_available@{distance\_available}!LineNode@{LineNode}}
+\doxysubsubsection{\texorpdfstring{distance\_available}{distance\_available}}
+{\footnotesize\ttfamily double Line\+Node\+::distance\+\_\+available}
+
+
+
+Distance the user is willing to walk when at the current node. 
+
+\mbox{\Hypertarget{structLineNode_ac5fdec7814fd25d1aca173d4fd0254d0}\label{structLineNode_ac5fdec7814fd25d1aca173d4fd0254d0}} 
+\index{LineNode@{LineNode}!line\_used@{line\_used}}
+\index{line\_used@{line\_used}!LineNode@{LineNode}}
+\doxysubsubsection{\texorpdfstring{line\_used}{line\_used}}
+{\footnotesize\ttfamily std\+::string Line\+Node\+::line\+\_\+used}
+
+
+
+The line used in the path. 
+
+\mbox{\Hypertarget{structLineNode_a963909f269753ef42f1e3a07b806d7fc}\label{structLineNode_a963909f269753ef42f1e3a07b806d7fc}} 
+\index{LineNode@{LineNode}!pred@{pred}}
+\index{pred@{pred}!LineNode@{LineNode}}
+\doxysubsubsection{\texorpdfstring{pred}{pred}}
+{\footnotesize\ttfamily int Line\+Node\+::pred}
+
+
+
+The previous node to the current one. 
+
+\mbox{\Hypertarget{structLineNode_a583742e4576b0c8d2a184b7a08f8675b}\label{structLineNode_a583742e4576b0c8d2a184b7a08f8675b}} 
+\index{LineNode@{LineNode}!visited@{visited}}
+\index{visited@{visited}!LineNode@{LineNode}}
+\doxysubsubsection{\texorpdfstring{visited}{visited}}
+{\footnotesize\ttfamily bool Line\+Node\+::visited}
+
+
+
+Boolean dictating whether the node has been visited or not. 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+headers/graphs/\mbox{\hyperlink{linegraph_8h}{linegraph.\+h}}\end{DoxyCompactItemize}

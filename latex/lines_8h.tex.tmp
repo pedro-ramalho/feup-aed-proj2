@@ -1,0 +1,19 @@
+\hypertarget{lines_8h}{}\doxysection{headers/lines.h File Reference}
+\label{lines_8h}\index{headers/lines.h@{headers/lines.h}}
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \char`\"{}../headers/utils.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../headers/graphs/graph.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../headers/stops.\+h\char`\"{}}\newline
+Include dependency graph for lines.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classLines}{Lines}}
+\end{DoxyCompactItemize}
