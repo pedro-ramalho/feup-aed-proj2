@@ -344,21 +344,18 @@ std::pair<double, double> Menu::coords_option() {
 
 void Menu::print_best_path(std::list<int> path, StopGraph graph, const Stops& s) {
     for (auto it = path.begin(); it != path.end(); it++) {
-        std::cout << "*it = " << *it << std::endl;
         std::cout << "-> Linha usada: " << graph.get_nodes()[*it].line_used << " - " << s.get_name_zone(*it).first << " (" << s.get_code(*it) << ")" << " - " << s.get_name_zone(*it).second << std::endl;
      }
 }
 
 void Menu::print_best_path(std::list<int> path, DistanceGraph graph, const Stops& s) {
     for (auto it = path.begin(); it != path.end(); it++) {
-        std::cout << "*it = " << *it << std::endl;
         std::cout << "-> Linha usada: " << graph.get_nodes()[*it].line_used << " - " << s.get_name_zone(*it).first << " (" << s.get_code(*it) << ")" << " - " << s.get_name_zone(*it).second << " - distância disponivel: " << graph.get_nodes()[*it].distance_available << std::endl;
      }
 }
 
 void Menu::print_best_path(std::list<int> path, LineGraph l_graph, const Stops& s, const StopsAndLines& s_l) {
     for (auto it = path.begin(); it != path.end(); it++) {
-        std::cout << "*it = " << *it << std::endl;
         std::cout << "-> Linha usada: " << l_graph.get_nodes()[*it].line_used << " - " << s.get_name(s_l.get_code_line(*it).first) << " (" << s_l.get_code_line(*it).first << ")" << " - " << s.get_zone(s_l.get_code_line(*it).first) << " - distância disponivel: " << l_graph.get_nodes()[*it].distance_available << std::endl;
     }
 }
